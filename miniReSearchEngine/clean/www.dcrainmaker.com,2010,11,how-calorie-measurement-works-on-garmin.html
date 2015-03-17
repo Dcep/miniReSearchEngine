@@ -1,0 +1,1497 @@
+How calorie measurement works on Garmin fitness devices | DC Rainmaker
+About Me
+Press Clippings
+Contact
+Advertise
+Search for:
+Skip to content
+Home
+Blog
+Product Reviews
+4iiii
+Activity Monitors
+Adidas
+CycleOps/PowerTap
+FINIS
+Fitbit
+Garmin
+GoPro
+Magellan
+Nike
+O-Synce
+Polar
+Power Meters
+Suunto
+Tacx
+Timex
+TomTom
+Wahoo Fitness
+Everything Else
+How-To Guides
+Tips & Tricks
+Race Report
+Travel
+Paris Blog
+The Queue
+JUMP TO:
+Start
+The Main Methods
+Device Breakdown  Running/Multisport
+Device Breakdown  Cycling
+Device Master Sheet
+Heart Rate Straps
+Summary
+Discussion (155)
+close
+How calorie measurement works on Garmin fitness devices
+November 24, 2010
+by
+DC Rainmaker
+|
+How-To Guides
+
+Sports Technology
+|
+Comments (151)
+There are few topics that cause more confusion, intrigue and general Huh? in the sports world than calorie burn. While many runners or cyclists often estimate calorie burn (and thus cookie allocation metrics) using borderline sketchy back of the napkin calculations, theres also a significant portion of the population that looks to use their Garmin device to determine calorie burn.
+The challenge that many folks have found out is that
+different Garmin devices
+produce different results, and sometimes  even different results for the same person. Further, a specific device can even product different results for the same person dependent on how its configured.
+So, I set out to put together a bit of the definitive guide to calorie calculations on Garmin fitness devices. Back when I was at the
+ANT+ Symposium in Calgary
+I sat down to start the conversation with the Garmin team there. Then more recently last week I met up again with the Garmin fitness team to talk through all the painstaking details.
+The Main Methods
+As you might have guessed, there are actually a number of ways in which your Garmin device will calculate how many calories youve burned. And not unexpectedly, the accuracy level varies based on which method you use. Some methods offer a rudimentary guesstimate, while others are based on scientific testing thats then imported into your device to get far more accurate results.
+So, lets walk through each of the six major methods, starting with the most accurate, and working our way down the list to the less accurate (the last option, Kilojoules, isnt really less accurate per se, but differentmore in a moment).
+1) New Leaf VO2 Test Profile:
+This method requires testing at one of a number of
+New Leaf testing
+centers around the country. New Leaf is actually a 3rd party company thats developed a pretty comprehensive way to determine calorie burn based on VO2 tests that are done. The tests are not terribly unlike your common VO2 max test, and involve you being hooked up to tubes and wires. The tests though are sport-specific, meaning you complete a running test to allow the Forerunner to determine running activity calories. The tests dont cross over, but there are tests available for running, cycling and elliptical. Once a test is complete you can download your profile into your Garmin device to get the most accurate calorie burn metrics when combined with a heart rate monitor. Im looking to get a New Leaf test done and put together a post or series of posts on the experience and accuracy I see. Heres
+the list of current devices
+, and levels of compatibility.
+2) Firstbeat Algorithm (Current  2nd Generation):
+The Firstbeat algorithm is the most accurate Garmin device calorie measurement that can be done without external testing. But its actually not developed natively by Garmin. Its developed by a Finish company (
+Firstbeat Technologies
+) that has its roots in calculations around Olympic athletes, specifically Nordic skiing. Their calculation uses user inputted variables including gender, height, weight and fitness class. It then combines this data with heart rate information from the ANT+ heart rate strap. Specifically, it evaluates the time between heart beats (beat to beat) to determine estimated MET (Metabolic Equivalent), which in turn is used determine actual work expenditure.
+This makes the system one of the more accurate non-invasive options (read: doesnt require a laboratory), within about 10% accuracy. Firstbeat has published a
+fascinating white paper
+detailing the technology and accuracy rates. This little snippet below though helps to show where the technology lies accuracy-wise  with it being right in the upper-middle compared to full-board lab operations on one end, and distance/time calculations on the other end (click below to expand picture).
+Finally, this metric also learns you as an athlete on a given device. Meaning, over time it has a weighted algorithm to note changes in your fitness level and adjust calorie burn accordingly. I asked how friends and family using a device might impact this. They noted that a single one-time use wasnt weighted heavily enough to make a difference, but that obviously a couple sharing a single device would see less accurate results (both due to the profile information being incorrect 50% of the time, as well as the learning aspect being off). It also should be noted that the second-generation of the Firstbeat algorithm is only applicable to running currently, and isnt used in the cycling products yet.
+3) Firstbeat Algorithm (1st Generation):
+This is essentially the same as the above noted algorithmexcept just slightly less accurate. This first generation algorithm is used on devices prior to this year, which are detailed in the below tables. Like any product, technology or concept  the calculations have evolved and are made available in its most recent incarnation on Garmins most recent devices. One interesting tidbit is that they found that while this 1st generation algorithm worked really well for newer runners, it was less accurate in more advanced runners  hence some of the updates seen in the 2nd generation.
+4) FR60 Heart Rate Algorithm:
+The FR60 non-GPS
+running watches have a proprietary heart rate based algorithm thats used when a heart rate strap is enabled. The primary driver of this was to remove the dependency on speed/distance thats typically associated with a GPS unit (since the FR60 is not GPS-based). The Garmin engineers describe this algorithm as a classic heart rate based calorie burn calculation, with virtually no extra fancies tossed in to make it significantly more accurate. There are no plans to evolve this one-off algorithm to other devices (including the next version of the FR60), nor to port either Firstbeat to the FR60.
+5) Speed/Distance Algorithm:
+This is the most basic method of determining calories, as it is only used when a heart rate strap is not enabled/used (default). Given the lack of heart rate data, the unit will simply use speed/distance, as well as the weight you entered in the device setup. The reason this is less accurate (65-80% accurate) is that it cant differentiate how much effort youre expending to travel a given distance  which while less important for running, is quite important for cycling. For example, if youre coasting down a 7 mile descent, youll burn virtually no calories compared to ascending the same mountain. This speed/distance algorithm does
+not
+consider or evaluate the impact of elevation change  primarily due to concerns the team had about relying on
+GPS-based elevation
+to determine calories. They also reasoned that while the Edge units had barometric altimeters, it was better to focus on heart-rate based calorie burn, as opposed to simply expanding the guesstimate that the speed/distance algorithm is. Finally, note that if you wear a heart-rate monitor/strap  speed/distance are ignored, and instead one of the other above (more accurate) methods are used.
+5) Power Meter to get Kilojoules:
+While not technically calories, the kilojoules is a unit of work, and thus is a method that some folks may use to judge how much effort was expended on a given workout. This method is only available on units that support power meters (Forerunner 310XT, Edge 500/705/800), and requires a compatible 3rd party ANT+ power meter (such as a Power Tap hub, Quarq Cinqo, SRM, etc). This isnt less accurate, but rather a different metric than straight calories. You can convert from kilojoules to calories.
+Finally, it should be pointed out that the overall philosophy of the team is/was to get folks using heart rate straps if they want accurate calorie metrics.
+Device Breakdown  Running/Multisport
+So now that weve gone through and covered the main methods for calorie calculations, lets break it down on a per-device basis. Well start off with the running and multisport related devices. You can click to expand the chart and get a full view that makes it a bit more visible.
+As you can see, the most recent devices (FR210/FR410) have the most up to date calorie metrics  primarily being the 2nd generation Firstbeat Algorithm. However, many devices support the New Leaf test, almost everything except the FR205, which is simply because it doesnt support a heart rate strap.
+Device Breakdown  Cycling
+Next up is the cycling side of things. Youll see that again like the running devices, the newest devices  such as the
+Edge 500
+and Edge 800, have the most recent calorie calculations available.
+As youll notice, the Edge devices also add the kilojoules power meter option, for those with compatible
+ANT+ power meters
+.
+Device Master Sheet
+And finally, one master sheet of all devices in a single table:
+Heart Rate Straps
+Given so much of the the calorie calculations is dependent on a heart rate strap, I should point out that any ANT+ heart rate strap will work when it comes to gathering heart rate data that the Garmin devices can use. However, there are a few different Garmin-made ANT+ straps out there to select from. The three that are available today are:
+1) Classic Garmin Heart Rate Strap:
+This is the most common version, and also been around the longest. It features a plastic portion of the strap that reads your heart rate, while the remainder of the strap is fabric.
+2) Pre-2010 Premium Heart Rate Strap:
+This strap version came out in Spring 2009, along with the Forerunner 310XT. It features a fully fabric band all the way around, with snap-on connectors holding the transmitter portion to the fabric.
+3) 2010 New Premium Heart Rate Strap:
+This version came out in August 2010 alongside the Edge 800, and is now shipping with all premium heart rate strap units (i.e.
+FR310XT
+,
+Edge 800
+, etc). This one aims to resolve some of the
+spiking/dropout issues
+noted in the pre-2010 version. In my testing over the past few months, this seems to resolve about 95% of the spiking issues that Ive seen. This version will be available for individual purchase, but an exact timeline hasnt been fully finalized. Note that I asked if there was a better name for the newest strap besides New-new Premium Heart Rate Strap, and the team hadnt really come up with a good name to use externally. So, for now, Im going with 2010 New Premium Heart Rate Strap.
+In general, remember, if youre having problems with heart rate strap readings, be sure to check out both of my posts on the subject 
+first part here
+and
+part two here
+.
+Summary
+Theres no doubt that the Garmin fitness devices offer a plethora of calorie calculation options. Before I started looking into this I would have said that there were too many options, however, after understanding the different options better  and the differing levels of accuracy each one offers, I have a better grasp on why there are so many different ways to calculate calories.
+As you can see, in many ways  it ends up being a matter of how much effort (or perhaps time/money) one wants to invest in the solution to get the most accurate results.
+(Final note  Thanks to the Garmin Fitness team for their time in answering all the questions and detailed specifications of each device and calorie metric type)
+Retweet
+34
+Like
+177
+Google +1
+13
+Tags:
+Calories
+,
+Garmin GPS
+
+Garmin plans to keep on selling FR305
+Featured Guest Post for Onlineshoes.com
+
+Related Posts
+ A look at Garmin Auto Lap by position for track and circuit loop use
+ A solution to heart rate dropouts/spikes with Garmin HR Soft Straps
+ Understanding the importance of Garmin firmware updates
+ Troubleshooting your heart rate monitor/strap HR spikes
+ How to train indoors with your Garmin device
+151 Comments
+Alistair
+November 24, 2010 at 10:30 am
+#1
+Given that I don't live in the US, and also don't know much about the supposed accuracy of New leaf setups at gyms as opposed to anything produced at a normal sports science lab, do you know if there is any way of putting in or editing any metabolic profile data manually?
+Cheers,
+Alistair
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+November 24, 2010 at 2:58 pm
+#2
+Do you know if Garmin has any plans to allow devices such as the FR310XT that use the Firstbeat 1st gen algorithm to be upgraded to 2nd gen algorithm?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Sascha Wenninger
+replied
+June 29, 2013 at 4:42 am
+#3
+According to the
+Garmin software update site
+, this happened with version 3.2 of the firmware.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+tms
+November 24, 2010 at 3:18 pm
+#4
+Great article - just picked up an Edge 800 and from what I've seen the kcal estimates are a
+massive
+improvement over the 705.  The almost laughable readings the old Garmins produced was the main thing keeping me using my Polar for running, but from the looks of it they've made some big steps forward on that front!
+You mention that the Firstbeat algorithm uses beat-to-beat measurements, so I was wondering if Garmin's HR strap actually delivers this data (and discards it) or if it's just reconstructing it from the second-by-second readings?  I always figured that the reason Garmin didn't provide R-R data like Polar/Suunto was that the ANT+ profile didn't support it - but if that data is being delivered to the head unit it's a bit of a shame if they're just throwing it away.
+Also, do you have any thoughts about the accuracy of these algorithms compared to that of their competitors?  Polar and Suunto have been using their own R-R heart-rate based caloric calculations for a while - so I'd be interested to hear how these compare?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+marathonmaiden
+November 24, 2010 at 3:23 pm
+#5
+interesting and great post. i've always wondered how those pesky calorie calculators work.  i'd also want to know how garmin compares to the competitors as well as how these calculations compare to machines at a gym
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+November 25, 2010 at 2:24 am
+#6
+Do you know if they calculate net calories by subtracting out a base metabolism rate?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Alistair
+November 25, 2010 at 2:21 pm
+#7
+@TMS: Suunto have been using firstbeat with the R-R data on their high end watches for a while. One thing I really miss from my T6 in my rowing days is the wealth of info I could pull out from workouts relating to oxygen debt, calorie usage etc. The TE scores were pretty useful once you got things well enough calibrated too. Certainly good enough to help guide things when I was doing less structured training in the off season.
+On the other hand with the 310xt I get decent gps and the facility for power going forward, so that was the trade off for triathlon type training. The 310 certainly doesn't store all the R-R info which is a shame as it has the space. I would have thought the ant+ protocol can cope as the suunto watches use plain ant to receive their data. Kind of interested as to whether the 310xt actually does handle r-r data internally as then in theory it should be possible to save it and use it for detailed analysis based on variability in intervals...
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Andrea
+November 26, 2010 at 12:20 pm
+#8
+Great post, as always!
+Do you know what kind of calorie measurement SportTracks 2.0 uses? When I download workouts on the program, it changes the value of the calories determined by my FR305.
+Thanks for your work! Ciao from Italy!!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+djpfine
+December 27, 2010 at 5:46 am
+#9
+I had no idea there were two version of the premium soft strap heart rate monitor. Any idea if the new strap with less bugs can now be purchased online through Amazon? Feel free to toss out a link we can use so that you can collect on the affiliate referrals =)
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Bruce
+January 10, 2011 at 1:37 pm
+#10
+What calorie count method does the 305 use?  The article says New Leaf, but I couldn't find much information on what it is and how accurate it is when doing normal exercising.  Thank you.  Bruce
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+January 18, 2011 at 7:42 pm
+#11
+Great article - I had emailed Garmin with a question about the calorie computation for the 405CX versus the 305 and they referred me here!
+Unfortunately, I'm getting really lousy calorie results (405CX says calorie burn is about 1/2 what it was on the 305 and even less than what tables based on time/distance/weight say, so that with the bezel issues have made me decide to return it...
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+February 1, 2011 at 3:24 am
+#12
+The cycling chart in the article looks to say the Edge 305 only uses speed/distance/weight to calculate calories, and not the HR strap.  Can someone confirm if that is really true?!?!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ash
+February 8, 2011 at 4:24 pm
+#13
+Hi Ray
+The calculation table shows that the 800 can use both First Beat and Power meter for calorie calculation. But which takes precedent?
+If I use both HR and Quarq, which will it be using for the calculation?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+February 11, 2011 at 7:27 pm
+#14
+Hi Anon-
+RE: Upgrade 310XT to 2nd gen algorithm.
+No, I asked, no plans.
+Hi Anon-
+RE: Removal of base metabolism rate
+I don't believe they do, based on my understanding.  I'll save it for the next time I chat with them.
+Hi Andrea-
+RE: ST Calorie calcs
+It uses a simple distance algorithm based on 'standards' for different activity type
+Hi djpfine-
+RE: New premium soft strap version buy standalone
+It's not yet on Amazon, but is available on Garmin.com
+Hi Anon-
+RE: Edge 305 calorie not using HR strap
+That's correct, and the Garmin engineering team validated all these charts pre-publishing.
+Hi Ash-
+RE: Edge 800 power meter calcs
+The power meter calculation method I'm referring to is kilojoules, not straight calories - and is seperate from calories in the traditional sense.  The detailed description is above.  Thanks!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+February 14, 2011 at 3:12 pm
+#15
+Thanks for the interesting article.
+The table you posted indicates the FR-305 uses new leaf, which requires only heart-rate data. However, I don't get a caloric statistic when I train indoors (spinning). Any ideas?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+February 24, 2011 at 1:38 am
+#16
+I was referred to this site by Garmin Support.  OK.  Still - I rode for 2 hours, covered 37 miles and my brand new Garmin 800 says I burned 350 calories.  This was a normal ride, 1100 ft of elevation gain and relatively fast.  350 calories!  NOT!  I estimate (via the old 705) that I burn just under 1000 calories per hour on my usual rides.  That said - the 800, in my opinion, is about 10% accurate - 90% off.  I like the 800 - but am not a fan of Garmin Support.  My 705 lasted 19 months before it bought the farm - the 800 better last longer.  Any ideas from anyone on what is going on here?
+ken@bikerfive.net
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Steve
+March 15, 2011 at 6:08 am
+#17
+my 410 seems pretty wacky compared to the FR60 that it replaced (which is being used by my wife now), wondering if it's best to try another..
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+steve
+March 15, 2011 at 6:09 am
+#18
+This comment has been removed by the author.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+steve
+March 15, 2011 at 6:10 am
+#19
+This comment has been removed by the author.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Maddocks
+April 14, 2011 at 7:43 pm
+#20
+Do you have any information how the Garmin products compare to Polar products for calorie calculations?
+There's an interesting debate about calories burned on the Garmin 405CX forums:
+link to forums.garmin.com
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+May 23, 2011 at 8:00 pm
+#21
+I'm not clear on the calorie calculation method for the FR305.  Are you indicating you have to get a New Leaf VO2 test performed to get the FR305 device to calorie count based on HR, otherwise the unit defaults to time/distance even if you are using the HR strap?
+Doc.J
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rodrigo
+May 24, 2011 at 4:36 pm
+#22
+From the charts, looks like the EDGE705 calculates calories using only speed/distance, regardless if you have an HR strap or not... That explains the bad readings I get when I'm using it.
+I also have a powertap, so I usually get the calories count from the powertap software instead of the garmin software. Would that be the best way to do it, or do you have a different recommendation ?
+For my indoor workout, I use the Suunto memory belt, and that seems to be very accurate (and also calculates Traing effect)
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Kel
+June 29, 2011 at 9:21 pm
+#23
+I also am wondering about the FR305.  I haven't had a test done so I'm guessing it just uses the speed/distance thing...  So what's the point of the heart rate strap then?  I have an old, plain jane HR monitor and it calculates calories based on the heart rate over time.
+However when I use my 305 indoors with the GPS off, I can see it's counting my HR but I just get a 0 for calories.  However if I then plug in the data from the bike for distance, SportTracks comes up with a calorie numbers.  Of course it's way off from what the actual bike told me but at least it's something.
+Maybe I'm just missing something?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+CW in Dallas
+August 31, 2011 at 2:08 am
+#24
+Apparently the new premium HR strap can make a huge difference.
+I first bought a new 410 and used it on 9 mile run with my old style monitor strap. It said I burned 805 calories.  Didn't like the touch bezel on the 410; the 210 went on sale; so I exchanged at REI.  Same 9 mile run (actually run at a faster pace, but nearly same recorded heart rate) with 210 and new premium strap that came with it, yielded only 498 calories.
+I assume the 410 and 210 use same calorie count technology. Again, the new model strap I used with the 210 showed an average HR of 126 while the old style strap coupled with the 410 had my average HR at 127 (despite my running 30 seconds per mile faster the day I used the 210).  I should also state that my user profile settings were the same with my height, weight, age, and "lifetime athlete."
+So, same user profile, same route and distance, similar weather conditions, nearly the same measured average HR; yet huge calorie count discrepancy between 410 with old style strap vs. 410 with new premium strap.  Does this make any sense at all?  I must say less than 500 calories for a 9 mile run at a pretty good pace (for me) is damn disappointing.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+CW in Dallas
+August 31, 2011 at 2:10 am
+#25
+Correction: at end of my post, I meant to say "huge calorie count discrepancy between 410 with old style strap vs. 210 with new premium strap."
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+fulmar2
+September 3, 2011 at 7:27 am
+#26
+FYI, I just installed the Update to 2.90 on my Garmine 310XT.  According to their release notes, it has been upgraded to 2nd Generation Firstbeat since 2.70
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+pratoni
+October 7, 2011 at 8:31 am
+#27
+I have the same doubt of the Anonymous in post 20.
+I simply don't believe in the calories results in my FR305, especially on the bike.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+October 7, 2011 at 2:10 pm
+#28
+Hi All-
+RE: FR305
+Indeed, the FR305 really does NOT do HR based calorie metrics unless you have a New Leaf test done.  I've confirmed this again with Garmin, and this can be confirmed in multiple places on the Garmin Forums:
+link to forums.garmin.com
+With a New Leaf test you can then use the HR starp to get accurate calorie burn on the FR305, but otherwise it's just speed/dist/weight calcs.
+RE: New Strap vs Old Strap
+There's no difference between the two straps from a calorie basis - unless the straps were giving incorrect readings altogether.  ANT+ straps don't do calorie calculations, nor can a Garmin unit tell the difference between a soft strap and a classic strap (or even two generations of soft straps).  The ANT+ Device Profile doesn't contain the ability to transfer calories (or store weight information).  That said, looking at the two devices, there could be something else at play here - including perhaps just a bug.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Tim
+October 10, 2011 at 2:55 pm
+#29
+Just wanted to note that the 310xt seems to have been updated to 2nd generation firstbeat as of software 3.7.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Josh
+October 19, 2011 at 3:28 am
+#30
+I noticed that you mention that the edge 500 works with the new leaf test and your charts show this to be the case.  However, the linked chart on new leaf's site shows that it isn't compatible with the test.  Do you know which chart is correct?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+November 30, 2011 at 3:10 pm
+#31
+Is there a web site or application that can recalculate calories burned from TCX file?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+November 30, 2011 at 3:11 pm
+#32
+Yes, Sport Tracks can.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+pratoni
+December 26, 2011 at 2:06 pm
+#33
+Can you say how the Timex (Timex Run Trainer ans Timex Global Trainer) and Polar (RCX5) watches that you reviewed do the calories calculations?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+rgabba
+January 17, 2012 at 8:22 am
+#34
+Hi Ray, greeting from Italy, thanks for your reviews, very useful.
+I have a FR60 for my indoor training (treadmill and spinning mainly) and a brand new EDGE 500 with speed/cadence sensor for cycling.
+I have tried FR60 and EDGE together in a short cycling training and they have gave me a different result about calories; edge 728kcal/h, FR60 1091kcal/h !!! Both were paired with the same heart rate monitor strap and speed/cadence sensor.
+What do you think about it? Which is most accurate? Both use HR for calories calculation, I know with different algorithm but I can't understand so different results.
+Thanks.
+Bye
+Roberto
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Datz
+replied
+June 14, 2014 at 12:40 am
+#35
+rgabba
+I just moved from the FR60 to the 310xt.
+My cal counts were the exact same as yours, and I'm wondering the same thing.
+I too am using the same HR and cadence monitors.
+Quite a big difference.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Oliver
+January 26, 2012 at 7:12 pm
+#36
+Hi;
+I have a Garmin Forerunner 405 and use the Classic Garmin HR Strap.
+According to the Device Breakdown chart the calorie calculation method for this device is either #1"New Leaf VO2 Test Profile" or #5"Speed/Distance Algorithm".  I do not use #1.  The last sentence under #5 states Finally, note that if you wear a heart-rate monitor/strap  speed/distance are ignored, and instead one of the other above (more accurate) methods are used.
+So for a 405 w/ Classic Garmin HR Strap, which method is actually used for the calorie calculations?
+Thanks in advance.
+Oliver
+PS  Great info in the article.....thanks.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Stephanie_Thomas
+February 21, 2012 at 1:43 am
+#37
+In your experience then, is the Garmin FR 210 more accurate than a Polar one?  I used Polar for years with similar workouts. The Garmin tells me I burn maybe 60-70% of what the Polar said I burned....a little depressing but really interested in which is right.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+February 21, 2012 at 1:54 am
+#38
+I think it depends.
+Polar pretty much pioneered heart rate algorithms, so they've got some really accurate stuff there.  But by the same token, the Firstbeat piece is pretty solid too - for watches that have it.  And if you can get a New Leaf test, that's even better.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Stephanie_Thomas
+February 25, 2012 at 4:50 pm
+#39
+This is so hard to figure out!  Polar is good, Garmin is good.  Yet the two amounts they give me are so far apart!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Stephanie_Thomas
+February 28, 2012 at 2:17 am
+#40
+Ok more info to see if you can give me any thoughts.  I am 5'6.5, 142 lbs, 39 year old female. i have a new garmin 210 with new strap.  i generally work out 4 times a week, sometimes running, sometimes at gym (elliptical, bike, weights).  Today I ran 3.51 miles in 38 minutes, avg heart rate 158.  Garmin says 322 calories.  Seems low to me.
+yesterday I worked out at the gym on a  new machine, precor cross between elliptical and stairmaster.  40 minutes, avg heart rate 130.  I wore both heart straps.  The garmin watch reported 308 calories.  The polar strap was picked up by the machine, which reported 450 calories (I input my age and weight).
+So, with the experience on this forum, can anyone give me an idea
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+DH61
+March 3, 2012 at 6:09 am
+#41
+I have a 410, which has stopped counting calories all of a sudden.
+I have GPS off, but from your article/posts it would seem that it shouldn't need GPS given that it has my demographic data + HR data. Admittedly, I'm not using a Garmin HRM as I was too annoyed by the quality to buy another Garmin when my old one died, but as the watch gets the HR data I wouldn't have thought that this would matter.
+I am also running Wahoo app on my iPhone, and, as other users have posted, I think the cal estimate is higher with this than with the 410.
+Cheers
+DH61
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Sarah
+April 4, 2012 at 8:57 pm
+#42
+I'm curious about iPhone apps. Which ones use heart rate for calorie computation when only using ANT + receiver and strap?  For instance, I think Endomondo does not while Digifit does?  Do you know the status of the others?  Hard to find this answer on app websites. Thanks for all your hard work!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+tunney
+April 18, 2012 at 12:53 pm
+#43
+I was shipped a "2010 New Premium Heart Rate Strap" from Amazon.co.uk
+Found it marginally better than the old one but still not as good as a polar strap.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Kevin
+June 4, 2012 at 2:45 pm
+#44
+I would love to see calorie calculations for the Timex Run Trainer / Global Run Trainer.
+After spending some time with my TRT, I believe something is awry, either with my user settings, or with the calculations themselves, causing the watch to over-calculate calories burned by a large margin.
+If you have any insight, I would love to hear it. Thanks for all of the work you do - I love reading your site.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Carol Calhoun
+June 15, 2012 at 2:57 am
+#45
+I am getting calorie readings on my new Edge 500 that are so wildly different from those on my old Edge 705 that they make me wonder whether the calorie readings are of any use at all.  As an example, today I completed a 12.13 mile bike ride in 1:23:08, and my Edge 500 said I used 465 calories.  A week ago, I did substantially the same ride, in substantially the same amount of time, without either my weight or the bicycle's differing much, and my Edge 705 said I used 1544 calories.  Obviously, a calorie reading of somewhere between 465 calories and 1544 calories is of absolutely no use to me.
+And this is characteristic of the difference in results I'm getting with other rides.  Initially, I thought perhaps I had my HRM adjusted badly so that it was picking up only some of my heartbeats.  (This hypothesis was suggested by the fact that on my very first ride, the Garmin claimed my average heart rate was 67, which seemed improbable.)  However, I now have the Garmin adjusted so that it constantly shows me current heart rate, and the rates shown seem reasonable.
+There is reference to the monitor "learning" as I go along.  Will this occur even if the majority of my cardio exercise is not recorded with the Garmin?  I typically bike about three days a week, which I record with the Garmin.  However, the remaining days, I use cardio equipment (stationary bicycle or elliptical) at the gym, and do not use the Garmin for that.  I'm just wondering whether the learning requires that the Garmin know the frequency with which I exercise, or whether it could do the learning just by monitoring my exercise several times a week.
+And is there anything else I could do to reconcile the two devices?  I have a cadence meter, which I have never used; I'm not sure whether using it would help.  I have set my fitness class at 9, which reflects my current level of activity.  Any other ideas?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Sarah
+July 25, 2012 at 5:37 pm
+#46
+Do you know how the Timex Run Trainer calculates calorie expenditure?
+Thanks -
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Anonymous
+August 21, 2012 at 4:56 pm
+#47
+Ray - thanks a lot for great reviews. I had a very simple question: is the Firstbeat Algorithm already installed on my 910XT and will it start collecting data automatically or do I need to buy a test from Firstbeat to then install on my 910XT?
+Thank you!
+FC
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+FC
+August 21, 2012 at 4:59 pm
+#48
+Ray - thanks a lot for great reviews. I had a very simple question: is the Firstbeat Algorithm already installed on my 910XT and will it start collecting data automatically or do I need to buy a test from Firstbeat to then install on my 910XT?
+Thank you!
+FC
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Zachary Bulacan
+September 4, 2012 at 6:50 am
+#49
+any updates on what the newer watches use?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Peter
+September 24, 2012 at 8:58 pm
+#50
+Hi Ray,
+Are you saying that the Firstbeat algorithms are specific to a given sport, so if I wear my FR210 running the calorie burn measurement will be more accurate than I'll get if I wear it cycling or cross country skiing?  If so, any idea how less accurate it is when using it for a sport other than that for which it was designed?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Unknown
+October 6, 2012 at 5:14 pm
+#51
+Peter,
+Good question as I have just read this page and was thinking the same thing.
+However, no, I don't think Ray is saying that the FirstBeat algorithms are specific to a sport in terms of calories, because of this:
+"Their calculation uses user inputted variables including gender, height, weight and fitness class.  It then combines this data with heart rate information from the ANT+ heart rate strap.  Specifically, it evaluates the time between heart beats (beat to beat) to determine estimated MET (Metabolic Equivalent), which in turn is used determine actual work expenditure."
+If you look on the more detailed link from when when Ray quizzed Garmin, you will see that there is more detail but not much to add - i.e. when calculating calories in this very accurate way, the relative fitness of the person (stroke volume, maximum heart rate, recovery, fitness, height, weight, and whatever else they used from user inputted date, etc), can only be guessed and refined, but the heart rate that goes with it is the only other variable - not the exercise that produces the heart rate. All other research I've done on the internet just now, seems to suggest that this is the case. e.g. If you weight train or sprint and reach 160 bpm reducing to 130 and back up again etc for an hour, that's the same calories as running or cycling with the same HRs - although of course that would be very hard to sustain for the hour with muscular weight training, if not impossible.
+However the reason for my post is that I hope that Ray can just confirm and answer your point, just to be 100% sure.
+Ray, thanks for excellent article and detail.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+JJ
+January 2, 2013 at 5:09 pm
+#52
+I purchased the 310XT last week but exchanged it today for the 610.  Much better fit for my needs.  I have a question for Mr. DCR regarding the calorie calculation.  I'm a walker, not a runner.  Today I took a medium walk of 3.87 miles in 58:32 with an average heart rate of 105, using the Garmin HRM (newest one).  The dog slows me down.  Too many things to sniff.  I digress.  Using the formula on livestrong.com for calculating calories burned with a known VO2max, I estimate that I should have burned 413 calories or net of 331 assuming a 2000 calorie per day need (54 year old male weighing 138 pounds).  My 610 computed my calories burn to be 324, which almost exactly what my calculated net consumption is but about 20 percent lower than the gross consumption.  My question is whether the Firstbeat algorithm is calculating gross or net calorie consumption.  Would be interested in any feedback anyone can provide.  Thanks.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Bob
+January 3, 2013 at 1:41 pm
+#53
+Does the 610 use the 2nd generation Firstbeat Algorithm?  Since the 210/410 do, I assume it does, but your article does not mention it, so I thought I'd ask.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+JJ
+replied
+January 3, 2013 at 3:28 pm
+#54
+It uses the second generation algorithm.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Bob
+January 3, 2013 at 4:39 pm
+#55
+Thanks, I am also trying to find a New Leaf test facility, but even using a 500 mile radius in the enewleaf.com locator I found nothing based on my zip code.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+EternalFury
+January 11, 2013 at 5:57 pm
+#56
+Ray, could you help in getting the attention of Garmin on the following problem, which has been lingering about for almost a year:
+link to forums.garmin.com
+Trying to contact them via Support for an update essentially sends you back to square one and you have to repeat all the evidence that has been sent to them over the past few months.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Prolly
+January 23, 2013 at 2:32 am
+#57
+Geat topic.  Thanks!
+Tonite I ran a test between my spiffy new Garmin 500 and my older Polar 200.  I actually rode my trainer with the two computers running and two HR straps on.  I did a quick 38 min ride with warmup, 2 sets of intervals and a cool down.  I used laps on both to delineate the HR during each period.  Results:  HR was pretty much spot-on identical between the two.  There was only a 1 bpm difference in one of the intervals.  So quite satisfied with that and was expecting as much.  Calorie count however was way off even though rider data entered (age, weight, height) was the same.  With an average 145 bpm over the entire work out I burnt 360 cal on the Garmin and 475 on the Polar.  Quite a difference and I remain dissatisfied as to which one is best.  I note here that generally the 500 reads lower during comparisons in the above comments.
+Thoughts?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Eduardo
+replied
+April 1, 2014 at 4:43 am
+#58
+I have the same problem, but i used a RC3GPS and a Vivofit....
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+April 1, 2014 at 4:52 am
+#59
+Ultimately you're going to get differences based on different devices and the technology they use.  Ensuring they are setup properly (height/weight/gender/etc...) will go a long ways, but there's no single international standard on how calorie burn should be measured.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Eduardo
+replied
+April 1, 2014 at 5:00 am
+#60
+Tks Ray :)
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Damian Howard
+February 4, 2013 at 5:28 am
+#61
+Hi Rainmaker,
+Could you please update the table for the latest offers from Garmin.
+Thanks Damian
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Thomas
+February 4, 2013 at 12:47 pm
+#62
+Hi ray,
+would be great if you could update this calorie device measurement table with the new Garmin devices
+Thanks
+Thomas
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rajasekhar
+February 19, 2013 at 6:31 am
+#63
+Hi,
+I am in the market to pick up a basic HRM based watch. My requirment is simple, to get estimate calorie measurement when engaged in sports like badminton, tennis and soccer( non cycling/running). I am keen on the FR70 since the calorie meaurement done on that is based on the FR60 heart rate based algorithum( right??).
+Would this serve the purpose and show me more or less a near accurate or at least dependable calorie measurement data when using it while playing badminton or soccer??
+Any help would be of great essence in selecting the right model. Thanks in Advance, looking forward to your reply sson.
+Cheers
+Raj
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Tisztul_A_Visztula
+April 12, 2013 at 7:13 pm
+#64
+It is really a fascinating doc:
+link to firstbeat.fi
+But it says almost nothing about fat expenditure while there is a second by second fat expenditure % graph in Firstbeat Athlete. Having checked the manual, too, I dare say FB does not show any evidence or just hint about their estimation on fat mobilization.
+Any disagreement by anybody being more familiar with FB stuff?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Joan
+April 14, 2013 at 5:18 pm
+#65
+Curious.  I got a 305 yesterday.  Has anyone compared results from  New Leaf testing to those at this online site?
+link to shapesense.com
+I doubt I'll ever have access to a testing center.  Thought estimates were better than none at all in that field.  Range of 37-41 ml/kg/min for two of the tests so far (the walking test I guessed based on experience just to see what it would throw up.  Close range to the first age and weight score.  I picked a number in the middle to go with for now until I can test.  Cool alternative, if it's anywhere close.  Can anyone confirm?  Thanks!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Tisztul_A_Visztula
+April 19, 2013 at 12:00 pm
+#66
+link to forums.garmin.com
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+mjervis
+April 25, 2013 at 4:42 am
+#67
+Have Garmin ever updated the firmware on the Edge 705 since this post? Or is it still doing the poor man's calorie calculations?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Josh
+May 29, 2013 at 7:18 pm
+#68
+Absurd that the power meter is listed as the "least accurate" when it is the
+most
+accurate, since it is the only device actually measuring energy output in real time rather than estimating it.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+May 30, 2013 at 11:35 am
+#69
+Nice effort on the bolding.  Unfortunately, you're wrong.
+It's only measuring the output, not YOUR effort into it - thus not the actual caloric burn (after all, this post is about calories).  It's due to this that it doesn't account for your inefficiencies as a cyclist.  There's a good post on this here:
+link to bikeradar.com
+As a further example, if you took two equal weight riders/bikes - one a TdF cycling pro, and then an overweight 5'2" woman that does no fitness activities, and had them both ride at 175w, the girl would burn significantly more calories than the guy, who wouldn't burn much of anything.  This being the result of efficiency.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Josh
+replied
+May 30, 2013 at 7:21 pm
+#70
+Sorry, DC, but linking to a forum is
+not
+a "good post". It's about as far from credible information as you can get.
+The fact is, only the power meter is directly measuring work done. All those other methods are faking it via estimation algorithms. Algorithms that are skewed horrendously by everything from weather to fatigue status. They're as reliable as a Garmin Vector release schedule.
+Whereas measurements for mechanical efficiency are extremely well known and consistent - in essence, gross mechanical efficiency is almost always 20.5% 1.5%. I went looking for papers that support that figure. Heck, I quickly found so many I went looking for a counterexample instead. There is one: the top handful of gifted and hardworking cyclists improve on that gross efficiency range, getting up to 24% (we don't count Lance's 25%) [1]; for all intents and purposes, they are outliers and not a useful data point; moreover, this efficiency level is not retained[2].
+So, if a club cyclist rides at 175W for an hour, they should consider themselves to have burned 735 kcal, 1.5%. For the world's top-10 professionals, a little over 600kcal.
+And, ahem, far from being "not much of anything", that's at least 25% of your myological glycogen storage and failure to account for it could be the difference between hitting the wall or not.
+Similarly, I don't see why bringing an untrained athlete into the discussion adds anything useful. "Let's go find someone who doesn't know what they're doing and therefore wastes lots of energy". Uh-huh.
+In summary, if you really want to measure kcal, don't use HR. Use a power meter, a device that is actually measuring physical energies and just use avg power (W) * time (h) * 4.2 kcal/W/hr.
+[1] Int J Sports Physiol Perform. 2012 Sep;7(3):200-9. The Tour de France: an updated physiological review. Santalla A, Earnest CP, Marroyo JA, Lucia A.
+[2] IJSPP. 2012, 7, 397-400. The Cycling Physiology of Miguel Indurain 14 Years After Retirement. Mujika, I.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Simon
+June 2, 2013 at 7:49 am
+#71
+Many thanks for this research and publication - I was trying to find out why my Garmin 405 gave me 2,700 calories for a two hour ride. I've now found I can switch it between Running Mode and Cycling Mode, and also now know why the calorie count was twice what it should have been.
+Very interesting stuff - well done!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Jae
+July 2, 2013 at 3:55 pm
+#72
+Good stuff here, I was just directed here by Garmin support and this thoroughly answered my question. I did a 13.5 hour hike up and over Mt. Madison, Adams and Jefferson and my Garmin 405 said i only burned 630 calories. No, the heck I didn't!! haha So I wrote in wondering what was the technical reason this occurred. Especially since I run at least twice a week and produce caloric stats that make more sense. After some explanation they sent me here. This is exactly the nitty gritty details I was looking for. I think I'll be investing in new Garmin that will measure my heart rate not based on my distance, weight, speed, etc but of my actual heart rate data. Thanks again!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Jae
+July 2, 2013 at 4:25 pm
+#73
+I have a question. Is the Garmin Forerunner 610 also good for non-running activities, like a workout in the gym to track time, max HR, avg HR and calories?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ray Maker
+replied
+July 2, 2013 at 4:34 pm
+#74
+Yup, it tracks calories without any issues there.  It supports the Firstbeat 2nd gen.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Jae
+July 2, 2013 at 4:38 pm
+#75
+perfect, thank you for the quick response!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Richard
+July 27, 2013 at 8:07 am
+#76
+Hi Okay For the last 2 years I've been using a the Motoactv to log my runs, but I've just got a Garmin Forerunner 310xt, and there is a huge difference in the amount of calories burnt.  Just some background:
+I'm 50 years old exercise 5 or 6 times a week on average (mainly running), I'm 175cm tall and weigh 69kg.  On the Garmin device I set my activity level to 7 on Garmin Connect, and I also enabled the "life time athlete option as my resting heart rate is below 60 (49 actually).  My max heart rate is 187 recorded on a recent race.  According to the Garmin after a 10km run at a pace of 5:34 per km I only used 185 calories, which seems ridiculous.  A similar run on the Motoactv says 678 calories.  185 seems impossible I'm sure I've used more than that typing this comment.  Any ideas what's going on?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Duncan
+August 7, 2013 at 3:24 am
+#77
+Does the 810 factor in air temperature at all when calculating calorie burn using speed / distance only?  Reason i ask is i did the same ride 2 days apart and got the following results:-
+Ride 1 - 30.76km / 59m 25s / avg temp 28.1c / Calories 1157
+Ride 2 - 30.76km / 58m 14s / avg temp 32.7c / Calories 1893
+Seems like a massive difference, considering there was only a 0.6kph difference in average speed, although average temperature was 4.6c higher on the second ride...
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+August 7, 2013 at 9:53 am
+#78
+Were you wearing a HR strap?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+brianh
+August 10, 2013 at 10:40 am
+#79
+Great article, as always! I do have the same question as mjervis though: "Have Garmin ever updated the firmware on the Edge 705 since this post? Or is it still doing the poor mans calorie calculations?"
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+August 12, 2013 at 12:33 am
+#80
+Still poor mans.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Mike M
+August 18, 2013 at 4:12 pm
+#81
+Thanks to all for great information, but now a question:
+I'm using the Wahoo WFHR3 Heart Rate strap with a Garmin Edge 500. Anyone know if this device is OK for the calorie calculation? It seems to work fine insofar as reporting heart rate, but the Garmin reports about half the calories compared to other formulas(straight distance: Distance*Weight*.28 or Power: Avg power*4*time) Example today: 4 hours ride time, 69 miles, 5000 ft of climbing, Garmin reports 1272 calories. My profile is Male, 58 years old, 125 lbs, activity level 8.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+August 19, 2013 at 6:39 am
+#82
+Hmm, the only thing I can think of is if the Wahoo strap isn't sending over HR RR information, perhaps Garmin is using that in part in the calorie calculations - which could be causing some missing information.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Mike M
+August 19, 2013 at 8:04 am
+#83
+Thanks Ray
+That was a consideration of mine after reading your info and all the posts.
+I might just try a Garmin HR Strap.
+Thanks so much for all the info that can't be found anywhere else!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Richard
+August 19, 2013 at 6:41 pm
+#84
+If you ask me Garmin are using pure "Guessology" in their calorie calculations. Here are two examples using the 310xt :
+Distance: 25.01 km Time: 2:24:09 Avg Pace 5:46 min/km Elevation Gain: 277 m Calories: 555
+link to connect.garmin.com
+Distance:	7.01 km Time:	38:37 Avg Pace: 5:30 min/km  Elevation Gain: 67 m Calories:	508 C
+link to connect.garmin.com
+According to which I ran for about 1hour 45mins longer and 18km further  in the first run, which was up a mountain while the second was on the flat , but I only used an extra 47 calories!  I just as well pick the calorie count out of a hat.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Charles
+September 1, 2013 at 7:52 pm
+#85
+I have a similar experiences to Duncan.  Same ride, distance, time, etc and do wear a HR monitor.  Calorie calculation on 810 is not only inconsistent but much lower than the 910. Love the products for the most part but very disappointed in this regard. I wish they were accurate and consistent.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+September 2, 2013 at 5:18 am
+#86
+In theory those two products should be using the same v2 variant of Firstbeat for their calorie calculations.  Have you double-checked that the following settings are identical: Age, Athlete Level, Weight?
+I don't think weight is used in it, but just in case.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Charles
+September 2, 2013 at 9:35 am
+#87
+All settings are the same
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Don
+September 6, 2013 at 9:47 pm
+#88
+How can I find the actual algorithms, even if only the speed/distance one? My googling has so far not found a hit.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Christopher Rupert
+September 13, 2013 at 9:15 am
+#89
+I never knew about this great device, thanks for the information. But, which one will provide the actual result, this tool or the online tools that most runners would use, I really wonder! Presently, I trust the link to
+calorie calculator
+provided on the Runnersworld.com website. I found it quite accurate and helpful.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Steve Knapp
+September 17, 2013 at 11:10 pm
+#90
+Do you know how "fitness class" influences the algorithms?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Thomas Moiln
+October 29, 2013 at 7:44 am
+#91
+Hi interesting reading!
+The new Garmin FR620 (FR220) how accurate do you think it will measure?
+There is some VO2 measurement in the FR620, how accurate is that?
+BTW i have ordered a FR620...
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+October 29, 2013 at 8:21 am
+#92
+It'll largely mirror the above, as it uses the same underlying Firstbeat technology.  But I'll cover it a bit more in my review as well, comparing it to past units worn at the same time.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Eli
+replied
+October 30, 2013 at 7:10 am
+#93
+Firstbeat Athlete (i.e. the same algorithms) isn't used to test for VO2max, you have to actually set that as one of the properties of your profile if you want to improve its accuracy along with setting your vital capacity.  (I believe without setting your vital capacity is guesses based on your height)
+Does the 620 let you set those two values to make the algorithm more accurate?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Brian Hazard
+December 30, 2013 at 8:17 pm
+#94
+I've been using my 620 to determine calorie counts for other activities, like tennis. I calculated that I burn an average of 350 calories per hour playing tennis, which is decent considering I usually play for 2-3 hours. But what I'm unclear on is whether or not it includes calories I would've "burned" watching TV on the couch. If so, it doesn't seem fair to track them against the calories I consume.
+Have any idea?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Andrew
+replied
+February 1, 2014 at 2:30 pm
+#95
+Your garmin unit will account for your standard metabolic burn rate, as well as your burn attributed to the activity you are doing.  so you would be double counting the burn if you have a base rate of say 2000 calories a day and then add your 350cal/hr on top of that.
+Best way to do it would be calculate your hourly BMR of calorie burn and subtract that from your activity total.
+ex. 2000 daily BMR calorie burn = ~84cal/hr
+If you play tennis for an hour = 350cal
+Total calorie burn attributed to the activity = 350-84 = 266cal of incremental calories burned.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Lisa
+February 7, 2014 at 8:51 am
+#96
+How can I use VO2max info I already have?  I've done a max GXT test in the labs in my department so I already know my info.  Is there any way to just input that information to my profile and have it use that?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Lisa
+replied
+February 11, 2014 at 8:53 am
+#97
+Is this already answered somewhere, since I have not had a response?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+February 11, 2014 at 9:06 am
+#98
+See this post here:
+link to dcrainmaker.com
+In particular though, the comments section where people have created little tools to take manual/paper test data and make the files for the Garmin units.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Liv-Berit
+February 10, 2014 at 3:24 am
+#99
+I've read your post, but I've still a question about how accurate the calorie calculation on my Forerunner 210 is. Yesterday I went for a 50 min walk, had an average HR of 140, walked 4,39 km at an average 5 km/h. The Forerunner says I burnt 264 calories. However several other calculators (f.ex Endomondo) says about 600 calories.
+Reviewing my outdoor walking sessions the last month the Forerunner 210 shows an average of 219 calories less then the Endomondo. Why?
+I have the same problem indoors at the gym. The crosstrainer or treadmill shows 300-400 calories (depending on the time and intensity), but the Forerunner 210 shows about 130-140 calories. What can I do to improve the accuracy? It is not possible to choose an activity level on the device, other than yes or no to athlete. I've read that activitylevel and VO2 Max are important variables in the Firstbeat algorithm. But those variables Are not possible to register in the device.
+The inaccuracy is a major problem to me, and I'm very dissatisfied about it. Considering to buy another watch. Do you know of other watches (budget-mid range) that have a greater level of accuracy? With or without GPS included.
+Grateful for any help! This is really frustrating!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+February 10, 2014 at 6:07 am
+#100
+There's a lot of factors that drive calorie burn.  However, I think the other devices are actually liking overestimating calories.  The general 'golden rule' of walking/running is 100 calories per mile.  Thus, at roughly at about 2.7 miles it burned 264 calories is quite reasonable.  Endomondo saying 600 calories is simply crazy.
+There are cases where calorie burn is higher (for example, if you weighed significantly more - for those that are significantly overweight), or, in cases where you're at/near VO2Max intensities.
+But honestly, looking at the examples you've given, the Garmin numbers are reasonable, and the other one isn't (without knowing the treadmill distances, it's hard to say there).
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Liv-Berit
+February 10, 2014 at 7:02 am
+#101
+Thanks for quick response! The point is that the calorie calculation of the Forerunner doesn't seems to tale my weight into account. I am 120 kg, thus the caloroes burnt should be higher than for a normal weighing person at the same distance.
+Another strange ting is that the Forerunner calculates that I burn approximately the same amount of calories walking half the distance at half the pace and double the time. Is that likely correct?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+February 11, 2014 at 6:12 am
+#102
+Ahh, gotchya.
+Strange. I don't know enough about the scientific side to know whether (for example a 60kg person burns half as much as a 120kg person).  In general, I'd believe data from Garmin, Polar, etc... over data from Endomondo - only because I know where that data comes from (FirstBeat and a few other Finland firms focused 100% on HR calorie burn).  Of course, whether or not the unit has a bug that doesn't account for weight is potentially valid.
+If you're wearing a HR strap, it would be using those tables to determine it, but again, it does seem odd it's not being biased a little bit on weight.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Tim
+February 10, 2014 at 11:43 pm
+#103
+Hello Rainmaker,
+I have a FR 305. I have been attempting to work out my calories burnt in a standard weights session.
+I disable the GPS in the gym, and the result is that 0 calories are burnt, despite an average HR of 120 across a 45 minute session.
+Do I need to change settings to calculate calories off the HR?
+Cheers,
+Tim
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+February 11, 2014 at 6:12 am
+#104
+That's odd. Are you on the latest firmware?  And have you set up your user profile (age/weight/etc...)?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Silvio Glckner
+replied
+February 11, 2014 at 9:37 am
+#105
+Hi, I too have the FR 305. In my experience it only calculates calories if it has speed data. So if you train indoors you either have to use a footpod for running or a speed sensor for your bike.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ryan Cohlhepp
+March 25, 2014 at 3:11 pm
+#106
+Any updates since you wrote this?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+March 25, 2014 at 3:13 pm
+#107
+Generally speaking, everything is actually pretty correct still.  All the new devices utilize the Firstbeat v2 algorithm, but beyond that, basically the same.
+That said, it's on my list to work with them this spring on getting it fully refreshed.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Eduardo
+March 31, 2014 at 1:50 pm
+#108
+Hi Ray,
+I have a RC3GPS Polar and Garmin Edge 810 + Vivofit.
+In the gym I use the session and the RC3GPS vivofit both with HRM Straps.
+In both sites (garminconnect and Polarpersonaltrainer) have the same value for average HR and HR MAX, but calories are more in the Polar vs. 311 Kcal 445kcal (vivofit)
+Do you know why this happen?
+Both devices should not have the same value?
+Which device is more acurate?
+Cheers
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Eduardo
+replied
+March 31, 2014 at 1:54 pm
+#109
+Sorry bad english in my previous post
+Hi Ray,
+I have a RC3GPS Polar and Garmin Edge 810 + Vivofit.
+In the same gym session  I use the and the RC3GPS vivofit both with HRM Straps.
+In both sites (garminconnect and Polarpersonaltrainer) have the same value for average HR and HR MAX, but calories are more in the Polar vs. 311 Kcal 445kcal (vivofit)
+Do you know why this happen?
+Both devices should not have the same value?
+Which device is more acurate?
+Cheers
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Esther
+April 9, 2014 at 1:24 pm
+#110
+I have a Forerunner 610 and the soft strap Garmin HRM. When I wear the HRM, my average calorie burn per mile while running is at least 10 BPM lower than when I don't wear the HRM (as per Garmin Connect's data when I upload). Both the watch and the website have my correct age and weight in the profile data. And yes, I'm comparing runs of similar length and intensity, similar terrain too. So which is the "correct" data? Thanks.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Rainmaker
+replied
+April 9, 2014 at 5:15 pm
+#111
+Honestly, you'll never really know.
+Calorie data is a very imperfect thing.  Everyone (device/algorithm/etc...) claims they are right, but it's very difficult to apply an algorithm to the entire world's population for any activity you do.  It just doesn't work out.
+I wish I had a better answer there. From a pure math standpoint, the one with the HR monitor is likely more accurate, since it's evaluating your work effort, versus the other is just doing simple math of weight & distance.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Isaiah
+April 25, 2014 at 6:02 pm
+#112
+Hey Ray,
+I started using a HRM a few months ago, and for a long time I was getting really bad spiking issues (heart rates above 250, average heart rates in the 180s). I've now mostly solved those issues, but I was wondering whether those might factor into my "athlete profile" and affect my calorie results now. If so, is there an easy way to reset the athlete profile?
+Thanks,
+Isaiah
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Cary
+May 12, 2014 at 1:11 pm
+#113
+Ray-
+I have the 220.  I recently had a V02 Max test which calculated my calorie burn (and fat and carb metabolism) along my heart rate profile.  Using those numbers to calculate my caloric burn (based upon average heart rate for an entire run) I come up with caloric numbers that are way different than what my 220 is calculating.  Example:  I just ran a hilly (6800ft of gain) 50k trail race on Saturday in 4:30:30.  Average HR was 137.  Based upon lab data I burn 951 calories per hour at a hear rate of 137. Thus, I get 4,275 calories for the total.  My 220 says 3,015.  I should note that I have a somewhat low Max heart rate of 165 for a 45 year old trained athlete.  I weigh 155 and am 5'10".  I put whatever data I could into my Garmin profile.  Any ideas on how to get the 220 more accurate?  Or could the V02 Max data be overestimating caloric burn?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+JakiChan
+May 23, 2014 at 12:28 am
+#114
+Since Garmin updated the 310XT to the second gen of the Firstbeat technology I'd love to see them do the same to the Edge 500. (I'm sure the 510 has it, but it's probably not worth it.)
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+pkiszk
+August 21, 2014 at 6:26 pm
+#115
+I came across this article while pondering about SportTracks (3.xx) calories calc methods. I use ST to record my running, rowing (concept2 rower) and cycling (no power meter though). I use HR strap all the time. Concept2 rower gives me detailed power data as well.  Now, ST allows you to determine calories spent on the basis of HR (settings under categories). Does this method use Firstbeat (1 / 2?) - under their "Heart rate method" setting ? This would be great and solve any issues for me at least (a heavy ST user). If not - what method ?
+I must also say, that Old Man's Biking plugin (GPS2PowerTrack) adds Power based calories calculation which gives you a bit different calcs amounts (a few % lower) but by not a big amount (for my workouts on a rower). Which, assuming that what Josh said about that particular method is accurate, suggests ST's method relying on HR is also quite good.
+Having said all of that, I still doubt if a 30min moderate run (5km, so pace of 10km/h, avg 70% max HR in my case) yields in 330 in calories burnt (or 660 per hour) - I remember a rule of thumb for running - that it burns 300-400 calories per hour (or, to say figuratively, one needs to run for an hour to burn a donut cake).
+So how come the method based on HR reports 50% more than that (or more than 50% if one assumes 300cals as basis) ?
+On the other hand, it matches the golden rule of 100calories / mile (5km is 3.125 miles).  All I want to say - is that I remain skeptical about calories burnt as reported by ST / Firstbeat method vs calories intake that we consume in food. I think one needs to adjust downwards the amount reported by ST or Garmin in order to keep the intake/output calorie balance in our daily life.  I would welcome your views.
+[But I would love to be wrong and find out that a moderate off road cycling at an avg of 65% max HR for 2,5 hours burns 1500cals, as reported by ST in my case - but I simply can't believe it !]
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+dgpete
+November 27, 2014 at 12:12 pm
+#116
+Hi Ray,
+Wonderful article like all the rest!
+Like many amateurs, I would LOVE to have a power meter but I have four kids, one still in college so that will have to wait. And while I know very well that calorie calculations can vary widely and are often very inaccurate it is still just one more small piece of data to preuse! Unfortunately I'm a data geek with insufficient funds for a PM;-)
+So along those lines, while I know it's an old thread, I can't seem to find any more recent info anywhere as to whether the newer Edge 810 and 1000 use the same methods/metrics to calculate calories as the tables you have above.
+I'm also interested in what order the Garmin devices will use them.
+Do you know or can you point to an info source?
+Anyway, keep up the great site! I will always purchase using your Amazon link if I can!
+THANKS!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Juro
+November 29, 2014 at 7:57 pm
+#117
+Hi Ray,
+I have recently switched from one HR strap to another; I was using the 4iiii strap and now I have the Scosche Rhythm+. I am still using my Garmin fenix.
+What I noticed is that while both straps give me the same average and max HR readouts, the calories calculated by the fenix for a run that I run often differ significantly (I am talking ~800 with the 4iiii strap and ~1000 with the Scosche).
+What role does the HR strap play in calculating calories? I thought the strap merely transmits the "beats" to the head unit which does all the calc; meaning same HR profile should result in very similar calorie burn.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+DC Rainmaker
+replied
+November 30, 2014 at 5:00 pm
+#118
+A huge role.  It's one of the biggest challenges with optical HR, is that it can't correctly do heart rate variability (HRV/RR).  It guesstimates it.  For some people, it ends up pretty close.  Yet for others, it's all over the map.  And yet again, some people it's really close on some runs and way out of whack on others.
+Right now it's a limitation of the optical technology across the board.  The Scosche sends out a best guess, but...it's still a guess.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Juro
+replied
+November 30, 2014 at 5:25 pm
+#119
+Ah, thanks a lot... so that means HRV/RR is transmitted for all EKG-based HR straps? I somehow thought that's a feature of the "premium" straps only.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+DC Rainmaker
+replied
+November 30, 2014 at 7:42 pm
+#120
+Yup, correct. In fact, on ANT+, it's required as part of the ANT+ specification.  So, every strap has to send it.  Which, is ironically why the Scosche sends it...because the spec requires them to send something. So they basically take a swag at it (as they are required to fill in that data).
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Juro
+replied
+December 1, 2014 at 12:18 am
+#121
+Thanks. That's disappointing, I was expecting that I will be sacrificing only the recovery and training intensity metrics (which fenix does not support anyway) by moving to Scosche - did not expect the calorie count issue... (Context: historically I believe my fenix gave me very accurate calorie counts - lower than what non-HR methods used to produce, inline with the increase of fitness I have managed to make happen this year.)
+You are right it's a bit random, too, apparently Scosche's dummy HRV is closer to an average run pattern.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Kevin Hudson
+December 15, 2014 at 8:55 am
+#122
+Ray, was wondering if you could help explain this. I've been running with a forerunner 205 for years. Finally decided to dip my toes into tris, and being a tech guy I splurged on the recent sales for the garmin 910xt and the mio link. My first two runs with my Mio Link Heart Monitor were 2-3 miles and showed about 120 calories per mile and a training effect of 3.3. Seemed about right.
+Then my recent two runs were 4-5 miles and the calories plummeted 70-75 calories in a mile and the training effect is going to 5 quickly. Then yesterday I did 6 mile run and it calculated the calories at a little less than 100 calories per mile. All runs the same pace. I'm can't figure out why the calories burned dropped but it seems almost impossible that I'm running only at 70-90 some calories per mile. Any ideas? Granted because of my recent schedule these first two weeks of owning them I haven't gotten any long runs in, so that may be affecting the training effect. Any help would be greatly appreciated!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ray Maker
+replied
+December 15, 2014 at 1:05 pm
+#123
+Yup, unfortunately it's a limitation of the optical HR sensor. It can't do HRV (heart rate variability) well, so it just estimates it.  Sometimes this works out, and yet other times it's all over the map.  This impacts calories, recovery time, VO2Max, and training effect (on Garmin and non-Garmin devices alike).
+I've been meaning to write a longer post on the topic...
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Kevin Hudson
+replied
+December 15, 2014 at 1:15 pm
+#124
+That's what I was afraid of. I was hoping I was doing something wrong. Thanks for the reply.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Michelle
+December 27, 2014 at 11:41 pm
+#126
+Classic strap gives me about 130 to 140 calories burned per mile, while the newest strap (came with FR 610) clocked in first around 88 and then today at 110.  I'm an average sized gal so I'm guessing the new hrm is more accurate.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Nachy Gonzalez
+December 28, 2014 at 9:30 pm
+#127
+Hi Ray,
+Is there something I can do with my FR920xt ro get an accurate calories burned?  Like manually input on the profile setting or something?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ray Maker
+replied
+December 29, 2014 at 1:50 pm
+#128
+You should ensure your information including gender, weight, and age are inputted correctly.  Additionally, using the HR strap is the most accurate method on the FR920XT.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Nachy Gonzalez
+replied
+December 31, 2014 at 3:24 am
+#129
+Hi Ray,
+You mean another HR strap? Not the fancy one that comes with my FR920xt?
+The calories burned in my 3.5 hours was 1298 calories at 141 bpm average.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+jkoch
+January 6, 2015 at 10:33 am
+#130
+Does anyone know which algorithm the Edge 510 uses?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ray Maker
+replied
+January 6, 2015 at 11:05 am
+#131
+The advanced V2 ones from Firstbeat.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Brandt Hambrick
+January 12, 2015 at 9:18 am
+#132
+Do you happen to know how Garmin is calculating HR when it gets imported data from another app?  I'm syncing TrainerRoad data (using Tapiriik) and a hour ride at about 15 MPH says 571 kJ, but Garmin calculated it at only 136 Cal.
+I connect my Garmin HRM and Cadence Meter using ANT+ to my pc, riding on a Kurt Kinetic if any of that matters.  I did not have any watch or bike computer in the mix.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Terrance
+January 24, 2015 at 1:36 pm
+#136
+I added some runs in Garmin Connect manually instead of having my watch do it automatically and the calories it calculates (I can change the field if I want) were different from what it would have estimated if I uploaded via watch. Any idea why that would be? My guess is because Connect makes the estimation in one case and the watch makes the estimation in the other?
+Thanks!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Ray Maker
+replied
+January 25, 2015 at 6:06 am
+#137
+Indeed, totally different methods.  For online, it's basically a simple weight/distance calculation (very basic), whereas in the device itself it takes into account the different methods outlined above.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+John Vance
+February 7, 2015 at 4:47 pm
+#138
+What is "fitness class" anyway, and how is it used in calculating calories used?  When I enter fitness class in my Garmin, it only wants to know how many hours a week I exercise.  I fail to see how this translates to chemical energy expended to produce work.  Two people can be the same weight and ride similar hours, but one could produce double the power, and therefore expend double the calories, at FTP.
+I weigh 130 lbs.  My Edge 500 calculated 1600 kcal for an 81 mile ride with 3,000 feet of climbing at an average pace of 19 mph.  Using my average power for the ride of about 160 watts, i get 2450 kcal.  I know from logging food and exercise over the past year that if i used the Firstbeat number of 1600 kcal, i would start losing weight at about a pound a week, which is the last thing I need to do.
+For me at least, the Firstbeat numbers are laughably off.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+DC Rainmaker
+replied
+February 8, 2015 at 1:33 pm
+#139
+It basically talks to how well trained a person is, which does tend to slightly impact calorie burn rates at different HR's.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+February 11, 2015 at 2:22 pm
+#140
+I have a FR620 that I sometimes use when playing football (soccer),
+This week I played twice in the same field, with approximately the same effort and time, but the calorie burn estimates given by the Garmin watch and my Polar FT-7 are way off:
+04.02.2015:
+-Duration: 1:02:43
+-Average HR: 166
+-Max HR: 194
+-Calories burned: 1079
+11.02.2015:
+-Duration: 1:04:59
+-Average HR: 165
+-Max HR: 193
+-Calories burned: 753
+I've been always getting higher calorie burn estimates when using the Polar FT-7
+What do you think?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+replied
+February 11, 2015 at 2:24 pm
+#141
+I forgot to mention that the readings on the 4th of Feb are by the Polar FT-7, where as the 11.02.2015 data are by the Garmin FR620 with the HRM Run heart strap
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+DC Rainmaker
+replied
+February 12, 2015 at 5:09 pm
+#142
+Calorie burn between manufs is really tough.  Everyone claims that they've got it right (and all have really smart dudes doing the calcs.  In fact, all the companies that do these HR calcs are within about a 10-minute drive of each other in Helsinki (+ Polar up a bit further north in Finland).  They all kinda rotate between each others companies over time.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+replied
+February 13, 2015 at 3:02 am
+#143
+Thank you for your quick response. I would understand a discrepancy of +- 50 calories, but 300 calories is just way too much.
+I always had higher calorie burn estimates with the Polar than the Garmin, which really makes me curious which one is more accurate.
+Have you tried to test the accuracy of this metric before?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Przemek
+February 13, 2015 at 1:25 am
+#144
+Harith,
+what is your age, weight, resting HR and max HR ? Also, your VO2Max, if you have it. I could try help you pick the one that is closer to your burn rate on my home-brewed calculations.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+replied
+February 13, 2015 at 3:05 am
+#145
+Hello there, thank you for your concern.
+I'm almost 24 years old, weigh 75 kilograms, and have a resting HR that is around 56-58 last time I checked. I haven't done an actual Max HR test, but been using formulas that put it in the ~185 range.
+My VO2Max from my Garmin watch comes out to be in the range of 40-45.
+I know I'm not very precise, but then again, I've been working out for a couple of years only.
+Thank you again!
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Przemek
+February 13, 2015 at 2:09 pm
+#146
+Your HRM is clearly above 185 ! Depending on the intensity of your soccer game, I would say your max is 200 or above 200. If you want to check this, you need to test this in proper conditions, racing is best - assuming you have a discipline in which you are technically efficient. Could be running, cycling, rowing. Any activity involving large muscle groups.
+When it comes to the calories burn. I use FR 620, Edge 810 and FR 910xt. Used to use FR 310xt and Edge 800. Edge 810 is the most conservative (reports lowest values), then 310xt, then FR 620, then 910xt. Having seen my VO2 consumption data at various HR percentage wise, I used the Weir formula to estimate caloric burn (assuming it is accurate at other than BMR level, I do not know it yet). I weight 74-75, so about your range, but I am 38. On the other hand, my VO2Max seems high (63ml/kg), which can be attributed to poor equipment calibration (Cosmed mentioned above) or, it could be real. I can't tell, plan to repeat it later this year with another provider.
+To make this short - assuming your max HR is around 200, average of 166 bpm is somewhere around 83% HRM. My burn rate at 83% HRM is around 820-850 kCals, including BMR (take 50-60 kCals for that), according to Weir formula. Having looked at FR620 caloric burn over the last couple of weeks I think it is pretty consistent with my caloric burn estimated by Weir formula (but not VO2Max data which suggest it is as high as 1000kCal / h).  So I would rely on FR 620 in your case, too, but not Polar.
+Also, I log calories eaten each day - and I used to log Edge 810 caloric burn (around 12-15% lower than FR 620) and should FR620/Edge 810 data be materially wrong (30% would be material - your difference between Polar and FR620), I would be losing weight. But I keep it. So FR 620/Edge 810 is roughly allright. I am planning to run some regression analysis of my data, but lack time to do this. Still, I think there are too many variables to be able to nail it really down and it is better to spend time elsewhere. Garmin got it pretty close to what we need.
+If someone wants more info, pls post here, I will try to contribute if I can.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+replied
+February 13, 2015 at 2:20 pm
+#147
+First of all, I want to really thank you for your time and effort. I really appreciate it.
+Regarding my Max HR, I only used the number 185 which is what comes out from the formulas. In my last 10K race (30.01.2015) my Max HR was 190, and it is important to mention that I was running at slower pace because it was my first race after 4 months battling ITBS.
+Max HR in half marathon last year was 185 (but that was using Polar FT-7)
+Do you think I should set my Max HR to 200 in the settings?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Przemek
+February 13, 2015 at 2:50 pm
+#148
+Harith,
+the best way to establish HRM is to go all out during a proper test. There are a lot of protocols to do this. For now, I would use a 200 HRM, you can get as high as 194 during soccer, you must be able to go above that in all-max effort. The question is this - what do you want to use it for - to improve the calories calculation in your watch - that may have no effect. If you want to establish your training zones - this is important, but that is not everything. Your lactate threshold is key. Again, you need to do some testing. In my case, my home-made tests proved to be pretty consistent with what the VO2Max test reported. If you want, I can give you details, if you can't find them online.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+replied
+February 14, 2015 at 5:07 am
+#149
+Yes, and I did reach 202-203 playing soccer before, so I get your point.
+I know it won't improve calorie burn calculation but I want to incorporate HR zone training this year and I felt that my zones were off.
+Regarding your details, I'd be interested as I'm a statistics lover.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Przemek
+February 17, 2015 at 8:34 am
+#150
+In order to determine your HR at Lactate Threshold you should do a 30min test, and take the average HR of the ending 20min HR. It is easier to do it indoor - cycling for example. Or rowing. Have look here:
+link to cyclingtips.com.au
+or here:
+link to beginnertriathlete.com
+In my case it was around 87% HRM and the VO2Max test put it at 88% HRM.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Harith Al Kubaisy
+replied
+February 21, 2015 at 3:11 am
+#151
+Do you think a normal stationary home exercise bike will do the trick for the test?
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+przemek
+replied
+February 21, 2015 at 3:24 am
+#152
+if it has variable resistance level that can make your cycling hard, then yes.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Dave Le Fevre
+March 4, 2015 at 1:32 pm
+#153
+Last summer Id noticed that my Garmin Edge 1000 gave much lower calorie figures if I wore the pulse-rate strap.  So Id performed an experiment by doing the same ride with and without the pulse-rate strap.
+With the pulse-rate strap - 1:46:19, 25.7 miles, average 14.50mph, max 31.54mph, average cadence 67, max cadence 101, average pulse 121, max pulse 161, calories 567
+Without the pulse-rate strap - 1:45:27, 25.76 miles, average 14.57mph, max 30.35mph, average cadence 68, max cadence 109, calories 1163
+So factoring in the pulse-rate reduced the calorie estimate by a factor of 2.05!  At the time, I found that surprising.
+My cycling pulse-rate reaches relatively high figures (for my age), so Id have assumed that, if anything, the with-pulse calorie figure would be higher than the without-pulse figure.
+I then repeated the experiment omitting also the cadence sensor.  That made no significant difference.  (I hadnt expected it to make a difference, but it was worth trying.)
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Przemek
+March 5, 2015 at 11:57 am
+#154
+Your calories, with HR strap on, look indeed low, but I would still rely on the low figure calculated on the basis of your HR rather than without it. I suspect you must be pretty thin/small and/or with a high HRMax. Also, did you enter your weight, age, max HR and resting HR into your Garmin ? This is crucial.
+PS. I would burn around 900-950 kCals for a similar type of workout (based on your avg HR and speed info alone).
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Dave Le Fevre
+March 5, 2015 at 1:52 pm
+#155
+Im not really that concerned by the calorie figure per se  I only performed the experiment to quantify what difference (if any) the pulse-rate strap made.
+I suspect you must be pretty thin/small and/or with a high HRMax
+My mass is a bit under 62kg.  My BMI is usually between 20.2 and 20.5.
+My maximum pulse-rate is low, but is high for my age.  Im 68, so Id anticipate a maximum of 220-68=152, yet I register about 15 more than that on steep climbs.
+did you enter your weight, age, max HR and resting HR into your Garmin
+Weight and age, yes. HR figures, no.  I intended to when I first configured it, but I have never yet found where to enter them.
+I noticed that if I observed the HR %Max datum and did the sums, it assumed that 100% was 152.  So I assumed that it did its own calculation of the maximum, and had no way of defining the resting rate.
+I would burn around 900-950 kCals for a similar type of workout
+Its a hilly route, I wasnt going that fast, but Im not nearly as fast as some decades ago.  So its not easy to compare.  Though perhaps calories burned is simply a function of route, speed, mass, and is unconnected with age or how hard one finds the ride.
+Reply link does not work in your browser because JavaScript is disabled.
+Reply
+Post a Comment
+Cancel reply
+Your email address will not be published. Required fields are marked.
+If you would like a profile picture, simply register at
+Gravatar
+, which works here on DCR and across the web.
+Name
+*
+Email
+*
+Website
+Comment
+You may use these
+HTML
+tags and attributes:
+<a href="" title=""> <abbr title=""> <acronym title=""> <b> <blockquote cite=""> <cite> <code> <del datetime=""> <em> <i> <q cite=""> <strike> <strong>
+Notify me of followup comments via e-mail. You can also
+subscribe
+without commenting.
+Twitter
+Facebook
+Google+
+YouTube
+Instagram
+RSS
+Im DC RAINMAKER
+I swim, bike and run. Then, I come here and write about my adventures.  Its as simple as that. Most of the time. If youre new around these parts,
+heres the long version
+of my story.
+SUPPORT THIS SITE
+Wanna help support the site?  You have two options.  The first is to use Clever Training with either the coupon code (DCR10JKW) or the VIP program.  Both save 10%, see details by clicking below:
+Alternatively, for everything else on the planet, simply buy your goods from Amazon via the link below and I get a tiny bit back. No cost to you, easy as pie!
+UK based here!
+Canada!
+Germany!
+France!
+Spain!
+Italy!
+Catch me on Facebook
+DC Rainmaker
+Like
+40,918 people like DC Rainmaker
+Ray Elsewhere
+Did you know I write a weekly column over 
+on Slowtwitch?
+Check out my Product/Electronics posts in
+Rays Sports Electronics Mailbag
+- they are
+packed full of gadget goodness.
+FAQs
+I have built an extensive list of my most frequently asked questions. Below are the most popular.
+Why havent you yet released a review for XYZ product you mentioned months ago?
+Will you test our product before release?
+Are you willing to review or test beta products?
+Which trainer should I buy?
+Which GPS watch should I buy?
+Im headed to Paris  what do you recommend for training or sightseeing?
+Im headed to Washington DC  what do you recommend for training?
+Im from out of the country and will be visiting the US, whats the best triathlon shop in city XYZ?
+What kind of camera do you use?
+What are your least favorite countries/places?
+View Them All Here 
+Follow me on
+Twitter
+The Fenix3 In-Depth Review is out! All the detail you ever wanted to know (and a lot more you didn't care to know):
+http://t.co/cfflggSVJa
+#
+,
+6 hours ago
+@heathcurtiss
+Let me circle back to you on this, remind me if I forget by early next week.
+#
+,
+12 hours ago
+@craigcramer
+Have you done hard reset(complete wipe)? Sounds like file corruption issue. I haven't really had any issues in last year or so.
+#
+,
+12 hours ago
+@alemaodh
+True, though it can be flaky.  What's the issue with your setup?
+#
+,
+12 hours ago
+I've decided that sometimes watching comments on review posts is like watching bumble bee soccer. Also as tricky to control.
+#
+,
+Mar 4
+@MisterGilmore
+Correct. I see a delay as inevitable.  On the bright side, Vivofit2 units arrived today at Clever Training.
+#
+,
+Mar 4
+@abussey1
+Regrettably, I'm not in Martinique. Odd that Twitter thinks I'm there. :/  Wishful thinking perhaps!
+#
+,
+Mar 4
+Follow Ray Maker's tweets
+5
+Easy Steps
+To The Site
+1
+In Depth Product Reviews
+You probably stumbled upon here looking for a review of a sports gadget. If youre trying to decide which unit to buy  check out my
+in-depth reviews section
+. Some reviews are over 60 pages long when printed out, with hundreds of photos! I aim to leave no stone unturned.
+2
+Read My GPS Recommendations.
+Heres my most recent
+gadget recommendations guide
+(Winter2014-2015 edition)  covering almost every category of sports gadgets out there. Looking for the equipment I use day to day? I also just put together my complete
+2013 Gear I Use equipment list
+, from swim to bike to run and everything in between (plus a few extra things). And to compliment that, heres
+The Girls (my wifes) list
+. Enjoy, and thanks for stopping by!
+3
+Understand technology and sport in the How-To Guides.
+I enjoy explaining new things to folks  especially showing people how to get the most from their gadgets.
+Heres an ongoing list of How to guides.
+4
+Read my Top 25 most useful posts.
+It turns our
+Ive written a fair bit of stuff
+over the past few years  and after it disappears from my front page, a lot of it never really sees the light of day again without Googleing skillz. Or a photographic memorywhich I dont have. Ive taken a look back and found stuff thatcontinues to find a trickle of readers via web searches or forum links.
+5
+Have some fun in the travel section.
+I travel a fair bit, both for work and for fun. Heres a bunch of
+random trip reports
+and daily trip-logs that Ive put together and posted. Ive sorted it all by world geography, in an attempt to make it easy to figure out where Ive been.
+All rights reserved 
+2015 DC Rainmaker
+Designed by:
+Heather Sanders
+.
