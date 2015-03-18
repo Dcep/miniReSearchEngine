@@ -1,0 +1,18 @@
+
+.skill{
+	color: #FE2E2E;
+	text-decoration: none;
+}
+
+.notSkill{
+	color: # 222222;
+	text-decoration: none;
+}
+
+.notSkill:hover{
+	color: #FAFAFA;
+	background-color: #6E6E6E;
+}
+.skill:hover{
+    background-color: #D8D8D8;
+}

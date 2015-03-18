@@ -1,0 +1,173 @@
+ <!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+	<link rel="stylesheet" href="css/jobs.css" />
+    <script src="js/vendor/modernizr.js"></script>
+
+  </head>
+  <body>    
+ 
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <h1>Skill Finder</h1>
+      </div>
+    </div>
+  </div>
+   
+
+    
+     
+     
+ <div class="large-12 columns" id="log">
+ <div class="radius panel">
+<form>
+<div class="row collapse">
+<div class="large-10 small-8 columns">
+<input id="message" type="text">
+</div>
+<div class="large-2 small-3 columns">
+<a href="#" onclick='send();' class="postfix button expand">Search</a>
+</div>
+<table>
+   <tr>
+      <td>data</td>
+      <td><input type="radio" name="data" value="LDA">LDA</td>
+      <td><input type="radio" name="data" value="Brown" checked>Brown</td>
+   </tr>
+</table>
+</div>
+</form>
+</div>
+
+      <div class="row" id="bef">
+      </div>
+
+    </div>
+ 
+     
+  </div>
+ 
+ 
+   
+ 
+  <footer class="row">
+    <div class="large-12 columns">
+
+    </div>
+  </footer>
+  <script src="js/vendor/jquery.js"></script>
+    <script src="js/foundation.min.js"></script>
+    <script>
+      $(document).foundation();
+    </script>
+  </body>
+  	 <script type="text/javascript">
+         var sock = null;
+         var ellog = null;
+		 
+		 var openDiv = create('<div class="row"><div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div><div class="large-10 columns"><p>');
+		 var closeDiv = create('</p></div></div>');
+
+         window.onload = function() {
+
+            ellog = document.getElementById('log');
+
+            var wsuri;
+            if (window.location.protocol === "file:") {
+               wsuri = "ws://192.168.179.128:8080/ws?a=23&foo=bar";
+            } else {
+               wsuri = "ws://" + window.location.hostname + ":8080/ws?a=23&foo=bar";
+            }
+
+            if ("WebSocket" in window) {
+               sock = new WebSocket(wsuri);
+            } else if ("MozWebSocket" in window) {
+               sock = new MozWebSocket(wsuri);
+            } else {
+               log("Browser does not support WebSocket!");
+               window.location = "http://autobahn.ws/unsupportedbrowser";
+            }
+
+            if (sock) {
+               sock.onopen = function() {
+                  log("Connected to " + wsuri);
+               }
+
+               sock.onclose = function(e) {
+                  log("Connection closed (wasClean = " + e.wasClean + ", code = " + e.code + ", reason = '" + e.reason + "')");
+                  sock = null;
+               }
+
+               sock.onmessage = function(e) {
+                  log(e.data);
+               }
+            }
+         };
+
+        function send() {
+            var msg = document.getElementById('message').value;
+			var model = $("input[name=data]:checked").val();
+			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "Model" : "' + model +'"}';
+            //var batchsize = parseInt(document.getElementById('batch').value);
+            if (sock) {
+               sock.send(obj);
+               log("Sent " + "x : " + obj);
+            } else {
+               log("Not connected.");
+            }
+        };
+		
+		function sendJob(msg, type) {
+			var model = $("input[name=data]:checked").val();[]
+			var obj = '{"TYPE" :"' + type + '","MSG" :"' + msg +'", "Model" : "' + model +'"}';
+            if (sock) {
+               sock.send(obj);
+               log("Sent " + "x : " + obj);
+            } else {
+               log("Not connected.");
+            }
+        };
+
+        function log(m) {
+			//console.log(m);
+			//var obj = JSON.parse(m);
+			//console.log(obj['Job_Title']);
+
+			var obj = JSON.parse(m);
+			//console.log(obj['Job_Title']);
+			$('<div class="row"><div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div><div class="large-10 columns"><p>'+ obj['Job_Title'] + '</p><a href="#" onclick=\'sendAll($("p").children().querySelectorAll(".skill"));\' class="postfix button expand">Submit all</a><p>' + obj['Job_Requirements'] + '</p><p>' + obj['Job_Description'] + '</p></div></div>').insertAfter("#bef");
+			
+			
+			//ellog.innerHTML += m + '\n';
+            //ellog.scrollTop = ellog.scrollHeight;
+			parentDiv = document.getElementById("log");
+			originalDiv = document.getElementById("bef");
+			
+			//parentDiv.insertAdjacentHTML(fragment,document.getElementById("bef"))//insertBefore(fragment, originalDiv.childNodes[0]);
+            
+        };
+
+		function sendAll(items){
+			console.log(items.length);
+			for (var i; i < items.length; i++){
+				items[i].click()
+				console.log(i);
+			}
+		}
+		function create(htmlStr) {
+				var frag = document.createDocumentFragment(),
+					temp = document.createElement('div');
+				temp.innerHTML = htmlStr;
+				while (temp.firstChild) {
+					frag.appendChild(temp.firstChild);
+				}
+				return frag;
+		}
+	  </script>
+</html>
+  
