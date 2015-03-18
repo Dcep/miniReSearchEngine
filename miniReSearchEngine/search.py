@@ -1,4 +1,4 @@
-import sys, os
+import sys, os, math
 
 from invertedFile import miniReSearchIF
 from twisted.internet import reactor
@@ -20,7 +20,8 @@ class EchoServerProtocol(WebSocketServerProtocol,miniReSearchIF):
 	def __init__(self):
 		miniIst = miniReSearchIF()
 		miniIst.filesDir = "lemma/"
-		self.invFile = miniIst.makeInvertedFile()
+		self.invFile, self.counts = miniIst.makeInvertedFile()
+		self.totalDocs = self.invFile['totalDocuments']
 		#miniReSearchIF.__init__()
 
 	def onConnect(self, request):
@@ -36,15 +37,24 @@ class EchoServerProtocol(WebSocketServerProtocol,miniReSearchIF):
 
 	def search(self, payload):
 		print payload
-		#for i in self.invFile[payload]:
-		data = json.dumps(self.invFile[payload], ensure_ascii=False)
-		data = json.loads(data)
-		print data
-		for i in data['docNo']:
-			with open("lemma/" + i + '.txt') as current_file:
-				payload = json.dumps({'id': i, "Job_Title": i, "Job_Requirements": current_file.read(), "Job_Description": "Nan"})
-				print payload
-				self.sendMessage(payload, isBinary=False)
+		payload = payload.split()
+		wcount = len(payload)
+		try:
+			data = json.dumps(self.invFile[payload], ensure_ascii=False)
+			data = json.loads(data)
+			idf = math.log(self.totalDocs/data['DocCount'])
+			send = {}
+			for i in data['docNo']:
+				with open("lemma/" + i + '.txt') as current_file:
+					tf_idf = data['docNo'][i]["Freq"] * idf
+					print 'tf-idf: ' + str(tf_idf)
+					send[tf_idf] = json.dumps({'id': i, "Job_Title": "query: " + payload + " tf-idf: " + str(tf_idf), "Job_Requirements": current_file.read(), "Job_Description": "Nan"})
+
+			for i in sorted(send.keys()):
+				self.sendMessage(send[i], isBinary=False)
+		except:
+			send = json.dumps({'id': 0, "Job_Title": payload + " not in databse", "Job_Requirements": payload + " not in databse", "Job_Description": payload + " not in databse"})
+			self.sendMessage(send, isBinary=False)
 
 
 

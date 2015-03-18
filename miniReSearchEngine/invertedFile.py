@@ -16,9 +16,11 @@ class miniReSearchIF():
 	def makeInvertedFile(self):
 
 		invertedFile = self.l()
-
+		docWordCoutns = self.l()
+		DocumentsCount = 0
 		for filename in os.listdir(self.filesDir):
 			with open(self.filesDir + filename) as current_file:
+				DocumentsCount += 1
 				tokens = nltk.word_tokenize(current_file.read())
 				counter = 0
 				for word in set(tokens):
@@ -41,7 +43,16 @@ class miniReSearchIF():
 					except:
 						invertedFile[word]['docNo'][filename.split('.')[0]]['WordPosition'] = []
 						invertedFile[word]['docNo'][filename.split('.')[0]]['WordPosition'].append(str(counter))
-		return invertedFile
+					try:
+						docWordCoutns[filename.split('.')[0]][word] += 1
+					except:
+						docWordCoutns[filename.split('.')[0]][word] = 1
+					try:
+						docWordCoutns[filename.split('.')[0]]["docWordCountTotal"] += 1
+					except:
+						docWordCoutns[filename.split('.')[0]]["docWordCountTotal"] = 1
+		invertedFile['totalDocuments'] = DocumentsCount
+		return invertedFile, docWordCoutns
 
 
 
@@ -50,7 +61,9 @@ if __name__ == '__main__':
 
 	mIF =  miniReSearchIF()
 	mIF.filesDir = "lemma/"
-	data = mIF.makeInvertedFile()
+	data, words = mIF.makeInvertedFile()
+	for i in words:
+		print words[i]['docWwordCountTotal']
 	print(json.dumps(data['cleavage']))
 	print json.dumps(data['cleavage']['FreqCount'])
 	print json.dumps(data['cleavage']['DocCount'])
