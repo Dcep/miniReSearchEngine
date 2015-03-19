@@ -6,15 +6,15 @@ import os, nltk, json
 class miniReSearchIF():
 
 	def __init__(self):
-		filesDir = "lemma/"
-		#invertedFile = self.makeInvertedFile()
+		self.filesDir = "lemma/"
+		#self.invertedFile = self.makeInvertedFile()
 
 
 	def l(self):
 		return defaultdict(self.l)
 
 	def makeInvertedFile(self):
-
+		#A counter Object may be better in place of the dict here
 		invertedFile = self.l()
 		docWordCounts = self.l()
 		DocumentsCount = 0
@@ -53,6 +53,7 @@ class miniReSearchIF():
 						docWordCounts[filename.split('.')[0]]["docWordCountTotal"] = 1
 		invertedFile['totalDocuments'] = DocumentsCount
 		return invertedFile, docWordCounts
+		#return invertedFile
 
 
 
@@ -61,12 +62,14 @@ if __name__ == '__main__':
 
 	mIF =  miniReSearchIF()
 	mIF.filesDir = "lemma/"
-	data, words = mIF.makeInvertedFile()
+	#data = mIF.makeInvertedFile()
+
+	print mIF.invertedFile
 	for i in words:
 		print words[i]['docWwordCountTotal']
-	print(json.dumps(data['cleavage']))
-	print json.dumps(data['cleavage']['FreqCount'])
-	print json.dumps(data['cleavage']['DocCount'])
-	for i in data['cleavage']['docNo']:
-		print json.dumps(data['cleavage']['docNo'][i])
+	print(json.dumps(data['document']))
+	print json.dumps(data['document']['FreqCount'])
+	print json.dumps(data['document']['DocCount'])
+	for i in data['document']['docNo']:
+		print json.dumps(data['document']['docNo'][i])
 
