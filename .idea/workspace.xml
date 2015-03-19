@@ -30,10 +30,22 @@
       <file leaf-file-name="search.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/miniReSearchEngine/search.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.60465115" vertical-offset="285" max-vertical-offset="1440">
-              <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.71202534" vertical-offset="750" max-vertical-offset="1920">
+              <caret line="80" column="66" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
               <folding>
                 <element signature="e#0#20#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="similarity.py" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/miniReSearchEngine/similarity.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
+              <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,8 +66,8 @@
       <file leaf-file-name="invertedFile.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/miniReSearchEngine/invertedFile.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1170">
-              <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1170">
+              <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -74,6 +86,7 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/miniReSearchEngine/lemma.py" />
+        <option value="$PROJECT_DIR$/miniReSearchEngine/similarity.py" />
         <option value="$PROJECT_DIR$/miniReSearchEngine/invertedFile.py" />
         <option value="$PROJECT_DIR$/miniReSearchEngine/search.py" />
       </list>
@@ -567,12 +580,12 @@
       <changelist id="f89a2fe3-8014-4e4e-843c-5a12db45f509" name="Default" comment="" />
       <created>1426586492815</created>
       <updated>1426586492815</updated>
-      <workItem from="1426586496901" duration="26229000" />
+      <workItem from="1426586496901" duration="38422000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26229000" />
+    <option name="totallyTimeSpent" value="38422000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="23" width="2050" height="1107" extended-state="6" />
@@ -637,18 +650,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/miniReSearchEngine/invertedFile.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="229" max-vertical-offset="1170">
-          <caret line="15" column="19" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="450" max-vertical-offset="1170">
+          <caret line="49" column="24" selection-start-line="49" selection-start-column="24" selection-end-line="49" selection-end-column="24" />
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/miniReSearchEngine/similarity.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1665">
+          <caret line="29" column="38" selection-start-line="29" selection-start-column="38" selection-end-line="29" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/miniReSearchEngine/search.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.60465115" vertical-offset="285" max-vertical-offset="1440">
-          <caret line="45" column="21" selection-start-line="45" selection-start-column="21" selection-end-line="45" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.71202534" vertical-offset="750" max-vertical-offset="1920">
+          <caret line="80" column="66" selection-start-line="80" selection-start-column="66" selection-end-line="80" selection-end-column="66" />
           <folding>
             <element signature="e#0#20#0" expanded="true" />
           </folding>

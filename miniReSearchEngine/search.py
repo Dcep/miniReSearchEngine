@@ -39,22 +39,54 @@ class EchoServerProtocol(WebSocketServerProtocol,miniReSearchIF):
 		print payload
 		payload = payload.split()
 		wcount = len(payload)
-		try:
-			data = json.dumps(self.invFile[payload], ensure_ascii=False)
+		#try:
+
+		if wcount == 1:
+			data = json.dumps(self.invFile[payload[0]], ensure_ascii=False)
 			data = json.loads(data)
 			idf = math.log(self.totalDocs/data['DocCount'])
 			send = {}
 			for i in data['docNo']:
-				with open("lemma/" + i + '.txt') as current_file:
-					tf_idf = data['docNo'][i]["Freq"] * idf
-					print 'tf-idf: ' + str(tf_idf)
-					send[tf_idf] = json.dumps({'id': i, "Job_Title": "query: " + payload + " tf-idf: " + str(tf_idf), "Job_Requirements": current_file.read(), "Job_Description": "Nan"})
-
+				with open("lemma/" + str(i) + '.txt') as current_file:
+						tf_idf = data['docNo'][i]["Freq"] * idf
+						print 'tf-idf: ' + str(tf_idf)
+						send[tf_idf] = json.dumps({'id': i, "Job_Title": "query: " + payload[0] + " tf-idf: " + str(tf_idf), "Job_Requirements": current_file.read(), "Job_Description": "Nan"})
 			for i in sorted(send.keys()):
 				self.sendMessage(send[i], isBinary=False)
-		except:
-			send = json.dumps({'id': 0, "Job_Title": payload + " not in databse", "Job_Requirements": payload + " not in databse", "Job_Description": payload + " not in databse"})
-			self.sendMessage(send, isBinary=False)
+		else:
+			idf = {}
+			docDict = {}
+			tfidf = {}
+			send = {}
+			for i in range(wcount):
+				try:
+					docDict[payload[i]] = (json.loads(json.dumps(self.invFile[payload[i]], ensure_ascii=False)))
+					idf[payload[i]] = (math.log(self.totalDocs/docDict[payload[i]]['DocCount']))
+				except:
+					#remove item that is not in corpus
+					del docDict[payload[i]]
+					print "word not in corpus"
+			print docDict
+			print idf
+			for word in docDict:
+				print word
+				print docDict[word]['docNo']
+				for document in docDict[word]['docNo']:
+					with open("lemma/" + str(document) + '.txt') as current_file:
+						try:
+							tfidf[document] = tfidf[document] + (docDict[word]['docNo'][document]["Freq"] * idf)
+						except:
+							tfidf[document] = docDict[word]['docNo'][document]["Freq"] * idf[word]
+
+						send[tfidf[document]] = json.dumps({'id': document, "Job_Title": "query: " + " ".join(payload) + " tf-idf: " + str(tfidf[document]), "Job_Requirements": current_file.read(), "Job_Description": "Nan"})
+			for i in sorted(send.keys()):
+				self.sendMessage(send[i], isBinary=False)
+			#print tfidf
+
+
+		#except:
+		#	send = json.dumps({'id': 0, "Job_Title": payload + " not in databse", "Job_Requirements": payload + " not in databse", "Job_Description": payload + " not in databse"})
+		#	self.sendMessage(send, isBinary=False)
 
 
 

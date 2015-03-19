@@ -16,7 +16,7 @@ class miniReSearchIF():
 	def makeInvertedFile(self):
 
 		invertedFile = self.l()
-		docWordCoutns = self.l()
+		docWordCounts = self.l()
 		DocumentsCount = 0
 		for filename in os.listdir(self.filesDir):
 			with open(self.filesDir + filename) as current_file:
@@ -44,15 +44,15 @@ class miniReSearchIF():
 						invertedFile[word]['docNo'][filename.split('.')[0]]['WordPosition'] = []
 						invertedFile[word]['docNo'][filename.split('.')[0]]['WordPosition'].append(str(counter))
 					try:
-						docWordCoutns[filename.split('.')[0]][word] += 1
+						docWordCounts[filename.split('.')[0]][word] += 1
 					except:
-						docWordCoutns[filename.split('.')[0]][word] = 1
+						docWordCounts[filename.split('.')[0]][word] = 1
 					try:
-						docWordCoutns[filename.split('.')[0]]["docWordCountTotal"] += 1
+						docWordCounts[filename.split('.')[0]]["docWordCountTotal"] += 1
 					except:
-						docWordCoutns[filename.split('.')[0]]["docWordCountTotal"] = 1
+						docWordCounts[filename.split('.')[0]]["docWordCountTotal"] = 1
 		invertedFile['totalDocuments'] = DocumentsCount
-		return invertedFile, docWordCoutns
+		return invertedFile, docWordCounts
 
 
 
