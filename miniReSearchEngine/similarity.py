@@ -1,3 +1,10 @@
+'''
+miniResearchEngine
+
+A bare bones search engine for research purposes
+
+'''
+
 import os		#for file reading
 import nltk		#for tokenizer
 import math		#for sqrt

@@ -1,10 +1,22 @@
+'''
+miniResearchEngine
+
+A bare bones search engine for research
+
+'''
+
 from collections import defaultdict
 import os, nltk, json
 
 
 
 class miniReSearchIF():
+	'''create inverted file from a list of text documents in a folder.
+		Notes:  This would be better setup as a shelve object,
+				look at persistent dicts http://code.activestate.com/recipes/576642/
+				or just cpickle the dict
 
+	'''
 	def __init__(self):
 		self.filesDir = "lemma/"
 		#self.invertedFile = self.makeInvertedFile()
@@ -52,7 +64,7 @@ class miniReSearchIF():
 					except:
 						docWordCounts[filename.split('.')[0]]["docWordCountTotal"] = 1
 		invertedFile['totalDocuments'] = DocumentsCount
-		return invertedFile, docWordCounts
+		return invertedFile#, docWordCounts
 		#return invertedFile
 
 

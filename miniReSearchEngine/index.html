@@ -80,9 +80,9 @@
 
             var wsuri;
             if (window.location.protocol === "file:") {
-               wsuri = "ws://192.168.179.128:8080/ws?a=23&foo=bar";
+               wsuri = "ws://192.168.179.128:8085/ws?a=23&foo=bar";
             } else {
-               wsuri = "ws://" + window.location.hostname + ":8080/ws?a=23&foo=bar";
+               wsuri = "ws://" + window.location.hostname + ":8085/ws?a=23&foo=bar";
             }
 
             if ("WebSocket" in window) {
