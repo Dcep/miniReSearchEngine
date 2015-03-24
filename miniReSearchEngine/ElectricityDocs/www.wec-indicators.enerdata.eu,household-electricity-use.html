@@ -1,0 +1,887 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr" lang="fr">
+
+	<head>
+		<meta http-equiv="content-type" content="Text/html;charset=UTF-8">
+		<title>Electricity use per household | Electricity Consumption Efficiency| WEC</title>
+		<meta name='Description' content='Housing electricity use : level and trends of houlsehold electricity use  provides the electricity use in the world' />
+		<meta name='Keywords' content='Electricity use per household indicator' />
+		<LINK REL="SHORTCUT ICON" href="images/favicon.gif">
+		<link href="css/jquery-ui.css" rel="stylesheet" type="text/css" title="feuille des styles" />
+		<link href="css/style.css" rel="stylesheet" type="text/css" title="feuille des styles" />
+		<!--[if IE 6]>
+			<link href="css/IE6_fix.css" rel="stylesheet" type="text/css" title="feuille des styles" />
+		<![endif]-->
+		<!--[if IE 7]>
+			<link href="css/IE7_fix.css" rel="stylesheet" type="text/css" title="feuille des styles" />
+		<![endif]-->
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/swfobject.js"></script>
+		<script type="text/javascript" src="js/jquery.address.js"></script>
+		<script type="text/javascript" src="js/jquery.address.js"></script>
+		<script type="text/javascript" src="js/jquery-hashchange.js"></script>
+			
+		<script type="text/javascript">
+			// Acces direct aux pages par URL
+			if($.address.value().substring(1,$.address.value().length) != ''){
+				$(document).attr('location',$.address.value().substring(1,$.address.value().length));
+			}
+			
+			// Redimentionnement
+			$(window).resize(function(){
+				if(!$.browser.msie || ($.browser.msie && $.browser.version >= 9)){
+					$(document).attr('location',$.address.value().substring(1,$.address.value().length));
+				}
+			});
+			
+			// Bind the event.
+			// $(window).hashchange(function(){
+				// $(document).attr('location',$.address.value().substring(1,$.address.value().length));
+			// });
+				
+			$(document).ready(function(){
+				// Ancre pour les policies
+				$('[action=ancre]').live('click',function(){
+					var ancre = $(this).attr('ancre');
+					var position = $(ancre).offset().top;
+					$('html, body').animate({
+						scrollTop:position-60
+					},'slow'); 
+					$("[ancre=#enTete]").remove();
+					$("[actif=actif]").css("background-color","#ffffff");
+					$("[actif=actif]").removeAttr("actif");
+					if(ancre!='#enTete'){
+						$(ancre).attr("actif","actif");
+						$(ancre).append("<a style='color:#1d4e66' action='ancre' ancre='#enTete'>Go to top</a>");
+						$(ancre).css("background-color","#e6e6e6");
+					}
+				});
+				
+				$('[action=openGlossary]').live('click',function(){
+					$("#menu2").accordion( "option", "active",1);
+				});
+				
+				// Largeur de l'application
+				if($(window).width() <= 1080){
+					$('#contenu').width($(window).width()-$("#gauche").width()-30);
+					$('#site').width($('#contenu').width()+$("#gauche").width()+20);
+				}
+				
+				// Choix de l'annee de la carte
+				$('[action=choixMapCountries]').live('click',function(){
+					choixMapCountries($(this).attr('idSerie'),'WORL',$(this).attr('annee'),'map');
+				});
+				
+				// Options générales des dialogues
+				$('.dialog').dialog({
+					autoOpen : false,
+					bgiframe : true,
+					width:650,
+					height:690,
+					resizable:false,
+					draggable:false
+				});
+					
+				// Chargement d'une map au chargement de la page
+				var url = "household-electricity-use.html";
+				$.get('xml/pages.xml',{},function(data){
+					$(data).find("page").each(function(){
+						if(url == $(this).attr('url')+'.html'){
+							$(document).attr('Description',$(this).children('description').text());
+							$(document).attr('Keywords',$(this).children('keywords').text());
+							var annee =  $(this).attr('cagr').substring(5,9);
+							$("#menu1 li a[idSerie="+$(this).attr('id')+"]").addClass('active');
+							choixMapCountries($(this).attr('id'),'WORL',annee,'map');
+						}
+					});
+				});
+				
+				// Export Map
+				// $('#exportMap').live('click',function(){
+					// flashMovie = document.getElementById('ammap');
+					// flashMovie.exportImage('php/export.php');
+				// });
+				
+				
+				// Exporter la carte sous forme d'image
+				$('#exportMap').live("click",function(){
+					// mettre un loading
+					choixMapCountries($(this).attr('idSerie'),'WORL',$(this).attr('annee'),'objectMapExport');
+					$('#exportMap img').attr('src','images/small-loading.gif');
+				});
+				
+				// Création du menu
+				$("#menu1").accordion({
+					autoHeight:false,
+					collapsible:true,
+					active:false
+				});
+				
+				// Choix de la carte
+				$("#menu1 li a").click(function(){
+					idSerie = $(this).attr('idSerie');
+					$("#menu1 li a").removeClass('active');
+					$(this).addClass('active');
+					// Chargement de la carte
+					$.get('xml/pages.xml',{},function(data){
+						$(data).find("page").each(function(){
+							if(idSerie == $(this).attr('id')){
+								var annee =  $(this).attr('cagr').substring(5,9);
+								choixMapCountries(idSerie,'WORL',annee,'map');
+								refreshPage(idSerie);
+								return false;
+							}
+						});
+					});
+					return false;
+				});
+				
+				// Création du Glossaire / Ranking
+				$("#menu2").accordion({
+										autoHeight:false
+				});
+				
+				// Fichiers excel depusi le Select
+				$("#selectCountryIndicators").on('change',function(){
+					$(document).attr('location',$(this).val());
+				});
+				
+				// Chargement carte pour les fichiers pays
+							});
+			
+			function refreshGlossary(idSerieGlossaire){
+				$.get('xml/glossaire.xml',{},function(data){
+					$(data).find('#'+idSerieGlossaire).each(function(){
+						$("#glossary").html('');
+						$("#glossary").append("<p>"+$(this).children('texte').text()+"</p>");
+					});
+				});
+			}
+			
+			function refreshAnalyse(idSerieAnalyse){
+				$.get('xml/analyse.xml',{},function(data){
+					$(data).find('#'+idSerieAnalyse).each(function(){
+						$("#analyse").html('');
+						$("#analyse").append("<p>"+$(this).children('texte').text()+"</p>");
+					});
+				});
+			}
+			
+			function refreshPoliciesPays(idSeriePolicies,pays,div){
+				if(idSeriePolicies.substring(0,4) == "CAGR"){
+					idSeriePolicies = idSeriePolicies.substring(4);
+				}else{
+					idSeriePolicies = idSeriePolicies;
+				}
+				$('#'+div).empty();
+				first=true;
+				$.get('xml/pays.xml',{},function(data){
+					$(data).find('[idNum='+pays+']').each(function(){
+						pays = $(this).attr('id');
+						$.get('xml/policies.xml',{},function(data){
+							$(data).find('#'+idSeriePolicies).each(function(){	
+								$(this).find('#'+pays).each(function(){
+									if($(this).children('text').length){
+										if(first){
+											$('#'+div).append('<h2 class="TextTitle">Policies : </h2><ul></ul>');
+											first=false;
+										}
+										$('#'+div+' ul').append('<li>'+$(this).children('text').text()+'</li>');
+									}
+								});
+							});
+						});
+					});
+				});
+			}
+			
+			function refreshPoliciesByPolicies(idSeriePolicies,typePolicies,div){
+				$("#"+div+"").empty();
+				$('#graph div').empty();
+				$('#policies').empty();
+				$.get('xml/pays.xml',{},function(data){
+					countryTab = new Array();
+					$("#"+div+"").append("<table><thead></thead></table><div id='commentaires'></div>");
+					$("#"+div+" table").hide();
+					$("#"+div+" table thead").append("<tr><td></td></tr>");
+					$(data).find('country').each(function(){
+						idCountry = $(this).attr('id');
+						country = $(this).children('nom').text();
+						infos = new Array(idCountry,country);
+						countryTab.push(infos);
+						$("#"+div+" table tr:last").append("<th title='"+country+"'>"+idCountry+"</th>");
+					});
+					
+					$.get('xml/policies.xml',{},function(data){
+						$(data).find('categorie[typePolicies='+typePolicies+']').each(function(){
+							categorie = $(this).attr('nom');
+							categorieColor = $(this).attr('color');
+							image = categorieColor.replace('#', '');
+							first = true;
+							$(this).find('#'+idSeriePolicies).each(function(){
+								if(first){
+									$("#"+div+" table").append("<tr style='background-color:"+categorieColor+"'><td>"+categorie+"</td></tr>");
+									$.each(countryTab, function(i, n){
+										$("#"+div+" table tr:last").append("<td></td>");
+									});
+				
+									first = false;
+								}
+								nomPolicies = $(this).parent().attr('nom');
+								idPolicies = $(this).parent().attr('id');
+								$("#"+div+" table").append("<tr></tr>");
+								$("#"+div+" table tr:last").append("<td>"+nomPolicies+"</td>");
+								
+								tabInfo = $(this);
+								$.each(countryTab, function(i, n){
+									if(tabInfo.find('#'+n[0]).length){
+										$("#"+div+" table tr:last").append("<td><center><a action='' ancre='#"+idPolicies+"-"+n[0]+"'><img src='images/"+image+".gif' /></a></center></td>"); // Point si le pays possède la politique
+										if(tabInfo.find('#'+n[0]).children('text').text().length){
+											if(!$('#commentaires #'+idPolicies).length){
+												$('#commentaires').append("<p id='"+idPolicies+"'></p>");
+												$('#commentaires #'+idPolicies).append("<h3>"+nomPolicies+" : </h3>");
+												$('#commentaires #'+idPolicies).append('<ul></ul>');
+											}
+											$("[ancre=#"+idPolicies+"-"+n[0]+"]").attr('action','ancre');
+											$('#commentaires #'+idPolicies+" ul").append("<li id='"+idPolicies+"-"+n[0]+"'><b>"+n[1]+"</b> : "+tabInfo.find('#'+n[0]).children('text').text()+"</li>");
+										}
+									}else{
+										$("#"+div+" table tr:last").append("<td></td>"); // Pas de point si le pays ne possède pas la politique
+									}
+								});
+								$("[action=]").css("cursor",'default');
+								$("#"+div+" table").show();
+							});
+						});
+					});
+				});
+			}
+			
+			function refreshPage(idSerie){
+				$.get('xml/pages.xml',{},function(data){
+					$(data).find('#'+idSerie).each(function(){
+						$.address.value($(this).attr('url')+'.html'); // Change l'URL de la page
+						$.address.title($(this).children('title').text()); // Change le titre de la page
+					});
+				});
+			}
+			
+			function refreshPub(idSerie){
+				$.post('php/generationPub.php',
+					{idSerie : idSerie},function(data){
+						$('#pub').html(data);
+					}
+				);
+			}
+			
+			function choixMapCountries(idSerie,zone,annee,idMap){
+				if($('#menu2').accordion("option","active") == 2){
+					$('#menu2').accordion("activate",0);
+				}
+				
+				$('#policies').empty();
+				$('#zone').val(zone);
+				
+				if(idMap=='map'){
+					$('#map').height(300);
+					$('#map').css('overflow','hidden');
+				}
+				// Map
+				$("#map").css('border','1px solid #999999');
+				var so = new SWFObject("swf/ammap.swf", 'map-'+idMap, "100%", "100%", "8", "#FFFFFF");
+				so.addVariable("path", "swf/");
+				so.addVariable("map_id", 'map-'+idMap);
+				if(idMap=='map'){
+					so.addVariable("settings_file", escape("xml/setting/ammap_settings.xml"));
+				}else{
+					so.addVariable("settings_file", escape("xml/setting/ammap_settings_export.xml"));					
+				}
+				$.ajax({
+					type: "GET",
+					url: "xml/legend.xml",
+					dataType: "xml",
+					success: function(xml){
+						legend = "<legend><entries>";
+						$(xml).find("#"+idSerie).each(function(){
+							if(typeof(annee) != 'undefined' && annee != ''){
+								if($(this).attr('type') == 'pays' && $(this).attr('annee') == annee){
+									$(this).children().children().each(function(){
+										legend = legend+"<entry color='"+$(this).attr('color')+"'><![CDATA["+$(this).text()+"]]></entry>";
+									});
+								}
+							}else{
+								if($(this).attr('type') == 'pays'){
+									$(this).children().children().each(function(){
+										legend = legend+"<entry color='"+$(this).attr('color')+"'><![CDATA["+$(this).text()+"]]></entry>";
+									});
+								}
+							}
+						});
+						legend = legend+"</entries></legend>";
+						so.addVariable("additional_map_settings",encodeURIComponent("<settings>"+legend+"</settings>"));
+						if(typeof(annee) != 'undefined' && annee != ''){
+							if(idMap=='map'){
+								so.addVariable("data_file", escape("xml/ammap_data_"+idSerie+"_"+annee+".xml"));
+							}else{
+								so.addVariable("data_file", escape("xml/ammap_data_"+idSerie+"_"+annee+"_export.xml"));
+							}
+						}else{
+							if(idMap=='map'){
+								so.addVariable("data_file", escape("xml/ammap_data_"+idSerie+".xml"));
+							}else{
+								so.addVariable("data_file", escape("xml/ammap_data_"+idSerie+"_export.xml"));
+							}
+						}
+						if(idMap=='map'){
+							$('#map').html("<strong><table><tr><td><img src='flashlogo.png' /></td><td>You need to upgrade your Flash Player to display maps.<br /><a href='http://get.adobe.com/flashplayer/' target='_blank'>Download the latest version</a></td></tr></table></strong>");
+						}
+						so.write(idMap);
+						if(idMap=='map'){
+							// Titre et onglets de la carte
+							$.get('xml/ranking.xml',{},function(data){
+								$(data).find("#"+idSerie).each(function(){
+									$("#titreMap").html('');
+									titre = $(this).children('titre').text();
+									anneeRanking = $(this).children('annee').text();
+									$("#titreMap").html("<h1 class='titre1'>"+titre+" <a><img action='openGlossary' src='/images/help.png' /></a><span class='droite'>Last Update : February 2015<span></h1>");
+									
+									// Titre
+									$.get('xml/pages.xml',{},function(data){
+										$(data).find("page").each(function(){
+											if(idSerie.substring(0,4) == "CAGR"){
+												serie = idSerie.substring(4);
+											}else{
+												serie = idSerie;
+											}
+											if(serie == $(this).attr('id')){
+												
+												categorie = $(this).attr('categorie1').toLowerCase();
+												cagr = $(this).attr('cagr');
+												if(idSerie.substring(0,4) == "CAGR"){
+													$("#titreMap").append("<h2 class='titre2'>Period : "+cagr+"</h2>");
+												}else{
+													$("#titreMap").append("<h2 class='titre2'>Years : <span></span></h2>");
+													
+													// Années de la carte
+													// if(idSerie == 'pcencroucf' || idSerie == 'solm2pop'){
+														// annees = new Array(2000,anneeRanking);
+													// }else{
+														// annees = new Array(2000,2010,anneeRanking);
+													// }
+													
+													if(anneeRanking == 2010){
+														annees = new Array(2000,anneeRanking);
+													}else{
+														annees = new Array(2000,2010,anneeRanking);
+													}
+													$.each(annees,function(key,value){
+														if(key == (annees.length-1)){
+															$("#titreMap h2 span").append("<a action='choixMapCountries' annee='"+value+"' idSerie='"+idSerie+"'>"+value+"</a>");
+														}else{
+															$("#titreMap h2 span").append("<a action='choixMapCountries' annee='"+value+"' idSerie='"+idSerie+"'>"+value+"</a> | ");
+														}
+														if(value == annee){
+															$("#titreMap h2 span a:last").addClass('active');
+														}
+													})
+												}
+											}
+										});
+									});
+									
+									// Onglets de la carte
+									$.get('xml/pages.xml',{},function(data){
+										$(data).find("page").each(function(){
+											if(idSerie == $(this).attr('id')){
+												
+												// Menu Map
+												$("#optionsMap").html("<ul></ul><a class='action button' id='exportMap' idSerie='"+idSerie+"' annee='"+annee+"' title='Export map'><img src='images/image.png' /> Map<a class='action button' id='exportExcel' title='Export data'><img src='images/excel.png' /> Excel</a>");
+												$('.button').button();
+												
+												// Onglet Level
+												$("#optionsMap ul").append("<li class='selected' id='linkTabs-level'><a>Level</a></li>");
+												$("#linkTabs-level").click(function(){
+													$(this).parent('ul').children('li').removeClass('selected');
+													$(this).addClass('selected');
+													choixMapCountries(idSerie,244,annee,'map');
+												});
+												
+												// Onglet variation
+												cagr = $(this).attr('cagr');
+												if($(this).attr('displayTrend') == 1){
+													$("#optionsMap ul").append("<li id='linkTabs-trend'><a>Trend</a></li>");
+													$("#linkTabs-trend").click(function(){
+														$(this).parent('ul').children('li').removeClass('selected');
+														$(this).addClass('selected');
+														choixMapCountries("CAGR"+idSerie,244,'','map');
+													});
+												}
+												// Onglet policies
+												if($(this).attr('displayPolicies') == 1){
+													$("#optionsMap ul").append("<li id='linkTabs-policies'><a>Policies</a></li>");
+													$('#graph').css('width','50%');
+													$('#graph').css('margin','10px 0 0 0');
+													$('#contenuGraph').css('padding-top','30px');
+													$('#contenuGraph').css('height','250px');
+													$("#linkTabs-policies").click(function(){
+														$('#map').height('auto');
+														$('#map').css('overflow','auto');
+														$(this).parent('ul').children('li').removeClass('selected');
+														$(this).addClass('selected');
+														refreshPoliciesByPolicies(idSerie,categorie,'map')
+													});
+												}else{
+													$('#graph').css('width','80%');
+													$('#graph').css('margin','10px 10% 0 10%');
+													$('#contenuGraph').css('padding-top','0px');
+													$('#contenuGraph').css('height','300px');
+												}
+
+												// Excel
+												if(idSerie.substring(0,4) == "CAGR"){
+													if($.browser.msie){
+														$("#exportExcel").click(function(){
+															window.open('xls/'+idSerie.substring(4)+".xls");
+														});
+													}else{
+														$('#exportExcel').attr('href','xls/'+idSerie.substring(4)+'.xls')
+													}
+												}else{
+													if($.browser.msie){
+														$("#exportExcel").click(function(){
+															window.open('xls/'+idSerie+".xls");
+														});
+													}else{
+														$('#exportExcel').attr('href','xls/'+idSerie+'.xls')
+													}
+												}
+												// Glossaire
+												refreshGlossary(idSerie);
+											}
+										});
+									});
+									
+									// Graph
+									refreshGraph('WORL',idSerie);
+									
+									// Ranking
+									refreshRanking(idSerie,'');
+								});
+							},'xml');
+						}
+					}
+				});
+			}
+			
+			function refreshRanking(idSerie,order){
+				$.ajax({
+					type: "GET",
+					url: "xml/ranking.xml",
+					dataType: "xml",
+					success: function(xml){ 
+						$(xml).find("#"+idSerie).each(function(){
+							annee = $(this).children('annee').text();
+							unite = $(this).children('unite').text();
+							triRanking = $(this).children('tri').text();
+							$('#ranking > table').remove();
+									
+							$('#ranking').html("<table width='100%'><tr><td>Year : <span id='yearRanking'></span></td><td class='value'>Unit : "+unite+"</td></tr></table>");
+							if(order == ''){
+								order = triRanking;
+							}
+							
+							$('#ranking').append("<div class='orderRanking'></div>");
+							var orders = new Array('top','bottom');
+							$.each(orders,function(key,value){
+								if(key == (orders.length-1)){
+									$('#ranking .orderRanking').append("<a action='orderRanking' tri='"+order+"'>Lowest ten</a>");
+								}else{
+									$('#ranking .orderRanking').append("<a action='orderRanking' tri='"+order+"'>Highest ten</a> | ");
+								}
+								if(value == order){
+									$("#ranking .orderRanking a:last").addClass('active');
+								}
+							});
+							
+							$("<br /><table id='rankingTable' width='100%'><tbody><tr valign='top'><th width='60%'>Country</th><th width='40%'>Value</th></tr></tbody></table>").appendTo('#ranking');
+							
+							classe = "";
+							$(this).find("countries[order="+order+"]").each(function(){
+								$(this).find('country').each(function(){
+									nomPays = $(this).attr('name');
+									valeur = $(this).attr('value');
+									if(classe == "altRow"){
+										classe = "";
+									}else{
+										classe = "altRow";
+									}
+									$("<tr class='"+classe+"'><td>"+nomPays+"</td><td class='value'>"+valeur+"</td></tr>").appendTo('#ranking > #rankingTable');
+								});
+							});
+							
+							$("[action=orderRanking][class!=active]").click(function(){
+								if($(this).attr('tri') == 'bottom'){
+									refreshRanking(idSerie,'top');
+								}else{
+									refreshRanking(idSerie,'bottom');
+								}
+							});
+							
+							if(idSerie.substring(0,4) == "CAGR"){
+								serie = idSerie.substring(4);
+							}else{
+								serie = idSerie;
+							}
+							$.get('xml/pages.xml',{},function(data){
+								$(data).find("page").each(function(){
+									if(serie == $(this).attr('id')){
+										cagr = $(this).attr('cagr');
+										if(idSerie.substring(0,4) == "CAGR"){
+											var anneeTitre = $(this).attr('cagr');
+										}else{
+											var anneeTitre = annee;
+										}
+										$('#yearRanking').html(anneeTitre);
+									}
+								});
+							});
+						});
+					}
+				});
+			}
+			
+			function refreshGraph(idPays,idSerie){
+				var idPaysIn = idPays;
+				var displayGraphZone = false;
+				var displayGraphTrade = false;
+				var xmlData = "";
+				// Graph
+				var so = new SWFObject("swf/amcolumn.swf", "amcolumn", "100%", "100%", "8", "#FFFFFF");
+				so.addVariable("path", "swf/");
+				so.addVariable("settings_file", encodeURIComponent("xml/setting/amcolumn_settings.xml"));
+				so.addVariable("chart_id", "amcolumn");
+				$.get('xml/pays.xml',{},function(data){
+					// $(data).find("country").each(function(){
+						// if($(this).children('id').text() == idPays){
+							// nomPays = $(this).children('nom').text();
+						// }
+					// });
+					
+					if(idSerie.substring(0,4) == "CAGR"){
+						var file = 'xml/amcolumn_data_'+idSerie.substring(4)+'.xml';
+					}else{
+						var file = 'xml/amcolumn_data_'+idSerie+'.xml';
+					}
+					
+					$.get(file,{},function(data){
+						$(data).find('charts').each(function(){
+							displayGraphZone = $(this).attr('displayGraphZone');
+							displayGraphTrade = $(this).attr('displayGraphTrade');
+							var xml = data;
+							if(displayGraphTrade == 0){
+								switch(idPays){
+									case 'asia': idPays = 202; break;
+									case 'africa': idPays = 197; break;
+									case 'europe': idPays = 216; break;
+									case 'australia': idPays = 109; break;
+									case 'north_america': idPays = 40; break;
+									case 'south_america': idPays = 199; break;
+									case 'cei': idPays = 215; break;
+									case 'moy': idPays = 217; break;
+									case 'monde': idPays =  193; break;
+								}
+								
+								$.get('xml/pays.xml',{},function(data){
+									xmlData = "<chart><series>";
+									$(xml).find('series').children().each(function(){
+										xmlData = xmlData+"<value description='"+$(this).attr('description')+"' xid='"+$(this).attr('xid')+"'>"+$(this).text()+"</value>";
+									});
+									xmlData = xmlData+"</series><graphs>";
+									
+									$(data).find("country").each(function(){
+										if($(this).attr('id') == idPays){
+											idZone = $(this).attr('zone');
+											nomPays = $(this).children('nom').text();
+										}
+									});
+									
+									$(data).find("country").each(function(){
+										if($(this).attr('id') == idZone){
+											zoneGeo = $(this).children('nom').text();
+										}
+									});
+									
+									color = "#000000";
+									// Pays
+									existeDataPays = false;
+									$(xml).find("chart[id="+idPays+"]").each(function(){
+										$(this).find('graphs').children().each(function(){
+											titre = $(this).attr('title');
+											xmlData = xmlData+"<graph gid='1' title='"+nomPays+"'>";
+											$(this).find('value').each(function(){
+												existeDataPays = true;
+												color = $(this).attr('color');
+												xmlData = xmlData+"<value description='"+$(this).attr('description')+"' xid='"+$(this).attr('xid')+"' color='"+color+"'>"+$(this).text()+"</value>";
+											});
+											xmlData = xmlData+"</graph>";
+										});
+									});
+									
+									if(displayGraphZone == 1){
+										// Zone Géo
+										if(idPays != 'WORL' && idPays != 'EU28'){
+											$(xml).find("chart[id="+idZone+"]").each(function(){
+												$(this).find('graphs').children().each(function(){
+													first = true;
+													$(this).find('value').each(function(){
+														if(first){
+															xmlData = xmlData+"<graph gid='2' title='"+zoneGeo+"'>";
+															first = false;
+														}
+														xmlData = xmlData+"<value description='"+$(this).attr('description')+"' xid='"+$(this).attr('xid')+"'>"+$(this).text()+"</value>";
+													});
+													if(!first){
+														xmlData = xmlData+"</graph>";
+													}
+												});
+											});
+										}
+										
+										// Monde
+										if(idPays != 'WORL' && idZone != 'WORL'){
+											$(xml).find("chart[id=WORL]").each(function(){
+												$(this).find('graphs').children().each(function(){
+													first = true;
+													$(this).find('value').each(function(){
+														if(first){
+															xmlData = xmlData+"<graph gid='3' title='World'>";
+															first = false;
+														}
+														xmlData = xmlData+"<value description='"+$(this).attr('description')+"' xid='"+$(this).attr('xid')+"'>"+$(this).text()+"</value>";
+													});
+													xmlData = xmlData+"</graph>";
+												});
+											});
+										}
+									}
+									xmlData = xmlData+"</graphs></chart>";
+							
+									$.ajax({
+										type: "GET",
+										url: "xml/ranking.xml",
+										dataType: "xml",
+										success: function(xml){
+											if(idSerie.substring(0,4) == "CAGR"){
+												$(xml).find("#"+idSerie.substring(4)).each(function(){
+													unite = $(this).children('unite').text();
+												});
+											}else{
+												$(xml).find("#"+idSerie).each(function(){
+													unite = $(this).children('unite').text();
+												});
+											}
+											if(displayGraphZone == 1 && idPays != 244){
+												so.addVariable("additional_chart_settings",encodeURIComponent("<settings><labels><label lid='2'><width>90</width><align>center</align><x>1</x><y>0</y><text><![CDATA["+unite+"]]></text></label></labels><graphs><graph gid='1'><color>"+color+"</color></graph></graphs><values><category><frequency>2</frequency><rotate>0</rotate></category></values></settings>")); // Titre et unite du Graph
+											}else{
+												so.addVariable("additional_chart_settings",encodeURIComponent("<settings><labels><label lid='2'><width>90</width><align>center</align><x>1</x><y>0</y><text><![CDATA["+unite+"]]></text></label></labels><graphs><graph gid='1'><color>"+color+"</color></graph></graphs><legend><enabled>false</enabled></legend><plot_area><margins><bottom>50</bottom></margins></plot_area></settings>")); // Titre et unite du Graph
+											}
+											so.addVariable("chart_data", xmlData);
+											$('#contenuGraph').html("<strong><table><tr><td><img src='images/flashlogo.png' /></td><td>You need to upgrade your Flash Player to display graphs and maps.<br /><a href='http://get.adobe.com/flashplayer/' target='_blank'>Download the latest version</a></td></tr></table></strong>");
+											$('#titreGraph').html("<h2 class='TextTitle'>"+nomPays+"</h2>");
+											if(existeDataPays){
+												so.write("contenuGraph");
+											}else if(!existeDataPays && idPaysIn != 'EU28'){
+												$('#contenuGraph').html('No data.');						
+												if(idSerie=='cuelemenelecc' || idSerie=='cuelemenels' || idSerie=='cuelementhcc' || idSerie=='pkmferpop' || idSerie=='cuelementh'){
+													var idPays = 'EU28';
+													refreshGraph(idPays,idSerie);
+												}
+												var finCode = idSerie.substring(4);
+												if(finCode=='cuelemenelecc' || finCode=='cuelemenels' || finCode=='cuelementhcc' || finCode=='pkmferpop' || finCode=='cuelementh'){
+													var idPays = 'EU28';
+													refreshGraph(idPays,idSerie);
+												}
+											}else{
+												$('#contenuGraph').html('No data.');
+											}
+										}
+									});
+								},'xml');
+							}else{								
+								xmlData = "<chart><series>";
+								$(xml).find('series').children().each(function(){
+									xmlData = xmlData+"<value description='"+$(this).attr('description')+"' xid='"+$(this).attr('xid')+"'>"+$(this).text()+"</value>";
+								});
+								xmlData = xmlData+"</series><graphs>";
+								xmlData = xmlData+"<graph gid='1'>";
+								$(xml).find("chart[id=244]").each(function(){
+									$(this).find('graphs').children().each(function(){
+										//titre = $(this).attr('title');
+										
+										$(this).find('value').each(function(){
+											color = $(this).attr('color');
+											xmlData = xmlData+"<value description='"+$(this).attr('description')+"' xid='"+$(this).attr('xid')+"' color='"+color+"'>"+$(this).text()+"</value>";
+										});
+									});
+								});
+								xmlData = xmlData+"</graph>";
+								xmlData = xmlData+"</graphs></chart>";
+								$.ajax({
+									type: "GET",
+									url: "xml/ranking.xml",
+									dataType: "xml",
+									success: function(xml){
+										if(idSerie.substring(0,4) == "CAGR"){
+											$(xml).find("#"+idSerie.substring(4)).each(function(){
+												unite = $(this).children('unite').text();
+											});
+										}else{
+											$(xml).find("#"+idSerie).each(function(){
+												unite = $(this).children('unite').text();
+											});
+										}
+										so.addVariable("additional_chart_settings",encodeURIComponent("<settings><labels><label lid='2'><width>80</width><align>center</align><x>1</x><y>0</y><text><![CDATA["+unite+"]]></text></label></labels><legend><enabled>false</enabled></legend><plot_area><margins><bottom>50</bottom></margins></plot_area><values><category><frequency>1</frequency><rotate>45</rotate></category></values></settings>")); // Titre et unite du Graph
+										so.addVariable("chart_data", xmlData);
+										$('#contenuGraph').html("<strong><table><tr><td><img src='images/flashlogo.png' /></td><td>You need to upgrade your Flash Player to display graphs and maps.<br /><a href='http://get.adobe.com/flashplayer/' target='_blank'>Download the latest version</a></td></tr></table></strong>");
+										$('#titreGraph').html("<h2 class='TextTitle'>World</h2>");
+										so.write("contenuGraph");
+									}
+								});
+							}
+						});
+					});
+				},'xml');
+			
+				if($('#graph').width() < 500){
+					refreshPoliciesPays(idSerie,idPays,'policies');
+				}
+			}
+			
+			// Fin de l'export
+			function amReturnImageData(map_id){
+				$('#exportMap img').attr('src','images/image.png');
+			}
+			
+			function amMapCompleted(map_id){
+				flashMovie = document.getElementById(map_id);
+				if(map_id == "map-objectMapExport"){
+					flashMovie.exportImage('php/export.php');
+				}
+				if(map_id == 'ammap'){
+					switch($("#zone").val()){
+						case 'asia': flashMovie.setZoom('330%', '-190%', '-130%', false); break;
+						case 'africa': flashMovie.setZoom('260%', '-70%', '-130%', false); break;
+						case 'europe': flashMovie.setZoom('300%', '-100%', '-70%', false); break;
+						case 'australia': flashMovie.setZoom('300%', '-200%', '-200%', false); break;
+						case 'north_america': flashMovie.setZoom('150%', '25%', '0%', false); break;
+						case 'south_america': flashMovie.setZoom('280%', '-10%', '-180%', false); break;
+						case 'cei': flashMovie.setZoom('250%', '-130%', '-30%', false); break;
+						case 'moy': flashMovie.setZoom('500%', '-240%', '-230%', false); break;
+						case 'monde': flashMovie.setZoom('100%', '30%', '0%', false); break;
+					}
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+		<script>
+		//Script Google Analytics
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+		(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-733667-6', 'auto');
+		ga('send', 'pageview');
+		</script>
+		<div id='site'>
+			<!-- En tête de la page -->
+			<div id='enTete'>
+				<a id='logo' target='_blank' href="http://www.worldenergy.org/"><img src="images/wec.png"></a>
+				<!--<span>powered by <a target='_blank' href='http://www.enerdata.net'><img id='logoEnerdata' alt='Enerdata' src='images/logos/enerdata_90.jpg' /></a></span><h1>Energy Efficiency Indicators</h1>-->
+				<h1>Energy Efficiency Indicators</h1>
+				<div id="enTeteMenu">
+					<a target='_blank' href="http://www.enerdata.net"><img src="images/enerdata.jpg" /></a>
+					<a target='_blank' href="http://www.ademe.fr"><img src="images/ademe.gif" width='63' height='70' /></a>
+				</div>
+			</div>
+
+			<!-- Menu gauche de la page -->
+			<div id='gauche'>
+				<div id="filArianne">
+					<a href=".">Home</a>
+					>
+					<span>Sector</span>
+				</div>
+				<div id='menu1'>
+					<h3><a href='#'>Global indicators</a></h3><div><ul><li>Primary energy intensity<ul><li><a href='http://wec-indicators.enerdata.eu/primary-energy-intensity.html' idSerie='ietotcpppa'>Total</a></li><li><a href='http://wec-indicators.enerdata.eu/primary-energy-intensity-wihtout-biomass.html' idSerie='ietoccpppa'>Excl. biomass</a></li><li><a href='http://wec-indicators.enerdata.eu/primary-energy-intensity-ajusted-EU.html' idSerie='ietotcpajppa'>Adjusted to EU</a></li></ul></li><li>Final energy intensity<ul><li><a href='http://wec-indicators.enerdata.eu/world-final-energy-intensity.html' idSerie='ietotcfppa'>Total</a></li><li><a href='http://wec-indicators.enerdata.eu/world-final-energy-intensity-GDP-structure.html' idSerie='ietotpibscppa'>At 2005 GDP structure</a></li><li><a href='http://wec-indicators.enerdata.eu/world-final-energy-intensity-ajusted-EU.html' idSerie='ietotpibajppa'>Adjusted to EU</a></li></ul></li><li><a href='http://wec-indicators.enerdata.eu/ratio-final-primary-intensity.html' idSerie='totrend'>Ratio final/primary intensity</a></li><li>CO2<ul><li><a href='http://wec-indicators.enerdata.eu/global-co2-intensity.html' idSerie='co2pibdxxp'>CO<sub>2</sub> intensity</a></li><li><a href='http://wec-indicators.enerdata.eu/global-co2-emissions-per-capita.html' idSerie='co2pop'>CO<sub>2</sub> emissions per capita</a></li></ul></li></ul></div><h3><a href='#'>Power sector</a></h3><div><ul><li>Efficiency of power plants<ul><li><a href='http://wec-indicators.enerdata.eu/power-generation-efficiency.html' idSerie='rendele'>Total</a></li><li><a href='http://wec-indicators.enerdata.eu/power-plants-thermals.html' idSerie='cmbelerend'>Thermal</a></li><li><a href='http://wec-indicators.enerdata.eu/coal-fired-power-plants-efficiency.html' idSerie='cspelerend'>Coal-fired</a></li><li><a href='http://wec-indicators.enerdata.eu/world-gas-fired-power-plants-efficiency-level.html' idSerie='gazelerend'>Gas-fired</a></li></ul></li><li>Share of efficient technologies<ul><li><a href='http://wec-indicators.enerdata.eu/efficient-technologies-CCGT.html' idSerie='pceccmw'>Combined-Cycle Gas Turbine</a></li><li><a href='http://wec-indicators.enerdata.eu/efficient-technologies-coal-supercritical-IGCC.html' idSerie='pceadcmw'>Coal advanced technologies</a></li></ul></li><li><a href='http://wec-indicators.enerdata.eu/world-rate-of-electricity-T-D-losses.html' idSerie='derend'>Rate of electricity T&D losses</a></li><li>Share of renewables<ul><li><a href='http://wec-indicators.enerdata.eu/renewable-in-power-production.html' idSerie='pcenrelepd'>Total</a></li><li><a href='http://wec-indicators.enerdata.eu/renewable-wind-solar-world-levels.html' idSerie='pceeoedvpd'>Wind and solar</a></li></ul></li><li>CHP<ul><li><a href='http://wec-indicators.enerdata.eu/chp-power-capacity.html' idSerie='pcetwelemw'>% CHP in power capacity</a></li></ul></li></ul></div><h3><a href='#'>Industry</a></h3><div><ul><li><a href='http://wec-indicators.enerdata.eu/industry-energy-intensity-world-level-trends.html' idSerie='ietotindppa'>Energy intensity</a></li><li>Steel industry<ul><li><a href='http://wec-indicators.enerdata.eu/unit-consumption-of-steel.html' idSerie='cutotacb'>Unit consumption of steel</a></li><li><a href='http://wec-indicators.enerdata.eu/electric-process-steel-industry.html' idSerie='pceleprdacb'>% electric process </a></li></ul></li><li><a href='http://wec-indicators.enerdata.eu/industrial-chp.html' idSerie='pceleaotwcons'>% industrial CHP</a></li><li><a href='http://wec-indicators.enerdata.eu/industry-co2-intensity.html' idSerie='co2inadxxp'>CO<sub>2</sub> intensity</a></li></ul></div><h3><a href='#'>Transport</a></h3><div><ul><li><a href='http://wec-indicators.enerdata.eu/transport-energy-intensity.html' idSerie='ietottrappa'>Energy intensity</a></li><li><a href='http://wec-indicators.enerdata.eu/Rail-passengers-transport.html' idSerie='pkmferpop'>Rail passengers transport</a></li><li><a href='http://wec-indicators.enerdata.eu/share-of-biofuels.html' idSerie='pcencroucf'>Share of biofuels</a></li><li><a href='http://wec-indicators.enerdata.eu/transport-co2-intensity.html' idSerie='co2tradxxp'>CO<sub>2</sub> intensity</a></li><li><a href='http://wec-indicators.enerdata.eu/transport-co2-emissions-per-capita.html' idSerie='co2trapop'>CO<sub>2</sub> emissions per capita</a></li></ul></div><h3><a href='#'>Households</a></h3><div><ul><li><a href='http://wec-indicators.enerdata.eu/electricity-use-per-capita.html' idSerie='cuelerespop'>Electricity use per capita</a></li><li>Electricity use per household<ul><li><a href='http://wec-indicators.enerdata.eu/household-electricity-use.html' idSerie='cuelemenele'>Total </a></li><li><a href='http://wec-indicators.enerdata.eu/specific-electricity-use.html' idSerie='cuelemenels'>Electric appliances and lighting</a></li><li><a href='http://wec-indicators.enerdata.eu/thermal-electricity-use.html' idSerie='cuelementh'>Thermal uses incl. cooling</a></li></ul></li><li><a href='http://wec-indicators.enerdata.eu/solar-water-heaters-per-capita.html' idSerie='solm2pop'>Solar water heaters per capita</a></li><li><a href='http://wec-indicators.enerdata.eu/co2-emissions-per-household.html' idSerie='co2resmen'>CO<sub>2</sub> emissions per household</a></li></ul></div><h3><a href='#'>Services</a></h3><div><ul><li><a href='http://wec-indicators.enerdata.eu/services-energy-intensity.html' idSerie='ietotterppa'>Energy intensity</a></li><li><a href='http://wec-indicators.enerdata.eu/electricity-intensity.html' idSerie='ieeleterppa'>Electricity intensity</a></li><li><a href='http://wec-indicators.enerdata.eu/services-co2-intensity.html' idSerie='co2terdxxp'>CO<sub>2</sub> intensity</a></li></ul></div><h3><a href='#'>Agriculture</a></h3><div><ul><li><a href='http://wec-indicators.enerdata.eu/agriculture-energy-intensity.html' idSerie='ietotagrppa'>Energy intensity</a></li><li><a href='http://wec-indicators.enerdata.eu/agriculture-co2-intensity.html' idSerie='co2agrdxxp'>CO<sub>2</sub> intensity</a></li></ul></div>				</div>
+				<div id='menu2'>
+					<h3><a href="#">Ranking major countries</a></h3>
+					<div id='ranking'>
+						Please select an indicator to see ranking.
+					</div>
+					<h3><a href="#">Glossary</a></h3>
+					<div id='glossary'>
+						Please select an indicator to see the glossary.
+					</div>
+					<!--<h3><a href="#">How to use this interface</a></h3>
+					<div>
+						<ul>
+							<li>Indicators by Country/Region<ul>
+							<li>Go to the home page and select a country/region on the map or in the list of countries/regions.</li></ul></li>
+							<li>Cross-country benchmarking<ul>
+							<li>Browse in the selection tree in the left column </li>
+							<li>Select a data series by clicking </li>
+							<li>The map and graph are displayed for the selected data series </li>
+							<li>Pass the cursor over a country to view the latest data </li>
+							<li>Export data (.xls) and maps by clicking on the appropriate button </li>
+							<li>A country ranking by region is displayed for each data indicator selected (left column) </li>
+							<li>A glossary is also available for a further analysis and understanding</li></ul></li>
+						</ul>
+					</div>-->
+				</div>
+			</div>
+			
+			<!-- Contenu de la page -->
+			<div id='contenu'>
+				<div id='titreMap'>
+					<noscript>
+						<center><b>Please enable javascript to navigate this site.</b></center>
+						<h1 class='titre1'>Average electricity consumption per electrified household</h1><h2 class='titre2'>Year : 2012</h2>					</noscript>
+									</div>
+				<div id='optionsMap'>
+				</div>
+				<div id='map'>
+					<noscript>
+						<img src='images/map/cuelemenele.jpg' alt='Average electricity consumption per electrified household' title='Average electricity consumption per electrified household' />					</noscript>
+				</div>
+				
+				<div id='cache'>
+					<div id='objectMapExport'>
+					</div>
+				</div>
+				
+				<div id='graph'>
+					<div id='titreGraph'>
+					</div>
+					<div id='contenuGraph'>
+					</div>
+				</div>
+				<div id='policies'>
+				</div>
+			</div>
+			
+			<!-- Contenu du pied de page -->
+			<div id='piedDePage'>
+				Copyright © <a target="_blank" href="http://www.enerdata.net">Enerdata</a> 2009-2015 All rights reserved - <a href="#" onclick="window.open('http://www.enerdata.net/enerdatauk/popup/terms_conditions.php','_blank', 'toolbar=0, location=0, directories=0, status=0, scrollbars=1, resizable=1, copyhistory=0, menuBar=0, width=700,height=600');return(false)">Terms &amp; Conditions</a>
+			</div>
+		</div>
+		<input type='hidden' id='zone' value=''>
+	</body>
+	
+	<div id='register' class='dialog'></div>
+	<div id='confirm' class='dialog'></div>
+	<div id='sources' class='dialog' title='Sources'></div>
+</html>

@@ -1,0 +1,486 @@
+<!DOCTYPE html> 
+<HTML lang="en">
+<HEAD>
+<TITLE>How to quantify household electricity end-use consumption</TITLE>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="author" content="zimmermann@stlouisfed.org">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link href="/css/normalnew.css" rel="stylesheet" type="text/css"/>
+    <link href="/css/pushy.css" rel="stylesheet" type="text/css"/>
+    <link rev="made" href="mailto:zimmermann@stlouisfed.org">
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+
+<META NAME="description" CONTENT="Downloadable! Information about total electricity consumption is available for most households. However, the electricity consumption related to different end uses, e.g. space heating, water heating, lighting and services from household appliances are usually not metered. Metering data are very costly to achieve, and in this paper we study two methods for end-use estimation, which can be applied on household data for appliance holdings, demographic and economic variables. The first method is the engineering model which has been used to calculate the so far only documented Norwegian end-use results applied on data from a Norwegian energy survey. The second method is an econometric conditional demand model applied on data from the same survey. We compare the numerical results from the two models and give some recommendations regarding choice of end-use approach and what questions to implement in household surveys designed to disaggregate electricity consumption.">
+<META NAME="keywords" CONTENT="Electricity end-use consumption; econometric conditional demand model; engineering model.">
+<META NAME="jel_code" CONTENT="C51; D12; Q40">
+<META NAME="author" CONTENT="Bodil M. Larsen & Runa Nesbakken">
+<META NAME="author_shortid" CONTENT="">
+<META NAME="title" CONTENT="How to quantify household electricity end-use consumption">
+<META NAME="download" CONTENT="1">
+<META NAME="freedownload" CONTENT="1">
+<META NAME="date" CONTENT="2003-02-02">
+<META NAME="citation_publication_date" CONTENT="2003/03">
+<META NAME="citation_authors" content="Bodil M. Larsen; Runa Nesbakken">
+<META NAME="citation_title" content="How to quantify household electricity end-use consumption">
+<META NAME="citation_abstract" content="Information about total electricity consumption is available for most households. However, the electricity consumption related to different end uses, e.g. space heating, water heating, lighting and services from household appliances are usually not metered. Metering data are very costly to achieve, and in this paper we study two methods for end-use estimation, which can be applied on household data for appliance holdings, demographic and economic variables. The first method is the engineering model which has been used to calculate the so far only documented Norwegian end-use results applied on data from a Norwegian energy survey. The second method is an econometric conditional demand model applied on data from the same survey. We compare the numerical results from the two models and give some recommendations regarding choice of end-use approach and what questions to implement in household surveys designed to disaggregate electricity consumption.">
+<META NAME="citation_publisher" content="Research Department of Statistics Norway">
+<META NAME="citation_journal_title" content="Discussion Papers">
+<META NAME="citation_keywords" content="Electricity end-use consumption; econometric conditional demand model; engineering model.">
+<META NAME="citation_abstract_html_url" content="http://ideas.repec.org/p/ssb/dispap/346.html">
+<META NAME="citation_abstract_pdf_url" content="http://ideas.repec.org/p/ssb/dispap/346.html">
+<META NAME="redif-type" content="paper">
+<META NAME="citation_type" content="redif-paper">
+<META NAME="citation_technical_report_number" content="346">
+<META NAME="citation_year" content="2003">
+</HEAD><BODY>
+<div class="container-fluid">
+    <div id="header" class="row">
+                <a name="top"></a>
+        <div class="col-sm-2 col-xs-12 hidden-print" style="min-height: 60px;">
+            <div class="col-xs-11 col-sm-12 header-logo">
+                <a href="/">
+                    <img width="145" src="/ideas2.gif" border="0" alt="IDEAS home">
+                </a>
+            </div>
+            <div class="col-xs-1 visible-xs menu-btn" style="margin-top: 10px;">&#8981;</div>
+        </div>
+        <div class="hidden-xs col-sm-10">
+            <nav class="navbar" role="navigation">
+            <div id="topnav">
+                <form method="GET" action="/cgi-bin/htsearch" id="topsearch" role="search" class="navbar-form navbar-right">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" value="">
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit" value="Search IDEAS">
+                    </span>
+                </div>
+                <br>
+                <a href="/search.html" class="advanced-search">Advanced Search</a>
+                </form>
+
+                <ul class="hidden-xs nav navbar-nav navbar-left">
+                    <li><a href="/i/p.html">Papers</a></li>
+                    <li><a href="/i/a.html">Articles</a></li>
+                    <li><a href="/i/e.html">Authors</a></li>
+                    <li><a href="http://edirc.repec.org/">Institutions</a></li>
+                    <li><a href="http://research.stlouisfed.org/fred2/">Data (FRED&reg;)</a></li>
+                </ul>
+            </div>
+            </nav>
+        </div>
+
+
+    </div>
+
+    <div class="row">
+        <div style="margin-top: -10px;">
+
+
+<div id="sidebar" class="pushy pushy-left hidden-xs hidden-print col-sm-2">
+                        <form method="GET" action="/cgi-bin/htsearch" id="topsearch" role="search" class="visible-xs">
+                <div class="input-group">
+                    <input class="form-control" type="text" name="q" value="">
+                    <span class="input-group-btn">
+                        <input class="btn btn-default" type="submit" value="Search">
+                    </span>
+                </div>
+                <a href="/search.html" class="adv-search">Advanced Search</a>
+            </form>
+
+            <div id="menu">
+                <a href="/">IDEAS home</a>
+                <h3>Browse for material</h3>
+                <ul>
+                    <li><a href="/i/p.html">Papers</a></li>
+                    <li><a href="/i/a.html">Articles</a></li>
+                    <li><a href="/i/c.html">Software</a></li>
+                    <li><a href="/i/b.html">Books</a></li>
+                    <li><a href="/i/h.html">Chapters</a></li>
+                    <li><a href="/i/e.html">Authors</a></li>
+                    <li><a href="http://edirc.repec.org/">Institutions</a></li>
+                    <li><a href="http://research.stlouisfed.org/fred2/">Data (FRED&reg;)</a></li>
+                </ul>
+
+                <h3>Find material</h3>
+                <ul>
+                    <li><a href="/j/">JEL Classification</a></li>
+                    <li><a href="/n/">NEP reports</a></li>
+                    <li><a href="/search.html">Search</a></li>
+                    <li><a href="/g/">Pub compilations</a></li>
+                    <li><a href="/k/">Reading lists</a></li>
+                </ul>
+		<H3><A HREF="#bottom">More options are now at bottom of page</A></H3>
+
+            </div>
+
+            <div id="sidelogos">
+                IDEAS is a <a href="http://repec.org/"><img width="60" src="/RePEc.gif" border="0" alt="RePEc"></a> service hosted by the <A HREF="http://research.stlouisfed.org/">Research Division</A> of the <A HREF="http://www.stlouisfed.org/">Federal Reserve Bank of St. Louis</a>
+            </div>
+ 
+<div class="hidden-xs" id="sidedyk">
+Curious about new research in your field? Subscribe to a <A HREF="http://nep.repec.org/">NEP Report</A>. It is free.
+
+</div>
+</div>
+            <div class="col-xs-12 col-sm-10 visible-print-block">
+                    <img width="145" src="/ideas2.gif" border="0" alt="IDEAS home"> Printed from https://ideas.repec.org/ 
+            </div>
+
+        <div id="main" class="col-xs-12 col-sm-10">
+            <div class="site-overlay"></div>
+            <div class="hidden-print">
+
+<div id="messages" class="col-xs-12">
+
+<span class="share-block">
+            <span>Share: </span>
+            <a class="share-twitter" href="#" title="Share on Twitter"></a>
+            <a class="share-facebook" href="#" title="Share on Facebook"></a>
+            <a class="share-google" href="#"  title="Share on Google+"></a>
+            <a class="share-reddit" href="#" title="Share on Reddit"></a>
+            <a class="share-stumbleupon" href="#"  title="Share on StumbleUpon"></a>
+            <a class="share-delicious" href="#" title="Save on Delicious"></a>
+            <a class="share-email" href="#"  title="Share by Email"></a>
+            <a class="share-print" href="#" title="Print this page"></a>
+</span>
+<span id="myideas">
+
+<A HREF="/cgi-bin/myideas.cgi">MyIDEAS</A></span>: <A HREF="/cgi-bin/myilogin.cgi">Login</A> 
+
+
+
+
+
+
+to save this paper or follow this series
+
+
+
+
+
+
+
+        <div id="google_translate_element"></div>
+</div>
+
+
+            </div>
+            <div id="content-block" class="col-xs-12">
+<div id="title">
+<H1>How to quantify household electricity end-use consumption</H1></div>
+
+<div class="col-xs-12">
+<div id="papernav" class="pull-right">
+<H3>Contents:</H3><UL><LI><A HREF="#author">Author info</A></LI> <LI><A HREF="#abstract">Abstract</A></LI> <LI><A HREF="#biblio">Bibliographic info</A></LI> <LI><A HREF="#download">Download info</A></LI> <LI><A HREF="#related">Related research</A></LI> <LI><A HREF="#refs">References</A></LI> <LI><A HREF="#cites">Citations</A></LI> <LI><A HREF="#lists">Lists</A></LI> <LI><A HREF="#statistics">Statistics</A></LI> <LI><A HREF="#correct">Corrections</A></LI>
+</ul></div>
+
+<A name="author"></A><div id="author-info" class="panel"><div class="panel-heading">
+<H2 class="panel-title"><A HREF="#author-body">Author Info</A></H2></div>
+<div class="panel-collapse collapse in" id="author-body"><div id="authortable"><UL id="authorlist"><LI class="authorname">Bodil M. Larsen</li>
+<LI class="authorname">Runa Nesbakken<p class="authorcontact">(<span data-liame2='["no","ssb","m7i7","larsen","merethe","bodil"]'></span>)</P> (<A
+         HREF="http://www.ssb.no/en/forskning/ansatte">Statistics Norway</A>)</p></li>
+</UL></div><div id="registered-authors"> <A HREF="https://authors.repec.org/">Registered</A> author(s): <UL id="authorregistered"></UL></div></div></div>
+<A name="abstract"></A><div class="abstract-content panel"><div class="panel-heading"><h2 class="panel-title"><a href="#abstract-body" data-toggle="collapse">Abstract</a></h2></div><div class="panel-collapse collapse in" id="abstract-body"><P>Information about total electricity consumption is available for most households. However, the electricity consumption related to different end uses, e.g. space heating, water heating, lighting and services from household appliances are usually not metered. Metering data are very costly to achieve, and in this paper we study two methods for end-use estimation, which can be applied on household data for appliance holdings, demographic and economic variables. The first method is the engineering model which has been used to calculate the so far only documented Norwegian end-use results applied on data from a Norwegian energy survey. The second method is an econometric conditional demand model applied on data from the same survey. We compare the numerical results from the two models and give some recommendations regarding choice of end-use approach and what questions to implement in household surveys designed to disaggregate electricity consumption.</p></div></div>
+<A name="download"></A><div class="download-info panel"><div class="panel-heading"><h2 class="panel-title"><a href="#download-body" data-toggle="collapse">Download Info</a></h2></div><div class="panel-collapse collapse in" id="download-body"><P>
+
+If you experience problems downloading a file, check if you have the
+proper <A HREF="/viewers.html">application</A> to
+view it first. In case of further problems read
+<a href="/help.html" TARGET="NEW">the IDEAS help
+page</a>. Note that these files are <B>not</B> on the IDEAS
+site. Please be patient as the files may be large.
+       <FORM METHOD=GET ACTION="/cgi-bin/get_doc.pl">
+       <INPUT TYPE=HIDDEN NAME="urn" VALUE="RePEc:ssb:dispap:346">
+<INPUT TYPE="radio" NAME="url" VALUE="http://www.ssb.no/a/publikasjoner/pdf/DP/dp346.pdf" checked><B>File URL:</B> http://www.ssb.no/a/publikasjoner/pdf/DP/dp346.pdf<BR><B>Download Restriction:</B> no<BR>
+<INPUT TYPE="SUBMIT" VALUE="download the selected file"></FORM><P>
+</div></div></div>
+<A name="biblio"></A><div class="bibliographic-info col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#biblio-body" class="collapsed">Bibliographic Info</a></h2></div><div class="panel-collapse collapse" id="biblio-body">
+Paper provided by Research Department of Statistics Norway in its series <A
+        HREF="/s/ssb/dispap.html">Discussion Papers</A> with number
+        346.<P>
+<form method="post" action="/cgi-bin/refs.cgi" enctype="multipart/form-data" target="refs" class="form-inline" role="form" style="margin-bottom: 10px;">
+<input type="hidden" name="handle" value="RePEc:ssb:dispap:346">
+<div class="pull-left" style="padding-right: 2px;">
+<input type="submit" class="btn btn-default" name="ref" value="Download reference"> as
+</div>
+<div class="col-xs-8" style="padding-left: 0;">
+<select name="output" size="1">
+<option value="0">HTML</option>
+<option value="0.5">HTML with abstract</option>
+<option value="1">plain text</option>
+<option value="1.5">plain text with abstract</option>
+<option value="2">BibTeX</option>
+<option value="3">RIS (EndNote, RefMan, ProCite)</option>
+<option value="4">ReDIF</option>
+<option value="6">JSON</option>
+</select> <small class="help-block">in new window</small>
+</div>
+</form><br>
+        <table class="table table-condensed">
+<tr><td><B>Length:</B></td><td class="va-middle"> </td></tr>
+        <tr><td><B>Date of creation:</B></td><td class="va-middle">  Mar 2003</td></tr>
+<tr><td><B>Date of revision:</B></td><td class="va-middle">   </td></tr>
+<tr><td><B>Handle:</B></td><td class="va-middle"> RePEc:ssb:dispap:346</td></tr>
+<tr><td><B>Contact details of provider:</B></td><td class="va-middle"> Postal: <adress>P.O.Box 8131 Dep, N-0033 Oslo, Norway</address><BR>Phone: (+47) 21 09 00 00<BR>Fax: (+47) 21 09 49 73<BR>Web page: <A HREF=http://www.ssb.no/en/>http://www.ssb.no/en/</A>Email: <span data-liame2='["no","ssb","m7i7","salg-abonnement"]'></span></p><BR><A HREF="http://edirc.repec.org/data/ssbgvno.html">More information through EDIRC</A> <P> </td></tr>
+</table></div></div>
+<A NAME="related"></A><div class="related-research col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#related-body" class="collapsed">Related research</a></h2></div><div class="panel-collapse collapse" id="related-body"><p>
+<B>Keywords: </B> <A HREF="/cgi-bin/htsearch?q=Electricity+end-use+consumption">Electricity end-use consumption</A>;  <A HREF="/cgi-bin/htsearch?q=econometric+conditional+demand+model">econometric conditional demand model</A>;  <A HREF="/cgi-bin/htsearch?q=engineering+model.">engineering model.</A>; <P><B>Find related papers by <A HREF="/j/">JEL</A> classification:</B><UL> <LI><A HREF="/j/C51.html"><B>C51</B></A> - Mathematical and Quantitative Methods - - Econometric Modeling - - - Model Construction and Estimation</LI>
+ <LI><A HREF="/j/D12.html"><B>D12</B></A> - Microeconomics - - Household Behavior - - - Consumer Economics: Empirical Analysis</LI>
+ <LI><A HREF="/j/Q40.html"><B>Q40</B></A> - Agricultural and Natural Resource Economics; Environmental and Ecological Economics - - Energy - - - General</LI>
+ </UL><P>
+<B>This paper has been announced in the following <A 
+HREF="http://nep.repec.org/">NEP Reports</A>:</B><UL><LI><A HREF="/n/nep-all/2003-06-04.html">NEP-ALL-2003-06-04</A> (All new papers)</LI>
+</UL>
+</div></div>
+<A NAME="refs"></A><div class="references col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#references-body" class="collapsed">References</a></H2></div><div class="panel-collapse collapse" id="references-body"><P>
+<B>References listed on IDEAS</B><BR> Please report citation or reference errors to <span data-liame2='["es","uv","m7i7","Barrueco","Jose"]'></span>, or , if you are the registered author of the cited work, log in to your <A HREF="https://authors.repec.org/">RePEc Author Service profile</A>, click on "citations"  and make appropriate adjustments.: 
+     <form method="post" action="/cgi-bin/refs.cgi" enctype="multipart/form-data" target="refs" >
+<input type="hidden" name="handle" value="repec:bes:jnlbes:v:13:y:1995:i:3:p:315-26#repec:fth:socaec:9411#repec:dgr:kubcen:199056#repec:aen:journl:2000v21-02-a03#repec:bes:jnlbes:v:12:y:1994:i:2:p:221-31#repec:fth:tilbur:9056#repec:aen:journl:1990v11-04-a05#repec:eee:enepol:v:26:y:1998:i:8:p:585-593#repec:cor:louvco:1992052#repec:aen:journl:1984v05-03-a06#repec:tiu:tiucen:eeac5253-bbf9-4ae2-bf14-e27a7a884b4d#repec:cor:louvrp:-1090"  />
+<input type="submit" name="ref" value="Download references" /> as
+<select name="output" size="1">
+<option value="0" />HTML</option>
+<option value="0.5" />HTML with abstract</option>
+<option value="1" />plain text</option>
+<option value="1.5" />plain text with abstract</option>
+<option value="2" />BibTeX</option>
+<option value="3" />RIS (EndNote, RefMan, ProCite)</option>
+<option value="4" />ReDIF</option>
+<option value="6" />JSON</option>
+</select> in new window
+</form>
+<OL><LI>repec:dgr:kubcen:199056 is not listed on IDEAS
+<LI class="downnone">Bartels, R. & Fiebig, D.G., 1990.
+ "<B><A HREF="/p/fth/tilbur/9056.html">Integrating Direct Metering And Conditional Demand Analysis Fr Estimating End-Use Loads</A></B>,"
+<A HREF="/s/fth/tilbur.html">Papers</A> 
+9056, Tilburg - Center for Economic Research.
+
+
+<BR>
+<div class="publishedas"><UL><LI class="downgate"> Robert Bartels & G. Fiebig, 1990.
+"<B><A HREF="http://ideas.repec.org/a/aen/journl/1990v11-04-a05.html">Integrating Direct Metering and Conditional Demand Analysis for Estimating End-Use Loads</A></B>,"
+<A HREF="http://ideas.repec.org/s/aen/journl.html">The Energy Journal</A>,
+International Association for Energy Economics, vol. 0(Number 4), pages 79-98.
+
+</UL></div><LI class="downgate"> Robert Bartels & Denzil G. Fiebig, 2000.
+"<B><A HREF="/a/aen/journl/2000v21-02-a03.html">Residential End-Use Electricity Demand: Results from a Designed Experiment</A></B>,"
+<A HREF="/s/aen/journl.html">The Energy Journal</A>,
+International Association for Energy Economics, vol. 0(Number 2), pages 51-81.
+
+
+<LI class="downfree">Bauwens, L. & Fiebig, D. G. & Steel, M. F. J.,   .
+ "<B><A HREF="/p/cor/louvrp/-1090.html">Estimating End-use Demand: a Bayesian Approach</A></B>,"
+<A HREF="/s/cor/louvrp.html">CORE Discussion Papers RP</A> 
+-1090, Université catholique de Louvain, Center for Operations Research and Econometrics (CORE).
+
+
+<BR>
+<div class="publishedas"><UL><LI class="downnone"> Bauwens, Luc & Fiebig, Denzil G & Steel, Mark F J, 1994.
+"<B><A HREF="http://ideas.repec.org/a/bes/jnlbes/v12y1994i2p221-31.html">Estimating End-Use Demand: A Bayesian Approach</A></B>,"
+<A HREF="http://ideas.repec.org/s/bes/jnlbes.html">Journal of Business & Economic Statistics</A>,
+American Statistical Association, vol. 12(2), pages 221-31, April.
+
+</UL></div><div class="otherversion"><UL><LI class="downfree">BAUWENS, Luc & FIEBIG, Denzil & STEEL, Mark, 1992.
+ "<B><A HREF="http://ideas.repec.org/p/cor/louvco/1992052.html">Estimating End-Use Demand : A Bayesian Approach</A></B>,"
+<A HREF="http://ideas.repec.org/s/cor/louvco.html">CORE Discussion Papers</A> 
+1992052, Université catholique de Louvain, Center for Operations Research and Econometrics (CORE).
+
+</UL></div><LI class="downnone">Hsiao, C. & Mountain, D.C. & Ho, C.F., 1994.
+ "<B><A HREF="/p/fth/socaec/9411.html">A Bayesian Integration of End-Use Metering and Conditional Demand Analysis</A></B>,"
+<A HREF="/s/fth/socaec.html">Papers</A> 
+9411, Southern California - Department of Economics.
+
+
+<BR>
+<div class="publishedas"><UL><LI class="downnone"> Hsiao, Cheng & Mountain, Dean C & Illman, Kathleen Ho, 1995.
+"<B><A HREF="http://ideas.repec.org/a/bes/jnlbes/v13y1995i3p315-26.html">A Bayesian Integration of End-Use Metering and Conditional-Demand Analysis</A></B>,"
+<A HREF="http://ideas.repec.org/s/bes/jnlbes.html">Journal of Business & Economic Statistics</A>,
+American Statistical Association, vol. 13(3), pages 315-26, July.
+
+</UL></div><LI class="downgate"> Dennis J. Aigner & Cynts Sorooshian & Pamela Kerwin, 1984.
+"<B><A HREF="/a/aen/journl/1984v05-03-a06.html">Conditional Demand Analysis for Estimating Residential End-Use Load Profiles</A></B>,"
+<A HREF="/s/aen/journl.html">The Energy Journal</A>,
+International Association for Energy Economics, vol. 0(Number 3), pages 81-98.
+
+
+<LI class="downfree">Bartels, R. & Fiebig, D., 1990.
+ "<B><A HREF="/p/tiu/tiucen/eeac5253-bbf9-4ae2-bf14-e27a7a884b4d.html">Integrating Direct Metering and Conditional Demand Analysis for Estimating End-Use Loads</A></B>,"
+<A HREF="/s/tiu/tiucen.html">Discussion Paper</A> 
+1990-56, Tilburg University, Center for Economic Research.
+
+
+<LI class="downgate"> Sanchez, Marla C & Koomey, Jonathan G & Moezzi, Mithra M & Meier, Alan & Huber, Wolfgang, 1998.
+"<B><A HREF="/a/eee/enepol/v26y1998i8p585-593.html">Miscellaneous electricity in US homes: Historical decomposition and future trends</A></B>,"
+<A HREF="/s/eee/enepol.html">Energy Policy</A>,
+Elsevier, vol. 26(8), pages 585-593, July.
+
+
+</OL>
+<A TARGET=NEW HREF="http://citec.repec.org/cgi-bin/get_data.pl?h=RePEc:ssb:dispap:346&o=all"><B>Full references</B></A> (including those not matched with items on IDEAS)<P></div></div>
+<a name="cites"></A><div class="related-research col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#citations-body" class="collapsed">Citations</a></h2></div><div class="panel-collapse collapse" id="citations-body"><P>
+The <A HREF="http://citec.repec.org/">CitEc</A> project has not yet found citations to this item.
+</div></div>
+<a name="lists"></A><div class="lists-content col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#lists-body" class="collapsed">Lists</a></h2></div><div class="panel-collapse collapse" id="lists-body"><P>
+This item is not listed on Wikipedia, on a <A HREF="/k/">reading list</A> or among the <A HREF="/top/">top items</A> on IDEAS.</div></div>
+<A name="statistics"></A><div class="statistics-content col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#statistics-body" class="collapsed">Statistics</a></h2></div><div class="panel-collapse collapse" id="statistics-body"><p>
+<A      HREF="http://logec.repec.org/scripts/paperstat.pl?h=RePEc:ssb:dispap:346">Access and download statistics</A></div></div>
+<A NAME="correct"></A><div class="corrections col-xs-12 panel"><div class="panel-heading"><h2 class="panel-title"><a data-toggle="collapse" href="#corrections-body" class="collapsed">Corrections</a></h2></div><div class="panel-collapse collapse" id="corrections-body"><p>
+When requesting a correction, please mention this item's handle: RePEc:ssb:dispap:346. See <A HREF="/corrections.html">general information</A> about how to correct material in RePEc.
+<P>
+For technical questions regarding this item, or to correct its authors, title, abstract, bibliographic or download information, contact: <span data-liame2='["no","ssb","m7i7","jbr"]'></span> (J Bruusgaard)</p>
+<P>
+If you have authored this item and are not yet registered with RePEc, we encourage you to do it <A HREF="https://authors.repec.org/new-user">here</A>. This allows to link your profile to this item. It also allows you to accept potential citations to this item that we are uncertain about.
+<P>
+If references are entirely missing, you can add them using <A HREF="http://citec.repec.org/cgi-bin/ui.pl?h=RePEc:ssb:dispap:346">this form</A>.
+<P>
+If the full references list an item that is present in RePEc, but the system did not link to it, you can help with <A HREF="http://citec.repec.org/cgi-bin/get_data.pl?h=RePEc:ssb:dispap:346&o=all">this form</A>.
+<P>
+If you know of missing items citing this one, you can help us creating those links by adding the relevant references in the same way as above, for each refering item. If you are a registered author of this item, you may also want to check the "citations" tab in your profile, as there may be some citations waiting for confirmation.
+<P>
+Please note that corrections may take a couple of weeks to filter through
+the various RePEc services.
+</div>
+</div></div>
+</div>
+            <div class="row hidden-print">
+        <div id="footer">
+            <div class="col-xs-12 col-sm-5 col-sm-offset-3 more-services">
+                <div>
+		<A name="bottom"></A>
+                <h4 style="border-bottom: 1px solid #ccc;">More services</h4>
+                <div class="list-group col-sm-6">
+                    <a href="/cgi-bin/myideas.cgi" class="list-group-item">
+                        <h4 class="list-group-item-heading">MyIDEAS</h4>
+                        <p class="list-group-item-text">Follow series, journals, authors &amp; more</p>
+                    </a>
+                    <a href="http://nep.repec.org/" class="list-group-item">
+                        <h4 class="list-group-item-heading">New papers by email</h4>
+                        <p class="list-group-item-text">Subscribe to new additions to RePEc</p>
+                    </a>
+                    <a href="http://authors.repec.org/" class="list-group-item">
+                        <h4 class="list-group-item-heading">Author registration</h4>
+                        <p class="list-group-item-text">Public profiles for Economics researchers</p>
+                    </a>
+                    <a href="http://ideas.repec.org/top/" class="list-group-item">
+                        <h4 class="list-group-item-heading">Rankings</h4>
+                        <p class="list-group-item-text">Various rankings of research in Economics &amp; related fields</p>
+                    </a>
+                    <a href="http://genealogy.repec.org/" class="list-group-item">
+                        <h4 class="list-group-item-heading">Genealogy</h4>
+                        <p class="list-group-item-text">Who was a student of whom, using RePEc</p>
+                    </a>
+                    <a href="http://biblio.repec.org/" class="list-group-item">
+                        <h4 class="list-group-item-heading">RePEc Biblio</h4>
+                        <p class="list-group-item-text">Curated articles &amp; papers various economics topics</p>
+                    </a>
+                </div>
+                 <div class="list-group col-sm-6">
+                    <a href="http://econacademics.org/" class="list-group-item">
+                        <h4 class="list-group-item-heading">EconAcademics</h4>
+                        <p class="list-group-item-text">Blog aggregator for economics research</p>
+                    </a>
+                    <a href="http://plagiarism.repec.org/" class="list-group-item">
+                        <h4 class="list-group-item-heading">Plagiarism</h4>
+                        <p class="list-group-item-text">Cases of plagiarism in Economics</p>
+                    </a>
+                    <a href="https://ideas.repec.org/jmp.html" class="list-group-item">
+                        <h4 class="list-group-item-heading">Job Market Papers</h4>
+                        <p class="list-group-item-text">RePEc working paper series dedicated to the job market</p>
+                    </a>
+                    <a href="https://ideas.repec.org/fantasy.html" class="list-group-item">
+                        <h4 class="list-group-item-heading">Fantasy League</h4>
+                        <p class="list-group-item-text">Pretend you are at the helm of an economics department</p>
+                    </a>
+                    <a href="https://research.stlouisfed.org/resources.html" class="list-group-item">
+                        <h4 class="list-group-item-heading">Services from the StL Fed</h4>
+                        <p class="list-group-item-text">Data, research, apps &amp; more from the St. Louis Fed</p>
+                    </a>
+                </div>
+            </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-2">
+                 <h4>About RePEc</h4>
+                 <ul>
+                     <li><a href="http://repec.org/">RePEc home</a></li>
+                     <li><a href="/faq.html">FAQ</a></li>
+                     <li><a href="http://blog.repec.org/">Blog</a></li>
+                     <li><a href="/help.html" target="NEW">Help!</a></li>
+                     <li><a href="/team.html">RePEc team</a></li>
+                     <li><a href="/archives.html">Participating archives</a></li>
+                     <li><a href="http://research.stlouisfed.org/privacy.html">Privacy</a></li>
+                     <li><a href="http://research.stlouisfed.org/legal.html">Legal</a></li>
+                 </ul>
+            </div>
+            <div class="col-xs-12 col-sm-2">
+
+                 <h4>How to help</h4>
+                 <ul>
+                     <li><a href="/corrections.html">Corrections</a></li>
+                     <li><a href="/volunteers.html">Volunteers</a></li>
+                     <li><a href="/participate.html">Get papers listed</a></li>
+                     <li><a href="/stepbystep.html">Open a RePEc archive</a></li>
+                 </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-12" style="text-align: center; padding-top: 10px;">
+            This information is provided to you by 
+            <a href="http://ideas.repec.org/">IDEAS</a> at the 
+            <a href="http://research.stlouisfed.org/">Research Division</a> of the <a href="http://www.stlouisfed.org/">Federal Reserve Bank of St. Louis</a> using <a href="http://repec.org/">RePEc</a> data.
+        </div>
+    </div>
+
+
+    </div>
+    </div>
+
+</div>
+
+
+<div id="toplink" class="hidden-print">
+    <a href="#top">Top of page</a>
+</div>
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="/ideas.js"></script>
+    <script src="/pushy.min.js"></script>
+    <!--<script src="/bootstrap.min.js"></script>-->
+    <script>
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement({
+            pageLanguage: 'en',
+            multilanguagePage: true,
+            includedLanguages: 'af,sq,ar,be,bg,ca,zh-CN,zh-TW,hr,cs,da,nl,en,eo,et,tl,fi,fr,gl,de,el,ht,iw,hi,hu,is,id,ga,it,ja,ko,lv,lt,mk,ms,mt,no,fa,pl,pt,ro,ru,sr,sk,sl,es,sw,sv,th,tr,uk,vi,cy,yi',
+            gaTrack: true,
+            gaId: 'UA-23765825-1',
+            //layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL
+          }, 'google_translate_element');
+        }
+    </script>
+    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script>
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-23765825-1']);
+      _gaq.push(['_setDomainName', '.repec.org']);
+      _gaq.push(['_trackPageview']);
+
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+      })();
+    </script>
+
+</BODY>
+</HTML>

@@ -1,0 +1,803 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--[if lt IE 7]> <html class="ie6 oldie" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 7]>    <html class="ie7 oldie" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if IE 8]>    <html class="ie8 oldie" xmlns="http://www.w3.org/1999/xhtml"> <![endif]-->
+<!--[if gt IE 8]><!--> <html xmlns="http://www.w3.org/1999/xhtml"> <!--<![endif]-->
+<head>
+<meta content="width=device-width, initial-scale=1" name="viewport">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<title></title>
+<meta name="title" content=""/>
+<meta http-equiv="keywords" content="">
+<link rel="stylesheet" href="/etc/clientlibs,_foundation,_main.css+designs,_trane,_residential.css.pagespeed.cc.xPyKmg3JK-.css" type="text/css"/>
+<script type="text/javascript" src="/etc/clientlibs/granite/jquery.js.pagespeed.jm.utwOtSA7H-.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/utils.js"></script>
+<script type="text/javascript">//<![CDATA[
+(function($,window,undefined){var http;window.Granite=window.Granite||{};window.Granite.$=window.Granite.$||$;window._g=window._g||{};window._g.$=window._g.$||$;http=Granite.HTTP;$.ajaxSetup({externalize:true,encodePath:true,hook:true,beforeSend:function(jqXHR,s){if(typeof G_IS_HOOKED=="undefined"||!G_IS_HOOKED(s.url)){if(s.externalize){s.url=http.externalize(s.url);}
+if(s.encodePath){s.url=http.encodePathOfURI(s.url);}}
+if(s.hook){var hook=http.getXhrHook(s.url,s.type,s.data);if(hook){s.url=hook.url;if(hook.params){if(s.type.toUpperCase()=='GET'){s.url+='?'+$.param(hook.params);}else{s.data=$.param(hook.params);}}}}},statusCode:{403:function(jqXHR){if(jqXHR.getResponseHeader("X-Reason")==="Authentication Failed"){http.handleLoginRedirect();}}}});$.ajaxSettings.traditional=true;}(jQuery,this));
+//]]></script>
+<script src="/etc/clientlibs/foundation/jquery.js+main.js.pagespeed.jc.-QmpmiDeB4.js"></script><script>eval(mod_pagespeed_lM118bBQQZ);</script>
+<script>eval(mod_pagespeed_Wy3ZB2NUvN);</script>
+<script type="text/javascript">{window.setTimeout(function(){$CQ.getScript("http://localhost:4502/libs/wcm/stats/tracker.js?path=/content/trane-residential/en/products/whats-right-for-my-home");},1);}</script>
+<script type="text/javascript">function trackMVTImpression(){}</script>
+<link rel="icon" type="image/vnd.microsoft.icon" href="/etc/designs/trane/residential/clientlib/images/favicon.ico">
+<link rel="shortcut icon" type="image/vnd.microsoft.icon" href="/etc/designs/trane/residential/clientlib/images/favicon.ico">
+<!-- Open Graph protocol -->
+<meta property="og:title" content="Product Selector"/>
+<meta property="og:type" content="article"/>
+<meta property="og:image" content=""/><!-- TODO -->
+<meta property="og:url" content="http://www.trane.com/residential"/>
+<meta property="og:site_name" content="Trane-Residential"/>
+<meta property="og:description" content="Trane Residential"/>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css"/>
+<link rel="stylesheet" href="/etc/designs/trane/residential/clientlib/css/A.reset.css+font-face.css+trane.css+landing.css+featured_content.css+rte.css+products.css+colorbox.css+productSelector.css+findDealerResults.css,Mcc.ESE9y6wosS.css.pagespeed.cf.LkBnND_3HG.css"/>
+<link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet"/>
+<link rel="stylesheet" href="/etc/designs/trane/residential/clientlib/css/jquery.mCustomScrollbar.css+magnific-popup.css.pagespeed.cc.ICDg8LxlnK.css" type="text/css"/>
+<script type="text/javascript" src="/etc/designs/trane/residential/clientlib/js/libs/jquery-1.10.2.min.js.pagespeed.jm.ZzSiN_5Whq.js"></script>
+<script type="text/javascript" src="/etc/designs/trane/residential/clientlib/js/libs/jquery-ui-1.10.3.min.js.pagespeed.jm.8oxCB8ix0b.js"></script>
+<script src="/etc/designs/trane/residential/clientlib/js/libs,_jquery-validate.min.js+Slide.js+modals.js.pagespeed.jc.-X4VbQrOpq.js"></script><script>eval(mod_pagespeed_YHWnZbBKty);</script>
+<script>eval(mod_pagespeed_zYd2nx0jss);</script>
+<script>eval(mod_pagespeed_HxniWKh8pH);</script>
+<!--[if IE]>
+        <link rel="stylesheet" href="/etc/designs/trane/residential/clientlib/css/ie.css"/>
+    <![endif]-->
+<!--[if lt IE 9]>
+        <script src="/etc/designs/trane/residential/clientlib/js/libs/html5shiv.js"></script>
+        <link rel="stylesheet" href="/etc/designs/trane/residential/clientlib/css/ie8.css"/>
+    <![endif]-->
+<script language="JavaScript" type="text/javascript">$(document).ready(function(){$('.global-menu-container div a').click(function(){var linkName;var link=$(this).attr('href');link=link.split('/residential/');if(link[1]!=undefined){linkName=link[1];}
+else{linkName=link;}
+linkTracking('cont',linkName);});$('.global-utility-links a').click(function(){var linkName;var link=$(this).attr('href');link=link.split('/residential/');if(link[1]!=undefined){linkName=link[1];}
+else{linkName=link;}
+linkTracking('cont',linkName);});$('#mainfooter a').click(function(){var linkName;var link=$(this).attr('href');link=link.split('/residential/');if(link[1]!=undefined){linkName=link[1];}
+else{linkName=link;}
+linkTracking('cont',linkName);});});</script>
+<script type="text/javascript">//<![CDATA[
+
+//]]></script>
+</head>
+<!-- Each template has its own special class -->
+<body class="body-class">
+<div class="parbase clientcontext"><script type="text/javascript" src="/etc/clientlibs/foundation/shared.js.pagespeed.jm.JarHSmweWr.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/granite/underscore.js.pagespeed.jm.OCRGVroean.js"></script>
+<script type="text/javascript" src="/etc/clientlibs/foundation/personalization/kernel.js.pagespeed.jm.4xtSxPxTjy.js"></script>
+<script type="text/javascript">$CQ(function(){CQ_Analytics.SegmentMgr.loadSegments("/etc/segmentation");CQ_Analytics.ClientContextUtils.init("/etc/clientcontext/default","/content/trane-residential/en/products/whats-right-for-my-home");});</script>
+</div>
+<header>
+<div class="header"><header class="global-header">
+<div class="utilnav utilitynav">
+<div class="global-search-container desktopDisplay">
+<div id="top-links">
+<div class="global-utility-links">
+<a href="/residential/en.html" class="">Home</a> |
+<a href="/residential/en/customer-care.html" class="">Contact Us</a> |
+<a href="/residential/en/for-dealers.html" class="" id="Contactus">For Dealers & Distributors</a> |
+<a href="http://www.trane.com/commercial/north-america/us/en.html" target="_blank" class="" id="Tranecommercial"> Trane Commercial <img src="/etc/designs/trane/residential/clientlib/images/xtrane_commercial.gif.pagespeed.ic.qMu_GZ4GPZ.png"/> </a>
+</div>
+<div id="search-container">
+<form action="/residential/en/search.html">
+<input type="text" name="q" placeholder="Search" maxlength="50" value="" id="global_search_search"/>
+<input type="submit" id="global_search_go" value="GO"/>
+</form>
+</div>
+</div>
+</div></div>
+<div class="megamenu parbase"><style>#searchForm .error{border:1px solid red}</style>
+<div id="main" class="global-menu-container">
+<div class="global-menu">
+<a href="/residential/en.html" class="logoahref"><img src="/etc/designs/trane/residential/clientlib/images/xTrane_Logo_full.png.pagespeed.ic.ToUgx26uJI.png" id="trane_logo"/></a>
+<div class="mobileDisplay mobilemenuicon">
+<img src="/etc/designs/trane/residential/clientlib/images/xmenu_icon.png.pagespeed.ic.Tp5axBM0Qx.png"/>
+<p>MENU</p>
+</div>
+<div class="mobileDisplay middlemenuicon">
+<img src="/etc/designs/trane/residential/clientlib/images/xfind_deal_icon.png.pagespeed.ic.b1JliSa-zk.png" class="middelimg"/>
+<p>FIND A DEALER</p>
+</div>
+<div class="mobileDisplay topmenuicons">
+<img src="/etc/designs/trane/residential/clientlib/images/xsearch_icon.png.pagespeed.ic.oCngrJ_Nqg.png"/>
+<p>SEARCH</p>
+</div>
+<div id="menu" class="menu-links">
+<ul>
+<!-- FIRST TIER (Main Nav) PAGES looping -->
+<li>
+<a href="/residential/en/products.html" class="active">Products<span class="fa fa-menuIcon visible-phone"></span></a>
+<div style="display:none;">/content/trane-residential/en/products/whats-right-for-my-home</div>
+<div style="display:none;">/content/trane-residential/en/products</div>
+<div class="drop-down products">
+<div class="drop-down-container">
+<!-- SECOND TIER PAGES looping -->
+<div class="column ">
+<h2><a href="/residential/en/products/whats-right-for-my-home.html">Product Selector</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column two">
+<h2><a href="/residential/en/products/heating-and-cooling.html">Heating and Cooling<span class="fa fa-menuIcon visible-phone"> </span></a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+<li>
+<a href="/residential/en/products/heating-and-cooling/air-conditioners.html">Air Conditioners</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/air-handlers.html">Air Handlers</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/gas-furnaces.html">Gas Furnaces</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/oil-furnaces.html">Oil Furnaces</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/heat-pumps.html">Heat Pumps</a>
+</li>
+</ul>
+<ul>
+<li>
+<a href="/residential/en/products/heating-and-cooling/comfort-coil.html">Coils</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/packaged-systems.html">Packaged Systems</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/geothermal-systems.html">Geothermal Systems</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/ductless-systems.html">Ductless Systems</a>
+</li>
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/products/thermostats-and-controls.html">Thermostat Controls</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/products/add-on-components.html">Add-On Components<span class="fa fa-menuIcon visible-phone"> </span></a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+<li>
+<a href="/residential/en/products/add-on-components/air-quality.html">Air Quality</a>
+</li>
+<li>
+<a href="/residential/en/products/add-on-components/zoning.html">Zoning</a>
+</li>
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/products/nexia-home-automation.html">Nexia™ Home Intelligence</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</li>
+<li>
+<a href="/residential/en/buying-a-trane.html">Buying A Trane<span class="fa fa-menuIcon visible-phone"></span></a>
+<div style="display:none;">/content/trane-residential/en/products/whats-right-for-my-home</div>
+<div style="display:none;">/content/trane-residential/en/buying-a-trane</div>
+<div class="drop-down products">
+<div class="drop-down-container">
+<!-- SECOND TIER PAGES looping -->
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/about-pricing.html">About Pricing</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/savings-and-offers.html">Savings & Offers</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/tax-credits.html">Tax Credits</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/about-trane-dealers.html">About Trane Dealers</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/questions-to-ask-a-dealer.html">Questions To Ask A Dealer</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/finance.html">Finance</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/buying-a-trane/find-a-dealer.html">Find a Dealer</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</li>
+<li>
+<a href="/residential/en/why-us.html">Why Us<span class="fa fa-menuIcon visible-phone"></span></a>
+<div style="display:none;">/content/trane-residential/en/products/whats-right-for-my-home</div>
+<div style="display:none;">/content/trane-residential/en/why-us</div>
+<div class="drop-down products">
+<div class="drop-down-container">
+<!-- SECOND TIER PAGES looping -->
+<div class="column ">
+<h2><a href="/residential/en/why-us/history.html">History</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/why-us/reliability.html">Reliability</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/why-us/testing-facility.html">Testing Facility</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/why-us/trane-around-the-world.html">Trane Around The World</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</li>
+<li>
+<a href="/residential/en/resources.html">Resources<span class="fa fa-menuIcon visible-phone"></span></a>
+<div style="display:none;">/content/trane-residential/en/products/whats-right-for-my-home</div>
+<div style="display:none;">/content/trane-residential/en/resources</div>
+<div class="drop-down products">
+<div class="drop-down-container">
+<!-- SECOND TIER PAGES looping -->
+<div class="column ">
+<h2><a href="/residential/en/resources/hvac-basics.html">HVAC Basics</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/resources/glossary.html">Glossary</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/resources/energy-savings.html">Energy Savings</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/resources/improve-air-quality.html">Improve Air Quality</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/resources/smart-home-automation.html">Smart Home Automation</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/resources/about-geothermal.html">About Geothermal</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/resources/for-your-home.html">For Your Home</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</li>
+<li>
+<a href="/residential/en/for-owners.html">Owners Support<span class="fa fa-menuIcon visible-phone"></span></a>
+<div style="display:none;">/content/trane-residential/en/products/whats-right-for-my-home</div>
+<div style="display:none;">/content/trane-residential/en/for-owners</div>
+<div class="drop-down products">
+<div class="drop-down-container">
+<!-- SECOND TIER PAGES looping -->
+<div class="column ">
+<h2><a href="/residential/en/for-owners/maintenance-tips.html">Maintenance Tips</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/for-owners/owners-guides.html">Owners Guides</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/for-owners/parts-and-filters.html">Parts & Filters</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/for-owners/troubleshooting.html">Troubleshooting</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+<div class="column ">
+<h2><a href="/residential/en/for-owners/warranty-and-registration.html">Warranty & Registration</a></h2>
+<ul>
+<!-- THIRD TIER PAGES looping -->
+</ul>
+</div>
+</div>
+<div class="spacer"></div>
+</div>
+</li>
+<li class="mobileDisplay"><a href="/residential/en/customer-care.html">Contact Us</a></li>
+</ul>
+</div><div class="global-find-dealer">
+<img src="/etc/designs/trane/residential/clientlib/images/xComfort_Specialist_Large.png.pagespeed.ic.E_TG7CEGfc.png" class="desktopinlineDisplay"/>
+<div class="global-find-dealer-zip">
+<form id="findDealer" action="/bin/trane/residential/dealerlocator/POST.servlet" method="POST">
+<input type="hidden" name="currentPage" id="comparisonPage" value="/content/trane-residential/en/products/whats-right-for-my-home"/>
+<input type="hidden" name="nextPage" id="comparisonPage" value="/content/trane-residential/en/buying-a-trane/find-a-dealer.html"/>
+<label class="desktopinlineDisplay">FIND A DEALER</label>
+<div class="findsearchplaceholder">
+<input type="text" id="find_dealer_zip" name="zip" placeholder="Enter ZIP/Postal Code" maxlength="7" class="jsfind_dealer_zip findsearchinput required alpha-numeric" value=""/>
+<input id="find_dealer_go" class="findsearchgo" type="submit" value="GO"/>
+</div>
+</form>
+</div>
+</div>
+<div class="global-search-div">
+<div class="global-search-cont">
+<form id="searchForm" action="/residential/en/search.html">
+<div class="findsearchplaceholder">
+<input type="text" name="q" placeholder="Search" value="" maxlength="50" class="mobilesearch jsfindsearchinput findsearchinput" title="Enter the Search keyword"/>
+<input type="submit" value="GO" class="findsearchgo"/>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+<script>$(document).ready(function(){$('#searchForm').validate({rules:{q:{mobilesearch:true}},invalidHandler:function(event,validator){var errors=validator.numberOfInvalids();if(errors){$(".jsfindsearchinput").val('Please enter keyword to search.');$(".jsfindsearchinput").attr("style","color:red");}},errorPlacement:function(){},submitHandler:function(form){form.submit();}});$(".jsfindsearchinput").on('click touchstart',function(){if($(".jsfindsearchinput").val()=='Please enter keyword to search.'){$(".jsfindsearchinput").val('');$(".jsfindsearchinput").attr("style","color:#6D6D6D");}});});jQuery.validator.addMethod("mobilesearch",function(){if($(".jsfindsearchinput").val()=='Please enter keyword to search.'||$(".jsfindsearchinput").val()==''){return false;}else{return true;}});</script>
+</div>
+</header>
+</div>
+</header>
+<div class="horizontal_break_gray">
+</div>
+<div class="contentArea productPage">
+<div class="landingContent">
+<section id="oneColumn">
+<div class="breadcrumb">
+<p class="breadcrumb-nav">
+<a href="/residential/en.html">Home</a>&nbsp;&gt;&nbsp;<a href="/residential/en/products.html">Products</a>&nbsp;&gt;&nbsp;<span class="current">Product Selector</span>
+</p></div>
+<section class="twoColumnContentWrapper">
+<div class="content parsys"><div class="productselector section">
+<!--Form Section Starting here-->
+<script src="https://maps.googleapis.com/maps/api/js?v=3.9&sensor=true" type="text/javascript"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js"></script>
+<script>$(function(){$(".slider a").draggable();});</script>
+<form action="" method="post" id="configurator_form" data-url="/content/trane-residential/en/products/whats-right-for-my-home.html">
+<!-- Configurator step 1 -->
+<section class="twoColumnContentWrapper config_step" id="step1">
+<section class="contentHeader">
+<article class="main_header">
+<h1 class="PageHeader">PRODUCT SELECTOR</h1>
+</article>
+</section>
+<section class="contentArea productCategory productDetails">
+<span class="step-accordion">
+<h1 class="contentHeaders"><a href="javascript:void(0)">Step 1 / 3:</a><span id="detail_heating" class="details"></span><span id="detail_house" class="details"></span><a class="edit display_none" id="edit_step1" href="javascript:void(0)">Edit</a></h1>
+<span class="article-arrow"></span>
+</span>
+<div class="step1_field">
+<p class="homeDetails">First, tell us little about your home:</p>
+<span class="step-marker">step <span class="active-step">1 </span>/ 3:</span>
+<div class="step1_left">
+<img src="/etc/designs/trane/residential/clientlib/images/productSelector/233x156ximg_house.png.pagespeed.ic.YDXMfDWuAQ.png" width="233px" height="156px">
+<p class="img-des">Tell us about your needs and we'll recommend the right system for you and your home.</p>
+</div>
+<div class="step1_right">
+<div class="productselectorsearch">
+<h3 class="zip_h3">Zip Code:</h3>
+<div class="border-dadada">
+<span class="err-tooltip display_none" id="tooltip_zip">* This field is required</span>
+<div class="zip_search_field ui-corner-all" id="zip_search_field">
+<input type="text" class="dealer_zip_input" name="postal_code" id="postalcode" maxlength="7" placeholder="ZIP Code" value="">
+<input type="hidden" class="stateName" value=""/>
+</div>
+</div>
+<!--<div class="zip_error config_error">Please enter a valid zip or postal code</div>-->
+</div>
+<span class="err-tooltip display_none" id="tooltip_1">*A selection is required</span>
+<h3 class="fuel_hdr">I'M INTERESTED IN:</h3>
+<div class="radio_group ui-buttonset ui-corner-all" id="fuel_type">
+<input type="radio" name="fuel_type" id="fuel_type_1" value="Heating" data-qrystr="heating" class="ui-helper-hidden-accessible">
+<label for="fuel_type_1" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left" role="button" aria-disabled="false">
+<span class="ui-button-text">Heating</span>
+</label>
+<input type="radio" name="fuel_type" id="fuel_type_2" value="Cooling" data-qrystr="cooling" class="ui-helper-hidden-accessible">
+<label for="fuel_type_2" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only" role="button" aria-disabled="false">
+<span class="ui-button-text">Cooling</span>
+</label>
+<input type="radio" name="fuel_type" id="fuel_type_3" value="Heating & Cooling" data-qrystr="both" class="ui-helper-hidden-accessible">
+<label for="fuel_type_3" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right" role="button" aria-disabled="false">
+<span class="ui-button-text">Both</span>
+</label>
+</div>
+<!--<div class="fuel_error config_error">Please select a interest</div>-->
+<span class="err-tooltip display_none" id="tooltip_2">*A selection is required</span>
+<h3 class="room_hdr">FOR MY:</h3>
+<div class="radio_group ui-buttonset ui-corner-all" id="room">
+<input type="radio" name="room_type" id="room_type_1" value="Entire House" data-qrystr="entireHome" class="ui-helper-hidden-accessible">
+<label id="entire_home_label" for="room_type_1" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-left width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">ENTIRE HOME</span>
+</label>
+<input type="radio" name="room_type" id="room_type_2" value="Single Room" data-qrystr="singleRoom" class="ui-helper-hidden-accessible">
+<label id="room_label" for="room_type_2" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-right width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">SINGLE ROOM</span>
+</label>
+</div>
+<!--<div class="room_error config_error">Please Select a Room type</div>-->
+<span class="err-tooltip display_none" id="tooltip_3">*A selection is required</span>
+<h3 class="square_footage_hdr">WHAT IS THE SQUARE FOOTAGE OF YOUR HOME?</h3>
+<div class="radio_group ui-buttonset ui-corner-all" id="square_footage">
+<input type="radio" name="square_footage_type" id="square_footage_type_1" value="less than 1000" data-qrystr="less1000" class="ui-helper-hidden-accessible">
+<label for="square_footage_type_1" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-top-left width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">LESS THAN 1000</span>
+</label>
+<input type="radio" name="square_footage_type" id="square_footage_type_2" value="1000-2000" data-qrystr="max2000" class="ui-helper-hidden-accessible">
+<label for="square_footage_type_2" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-top-right width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">1000 - 2000</span>
+</label>
+<input type="radio" name="square_footage_type" id="square_footage_type_3" value="2000-3000" data-qrystr="max3000" class="ui-helper-hidden-accessible">
+<label for="square_footage_type_3" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-bottom-left width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">2000 - 3000</span>
+</label>
+<input type="radio" name="square_footage_type" id="square_footage_type_4" value="3000+" data-qrystr="more3000" class="ui-helper-hidden-accessible">
+<label for="square_footage_type_4" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-bottom-right width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">3000+</span>
+</label>
+<!--<div class="square_footage_error config_error">Please Select Footage type</div>-->
+</div>
+<span class="err-tooltip display_none" id="tooltip_4">*A selection is required</span>
+<h3 class="system_hdr">WHAT TYPE OF SYSTEM ARE YOU LOOKING FOR?</h3>
+<div class="radio_group ui-buttonset ui-corner-all" id="system">
+<input type="radio" name="system_type" id="system_type_1" value="Split system" data-qrystr="splitSystemAH" class="ui-helper-hidden-accessible">
+<label for="system_type_1" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-top-left width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text padding-10px-5pct">SPLIT SYSTEM<p class="sys_des">(Air Handler & Heat Pump)</p></span>
+</label>
+<input type="radio" name="system_type" id="system_type_2" value="Split system conditioner" data-qrystr="splitSystemAC" class="ui-helper-hidden-accessible">
+<label for="system_type_2" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-top-right width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text padding-10px-5pct">SPLIT SYSTEM<p class="sys_des">(Air Conditioner & Furnace)</p></span>
+</label>
+<input type="radio" name="system_type" id="system_type_3" value="Packaged system" data-qrystr="packagedSystem" class="ui-helper-hidden-accessible">
+<label for="system_type_3" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-bottom-left width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">PACKAGED SYSTEM</span>
+</label>
+<input type="radio" name="system_type" id="system_type_4" value="I DON'T KNOW" data-qrystr="dontKnow" class="ui-helper-hidden-accessible">
+<label for="system_type_4" aria-pressed="false" class="ui-button ui-widget ui-state-default ui-button-text-only ui-corner-bottom-right width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">I DON'T KNOW</span>
+</label>
+<!--<div class="system_error config_error">Please Select System type</div>-->
+</div>
+</div>
+<div class="prev_next">
+<a href="javascript:void(0)" class="link_next link compareButtonSkin" id="step1_next">Continue to Step 2</a>
+<a href="javascript:void(0)" class="link_next link compareButtonSkin" id="step1_next_desktop">Continue to Step 2</a>
+</div>
+</div>
+</section>
+<div class="clearfix"></div>
+</section>
+<!-- Configurator step 2 -->
+<section class="twoColumnContentWrapper config_step" id="step2">
+<section class="">
+<span class="step-accordion padding-top-23px">
+<h1 class="contentHeaders"><a href="javascript:void(0)">Step 2 / 3:</a><span id="energy" class="details"></span><a class="edit display_none" id="edit_step2" href="javascript:void(0)">Edit</a></h1>
+<span class="article-arrow"></span>
+</span>
+</section>
+<section class="contentArea productCategory productDetails">
+<div class="step2_field">
+<p class="step2_p">Next,Tell us about your Energy Usage:</p>
+<span class="step-marker">step <span class="active-step">2 </span>/ 3:</span>
+<div class="step2_left">
+<img src="/etc/designs/trane/residential/clientlib/images/xstep2.png.pagespeed.ic.dZOqE2umYR.png">
+<p class="img-des">Different homes have different sources of energy.In order to help you to find the best system for you and your family,first find what type of energy source(s) your home uses.</p>
+<!-- Home size field. Fields did not match up exactly with current fields. Current site has 8 size options. Picked size values that fell in the below ranges. Change radio values if needed. -->
+</div>
+<div class="step2_right">
+<h3 class="width_111pct" id="energytitleresource">WHAT ENERGY SOURCES ARE AVAILABLE IN YOUR HOME?</h3>
+<span class="err-tooltip display_none" id="tooltip_5">*A selection is required</span>
+<h3 class="source_select" id="energysubtitleresource">Select all that apply to you.</h3>
+<div class="radio_group ui-buttonset ui-corner-all" id="energy_resource">
+<input type="checkbox" name="energy_resource_type" id="energy_resource_type_1" value="Oil" data-qrystr="oil" class="ui-helper-hidden-accessible">
+<label for="energy_resource_type_1" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">OIL</span>
+</label>
+<input type="checkbox" name="energy_resource_type" id="energy_resource_type_2" value="Natural Gas" data-qrystr="naturalGas" class="ui-helper-hidden-accessible">
+<label for="energy_resource_type_2" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">NATURAL GAS</span>
+</label>
+<input type="checkbox" name="energy_resource_type" id="energy_resource_type_3" value="Propane" data-qrystr="propane" class="ui-helper-hidden-accessible">
+<label for="energy_resource_type_3" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">PROPANE</span>
+</label>
+<!--input type="checkbox" name="energy_resource_type" id="energy_resource_type_4" value="Electricity" data-qrystr="electricity" class="ui-helper-hidden-accessible"-->
+<span class="useelectricitytool">Tool assumes the use of electricity</span>
+<!--<div class="energy_resource_error config_error">Please Select energy resource type</div>-->
+</div>
+<!--slider code starts here-->
+<p class="slider_p">How concerned are you about energy savings?</p>
+<div class="sliderContainer">
+<div id="slider1" class="slider"></div>
+</div>
+<div class="concern_p">NOT CONCERNED</div><div class="concern_p flt-rgt">VERY CONCERNED</div>
+<input id="slider1_value" type="hidden" name="slider1_value"/>
+<p class="slider_p">Which do you care more about?</p>
+<div class="sliderContainer">
+<div id="slider2" class="slider"></div>
+</div>
+<!-- <div class="concern_cost">LOW PURCHASE COST</div><div class="concern_cost margin-left-right-20pct">LONG_TERM SAVINGS</div>  -->
+<div class="concern_p">LOW PURCHASE COST</div><div class="concern_p flt-rgt">LONG-TERM SAVINGS</div>
+<input id="slider2_value" type="hidden" name="slider2_value"/>
+<!--slider code ends here-->
+<div class="prev_next"><a href="javascript:void(0)" class="link_next compareButtonSkin link" id="step2_next">Continue to Step 3</a></div>
+<div class="prev_next"><a href="javascript:void(0)" class="link_next compareButtonSkin link" id="step2_next_desktop">Continue to Step 3</a></div>
+</div>
+</div>
+</section>
+</section>
+<!-- Configurator step 3 -->
+<section class="twoColumnContentWrapper config_step" id="step3">
+<section class="contentHeader">
+<span class="step-accordion padding-top-40px">
+<h1 class="contentHeaders"><a href="javascript:void(0)">Step 3 / 3:</a></h1>
+<span class="article-arrow"></span>
+</span>
+</section>
+<section class="contentArea productCategory productDetails">
+<section>
+<article class="main_header">
+<h1 class="PageHeader font-size-24px step3_para">Choose any of the following that concern you:</h1>
+<span class="step-marker margin-step">step <span class="active-step">3 </span>/ 3:</span>
+</article>
+<div class="step3_field">
+<div class="step3_left">
+<img src="/etc/designs/trane/residential/clientlib/images/xhouseimg3.png.pagespeed.ic.A8w2i_gZRV.png">
+<p class="img-des">Comfort is more than just about the temperature of your home.Your HVAC system can be tailored to your family's prefrences and health neeeds.</p>
+</div>
+<span class="err-tooltip display_none" id="tooltip_6">*A selection is required</span>
+<div class="step3_right">
+<div class="radio_group ui-buttonset step3_buttons ui-corner-all" id="user_choice">
+<input type="checkbox" name="user_choice_type" id="user_choice_type_1" value="Allergens" data-qrystr="allergens" class="ui-helper-hidden-accessible">
+<label for="user_choice_type_1" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">ALLERGENS</span>
+</label>
+<input type="checkbox" name="user_choice_type" id="user_choice_type_2" value="ODORS AND MOLD" data-qrystr="odorMold" class="ui-helper-hidden-accessible">
+<label for="user_choice_type_2" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">ODORS AND MOLD</span>
+</label>
+<input type="checkbox" name="user_choice_type" id="user_choice_type_3" value="DRY AIR" data-qrystr="dryAir" class="ui-helper-hidden-accessible">
+<label for="user_choice_type_3" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">DRY AIR</span>
+</label>
+<input type="checkbox" name="user_choice_type" id="user_choice_type_4" value="HUMIDITY CONTROL" data-qrystr="humidityControl" class="ui-helper-hidden-accessible">
+<label for="user_choice_type_4" aria-pressed="false" class="step2-label ui-button ui-widget ui-state-default ui-button-text-only ui-corner-all width-45pct" role="button" aria-disabled="false">
+<span class="ui-button-text">HUMIDITY CONTROL</span>
+</label>
+<!--<div class="energy_resource_error config_error">Please Select energy resource type</div>-->
+</div>
+<div class="final_results" id="step3_next"><p>GET RESULTS <span class="fa fa-chevron-right"></span></p></div>
+</div>
+</div>
+</section>
+</section>
+</section>
+</form>
+<!--Form Section End here-->
+</div>
+</div>
+</section>
+<div class="leftnav"><div class="left-nav ">
+<ul>
+<li><h2>Products</h2><span class="border"></span></li>
+<!-- FIRST TIER (Current Nav Root) PAGES looping -->
+<!-- This piece of code decides if the subNavPage is expanded based on the subNavChildPage hidden options -->
+<li>
+<a href="/residential/en/products/whats-right-for-my-home.html" class="active selected">
+Product Selector</a>
+<span class="border"></span>
+</li>
+<!-- This piece of code decides if the subNavPage is expanded based on the subNavChildPage hidden options -->
+<li class="has_sub">
+<a href="/residential/en/products/heating-and-cooling.html" class="active ">
+<span class="fa fa-chevron-right"></span>
+Heating and Cooling</a>
+<ul>
+<li>
+<a href="/residential/en/products/heating-and-cooling/air-conditioners.html" class="active ">
+Air Conditioners</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/air-handlers.html" class="active ">
+Air Handlers</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/gas-furnaces.html" class="active ">
+Gas Furnaces</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/oil-furnaces.html" class="active ">
+Oil Furnaces</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/heat-pumps.html" class="active ">
+Heat Pumps</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/comfort-coil.html" class="active ">
+Coils</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/packaged-systems.html" class="active ">
+Packaged Systems</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/geothermal-systems.html" class="active ">
+Geothermal Systems</a>
+</li>
+<li>
+<a href="/residential/en/products/heating-and-cooling/ductless-systems.html" class="active ">
+Ductless Systems</a>
+</li>
+</ul>
+<span class="border"></span>
+</li>
+<!-- This piece of code decides if the subNavPage is expanded based on the subNavChildPage hidden options -->
+<li class="has_sub">
+<a href="/residential/en/products/thermostats-and-controls.html" class="active ">
+<span class="fa fa-chevron-right"></span>
+Thermostat Controls</a>
+<ul>
+<li>
+<a href="/residential/en/products/thermostats-and-controls/connected-controls.html" class="active ">
+Connected Controls</a>
+</li>
+<li>
+<a href="/residential/en/products/thermostats-and-controls/thermostats-controls.html" class="active ">
+Thermostats Controls</a>
+</li>
+</ul>
+<span class="border"></span>
+</li>
+<!-- This piece of code decides if the subNavPage is expanded based on the subNavChildPage hidden options -->
+<li class="has_sub">
+<a href="/residential/en/products/add-on-components.html" class="active ">
+<span class="fa fa-chevron-right"></span>
+Add-On Components</a>
+<ul>
+<li>
+<a href="/residential/en/products/add-on-components/air-quality.html" class="active ">
+Air Quality</a>
+</li>
+<li>
+<a href="/residential/en/products/add-on-components/zoning.html" class="active ">
+Zoning</a>
+</li>
+</ul>
+<span class="border"></span>
+</li>
+<!-- This piece of code decides if the subNavPage is expanded based on the subNavChildPage hidden options -->
+<li>
+<a href="/residential/en/products/nexia-home-automation.html" class="active ">
+Nexia™ Home Intelligence</a>
+<span class="border"></span>
+</li>
+</ul>
+</div>
+</div>
+</section>
+<div class="content-btm parsys">
+</div>
+<div class="content-inherit parsys iparsys"><div class="iparys_inherited"><div class="content-inherit parsys iparsys"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="horizontal_break_orange">
+</div>
+<div class="footer">
+<a href="#" class="scrollToTop"><span class="fa fa-eject"></span></a>
+<!--  ************************************************* START FOOTER *******************************************************  -->
+<footer id="mainfooter">
+<div class="mobileDisplay topfooternav">
+<a href="/residential/en/for-dealers.html">For Dealers & Distributors</a>&nbsp;|&nbsp;<a href="http://www.trane.com/commercial/north-america/us/en.html" target="_blank"> Trane Commercial
+<img src="/etc/designs/trane/residential/clientlib/images/xtrane_commercial.gif.pagespeed.ic.qMu_GZ4GPZ.png"></a>
+</div>
+<a> © 2014 Trane</a>
+&nbsp;|&nbsp;
+<a href="/residential/en/privacy-policy.html">Privacy Policy</a>
+&nbsp;|&nbsp;
+<a href="/residential/en/terms-and-conditions.html">Terms of Use</a>
+&nbsp;|&nbsp;
+<a href="/residential/en/news.html">News Room</a>
+<div class="footerbtncon">
+<a href="http://company.ingersollrand.com/ircorp/en/index.html" target="_blank" class="footerIRicons"><img src="/content/dam/Trane/residential/other/xIR.gif.pagespeed.ic._bouSW0rSN.png" alt="Ingersoll Rand" id="IR_logo"/></a>
+<div class="footer-social-links">
+<span class="desktopinlineDisplay footerconus">CONNECT WITH US</span>
+<a href="https://twitter.com/trane" target="_blank" class="tw_link">
+<img src="/etc/designs/trane/residential/clientlib/images/xtwitter.png.pagespeed.ic.QfN1Ts86cH.png" alt="Twitter"/></a>
+<a href="https://www.facebook.com/Trane" target="_blank" class="fb_link">
+<img src="/etc/designs/trane/residential/clientlib/images/xfacebook.png.pagespeed.ic.sLKdd41mO8.png" alt="Facebook"/></a>
+<a href="http://www.youtube.com/thetranecompany" target="_blank" class="yt_link">
+<img src="/etc/designs/trane/residential/clientlib/images/xyoutube.png.pagespeed.ic.RuqAATy4un.png" alt="YouTube"/></a>
+</div>
+</div>
+</footer>
+<!--  ************************************************* END FOOTER *******************************************************  -->
+<!--           --------------------------JavaScript Includes----------------------------             -->
+<script src="/etc/designs/trane/residential/clientlib/js/jquery.featured-content.js.pagespeed.jm.0Svg2b5SQe.js"></script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="/etc/designs/trane/residential/clientlib/js/trane.js.pagespeed.jm.-IRyxTvehr.js"></script>
+<script src="/etc/designs/trane/residential/clientlib/js/geolocation.js.pagespeed.jm.-FCDiNqnFP.js"></script>
+<!--[if lt IE 10]>
+        <script src="/etc/designs/trane/residential/clientlib/js/libs/modernizr.custom.js" type="text/javascript"></script>
+        <script src="http://afarkas.github.com/webshim/demos/js-webshim/minified/polyfiller.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            $.webshims.setOptions('geolocation', {
+                confirmText: '{location} wants to know your position. It is Ok to press Ok.'
+            });
+            $.webshims.polyfill();
+        </script>
+        <![endif]-->
+<script type="text/javascript">var zip="";if(!(navigator.appVersion.indexOf('MSIE')>=0))zip=$('#find_dealer_zip').val();$(document).ready(function(){$(".scrollToTop").hide();var tranescnWdh1=window.innerWidth||document.documentElement.clientWidth||document.body.clientWidth;var $wdt2=640;if(tranescnWdh1<$wdt2){$(window).scroll(function(){if($(this).scrollTop()>100){$('.scrollToTop').fadeIn();}else{$('.scrollToTop').fadeOut();}});$('.scrollToTop').click(function(){$('html, body').animate({scrollTop:0},800);return false;});}});</script>
+</div>
+<div class="servicecomponents cloudservices"><div class="sitecatalyst cloudservice"><script src="/etc/clientlibs/foundation,_sitecatalyst,_sitecatalyst.js+foundation,_sitecatalyst,_util.js+mac,_mac-sc.js+foundation,_sitecatalyst,_plugins.js.pagespeed.jc.mDdwZGtm8z.js"></script><script>eval(mod_pagespeed_Vtipq1CXLB);</script>
+<script>eval(mod_pagespeed_KYWNDJAxvA);</script>
+<script type="text/javascript" src="/content/trane-residential/_jcr_content/analytics.sitecatalyst.js"></script>
+<script>eval(mod_pagespeed_IHgiDKGxe$);</script>
+<script>eval(mod_pagespeed_aLwgx_FIMb);</script>
+<script type="text/javascript">CQ_Analytics.Sitecatalyst.frameworkComponents=['foundation/components/page'];CQ_Analytics.Sitecatalyst.updateEvars=function(options){this.frameworkMappings=[];this.frameworkMappings.push({scVar:"pageName",cqVar:"pagedata.title",resourceType:"foundation/components/page"});for(var i=0;i<this.frameworkMappings.length;i++){var m=this.frameworkMappings[i];if(!options||options.compatibility||(options.componentPath==m.resourceType)){CQ_Analytics.Sitecatalyst.setEvar(m);}}}
+CQ_Analytics.CCM.addListener("storesinitialize",function(e){var collect=true;var lte=s.linkTrackEvents;s.pageName="content:trane-residential:en:products:whats-right-for-my-home";CQ_Analytics.Sitecatalyst.collect(collect);if(collect){CQ_Analytics.Sitecatalyst.updateEvars();var s_code=s.t();if(s_code)document.write(s_code);s.linkTrackEvents=lte;if(s.linkTrackVars.indexOf('events')==-1){delete s.events};$CQ(document).trigger("sitecatalystAfterCollect");}});</script>
+<script type="text/javascript">if(navigator.appVersion.indexOf('MSIE')>=0)document.write(unescape('%3C')+'\!-'+'-')</script>
+<noscript><img src="http://traneresidential.112.2o7.net/b/ss/traneresidential,tranecom/1/H.25--NS/1425354281591?cdp=2&amp;gn=content%3Atrane-residential%3Aen%3Aproducts%3Awhats-right-for-my-home" height="1" width="1" border="0" alt=""/></noscript>
+<span data-tracking="{event:'pageView', values:{}, componentPath:'foundation/components/page'}"></span>
+</div>
+</div>
+</body>
+</html>

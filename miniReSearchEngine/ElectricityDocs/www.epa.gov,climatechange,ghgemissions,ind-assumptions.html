@@ -1,0 +1,505 @@
+ <!DOCTYPE html><html lang="en">
+    <!--EPA Template, OneEPA Web, 17 November 2010 -->
+    <head>
+        <meta charset="utf-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=8"/>
+        <title>Individual Emissions - Household Emissions Calculator Assumptions and References | Climate Change | US EPA</title>
+        <!-- Dc.description meta keyword -->
+        <meta name="DC.description" content="This page provides information on how emissions are calculated for EPA's Personal Greenhouse Gas Emissions Calculator."/>
+        <meta name="keywords" content=" thermostat, energy use, waste disposal, fuel oil, natural gas, electricity, transportation, algorithm, tool, assumptions, emissions calculations, climate change,Global warming,"/>
+        <!-- Dc.Title meta keyword -->
+        <meta name="DC.title" content="Individual Emissions - Household Emissions Calculator Assumptions and References"/>
+        <meta name="DC.Subject.epabrm" content=""/>
+        <meta name="DC.type" content="Data &amp; Tools,"/>
+        <meta name="DC.Subject.epachannel" content="Science &amp; Technology,Learn the Issues,"/>
+        <meta name="DC.Subject.epacat" content=""/>
+        <meta name="DC.Subject.epaect" content=""/>
+        <meta name="DC.Subject.epaemt" content=""/>
+        <meta name="DC.Subject.epahealth" content=""/>
+        <meta name="DC.Subject.eparit" content="Waste Generation,"/>
+        <meta name="DC.Subject.eparat" content=""/>
+        <meta name="DC.Subject.epaopt" content=""/>
+        <meta name="DC.Subject.epappt" content="Fuel Economy,Energy Efficiency,Waste Reduction,"/>
+        <meta name="DC.Subject.eparegulation" content=""/>
+        <meta name="DC.Subject.epasubstance" content="Light Bulbs,Municipal Solid Waste,Greenhouse Gases,Natural Gas,Oil,"/>
+        <meta name="DC.Subject.epaindustry" content=""/>
+        <meta name="DC.audience" content=""/>
+        <meta name="DC.coverage" content=""/>
+        <!-- DC.creator meta keyword -->
+        <meta name="DC.creator" content="US EPA, Climate Change Division"/>
+        <meta name="DC.language" content="en"/>
+        <!-- DC.date.created meta keyword -->
+        <meta name="DC.date.created" content="2012-07-12"/>
+        <!-- DC.date.modified meta keyword -->
+        <meta name="DC.date.modified" content="2012-08-01"/>
+        <!-- DC.date.reviewed meta keyword -->
+        <meta name="DC.date.reviewed" content="2013-08-01"/>
+        <!-- DC.date.archivedate meta keyword -->
+        <meta name="DC.date.archivedate" content="0001-01-01"/>
+        <meta name="viewport" content="width=device-width; initial-scale=1.0"/>
+        <link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"/>
+        <link type="application/atom+xml" title="EPA.gov News" rel="alternate" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSRecentNews"/><link rel="alternate" type="application/atom+xml" title="EPA.gov Headquarters Press Releases" href="http://yosemite.epa.gov/opa/admpress.nsf/RSSByLocation?open&location=Headquarters" />
+        <link type="application/atom+xml" title="Greenversations, EPA's Blog" rel="alternate" href="http://blog.epa.gov/blog/feed/"/>
+        <link type="application/rdf+xml" title="ICRA labels" rel="meta" href="http://www.epa.gov/labels.rdf"/>
+        <!--BEGIN local-css-->  <link rel="stylesheet" href="/climatechange/styles/main.css"/>  <!-- END local-css -->
+        <link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/epa.css"/> 
+                <!--[if IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie7.css"/><![endif]-->
+				<!--[if lt IE 7]><link rel="stylesheet" href="http://www.epa.gov/epafiles/templates/webcms/css/ie6.css"/><![endif]-->
+                  	 
+        <script type="text/javascript" src="/quickedit/quickedit.js"> </script>
+    </head>
+    <body class="basic">
+        <!--googleoff: index--><p id="sitewidec"></p>
+        <p class="skip">Jump to <a title="Jump to main content" href="#main">main content
+				</a> or 
+				<a title="Jump to area navigation." href="#areanav">area navigation</a>.
+				</p>
+        <div id="header">
+            <!-- START EPA HEADER -->
+            <p>
+                <a title="US EPA Home Page" href="http://www.epa.gov/">
+                    <img src="http://www.epa.gov/epafiles/templates/webcms/css/i/print-epa-logo.gif" alt="US Environmental Protection Agency logo"/>
+                </a>
+            </p>
+            <!-- START AREA SEARCH -->
+            <form method="get" id="EPAsearch" action="http://nlquery.epa.gov/epasearch/epasearch">
+                <fieldset>
+                    <ol>
+						<li id="azindex">
+						    <a title="Alphabetical list of top EPA topics" href="http://www.epa.gov/epahome/quickfinder.htm">A-Z Index</a>
+						</li>
+						<li>
+						    <a href="http://www.epa.gov/search.html">Advanced Search</a>
+						</li>
+						<li>
+						    <fieldset id="search">
+						        <legend>What are you looking for?</legend>
+						        <input value="" name="querytext" id="searchbox"/> 
+						<button id="searchbutton" type="submit" title="Search" >
+						 
+						</button>
+						</fieldset>
+						</li>
+                    </ol>
+                    <input value="epa" type="hidden" name="typeofsearch"/>
+                    <input value="earlink1" type="hidden" name="fld"/>
+                    <input value="Climate Change" type="hidden" name="areaname"/>
+                    <input value="http://www.epa.gov/climatechange/contactus.html" type="hidden" name="areacontacts"/>
+                    <input value="" type="hidden" name="areasearchurl"/>
+                    <input value="epafiles_default.xsl" type="hidden" name="result_template"/>
+                    <input value="sample4filt.hts" type="hidden" name="filter"/>
+                </fieldset>
+            </form>
+            <!-- END AREA SEARCH -->
+            <!-- IA Buckets-->
+            <ul>
+                <li id="learn">
+                    <a title="Learn the Issues" href="http://www.epa.gov/gateway/learn/">Learn the Issues</a>
+                </li>
+                <li id="scitech">
+                    <a title="Science and Technology" href="http://www.epa.gov/gateway/science/">Science &amp; Technology</a>
+                </li>
+                <li id="laws">
+                    <a title="Laws and Regulations" href="http://www.epa.gov/lawsregs/">Laws &amp; Regulations</a>
+                </li>
+                <li id="about">
+                    <a title="About EPA" href="http://www.epa.gov/aboutepa/">About EPA</a>
+                </li>
+            </ul>
+            <!-- END EPA HEADER -->
+        </div>
+        <div id="content">
+            <div id="area">
+                <p>
+                    <a href="http://www.epa.gov/climatechange/contactus.html">Contact Us</a>
+                </p>
+                <!-- START AREA NAME -->
+                <p>Climate Change</p>
+                <!-- END AREA NAME -->
+            </div>
+            <div id="page">
+                <div id="main">
+                    <ul id="breadcrumbs">
+						<li class="first">
+						    <b>You are here:</b>
+						    <a href="http://www.epa.gov/">EPA Home</a>
+						</li>
+						<!-- START BREADCRUMBS -->
+						<li>
+						    <a href="/climatechange/">Climate Change</a>
+						</li>
+						<li>
+						    <a href="/climatechange/ghgemissions/">Emissions</a>
+						</li>
+						<li>Individual Emissions - Household Emissions Calculator Assumptions and References</li>
+                    </ul>
+                    <!-- END BREADCRUMBS -->
+                    <!-- BEGIN PAGE NAME -->
+                    <!--googleon: index-->
+                    <h1>Household Emissions Calculator Assumptions and References</h1>
+                    <!-- END PAGE NAME -->
+                    <!-- BEGIN CONTENT -->
+                    <!-- START TAB's -->
+                    <!-- END TAB's -->
+                    <!-- BEGIN CONTENT AREA -->
+                    <div id="pageContent">
+<h2>Your Current Household Emissions Sources</h2>
+<h3>Household Vehicles</h3>
+<p>Pounds of carbon dioxide equivalent are calculated based on EPA's estimate of the <a href="http://www.epa.gov/oms/climate/documents/420f11041.pdf">greenhouse gas emissions from a typical passenger vehicle</a> in the United States. Estimates of the typical values for fuel economy and miles driven per week are from the <a href="http://www.fhwa.dot.gov/policyinformation/statistics/2007/pdf/vm1.pdf">Federal Highway Administration's Highway Statistics 2007 Table VM-1 (PDF)</a>
+						    <span class="fileinfo">(1 p, 11K)</span>. Note that EPA's emissions estimates are lower than estimates obtained through <a href="http://www.fueleconomy.gov/feg/findacar.htm">fueleconomy.gov</a>, because EPA's estimates are for tailpipe emissions only. The fueleconomy.gov site estimates emissions over the full fuel lifecycle (including extraction, processing, and transportation of fuel).</p>
+<h3>Electricity</h3>
+<p>Electricity emissions factors are categorized by geographic subregion. Source: EPA. <a href="http://www.epa.gov/cleanenergy/energy-resources/egrid/index.html">eGRID</a> Version 1.1 Aggregation File, eGRID2010.</p>
+<p>"Typical" annual CO<sub>2</sub> emissions are 14,920 pounds per household, assuming approximately 957 kWh per month. Source: <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus8.pdf">U.S. Energy Information Administration 2009. A Look at Residential Energy Consumption in 2005</a>.</p>
+<h3>Natural Gas</h3>
+<p>Carbon coefficient for natural gas: 117 pounds of CO<sub>2</sub> per million BTU, or 0.12 pounds per cubic foot of gas. Source: <a href="http://www.epa.gov/climatechange/ghgemissions/usinventoryreport/archive.html">U.S. EPA Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2009</a> (EPA 2011).</p>
+<p>"Typical" annual CO<sub>2</sub> emissions of 8,049 pounds per household based on national average monthly consumption of 5,583 cubic feet of gas. Source: <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus8.pdf">U.S. Energy Information Administration 2009. A Look at Residential Energy Consumption in 2005</a>.</p>
+<h3>Fuel Oil</h3>
+<p>Carbon coefficient for distillate fuel (fuel oil): 163 pounds of CO<sub>2</sub> per million BTU, or 22.61 pounds per gallon. Source: <a href="http://www.epa.gov/climatechange/ghgemissions/usinventoryreport/archive.html">U.S. EPA Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2009</a> (EPA 2011).</p>
+<p>"Typical" annual CO<sub>2</sub> emissions of 16,779 pounds per household based on national average monthly consumption of 62 gallons of oil. Source: <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus8.pdf">U.S. Energy Information Administration 2009. A Look at Residential Energy Consumption in 2005</a>.</p>
+<h3>Propane</h3>
+<p>Carbon coefficient for LPG (propane): 136pounds of CO<sub>2</sub> per million BTU, or 12.43 pounds per gallon. Source: <a href="http://www.epa.gov/climatechange/ghgemissions/usinventoryreport/archive.html">U.S. EPA Inventory of U.S. Greenhouse Gas Emissions and Sinks: 1990-2009</a> (EPA 2011).</p>
+<p>"Typical" annual CO<sub>2</sub> emissions of 5,679 pounds per household based on national average monthly consumption of 38 gallons of propane. Source: <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus8.pdf">U.S. Energy Information Administration 2009. A Look at Residential Energy Consumption in 2005</a>
+						</p>
+<h3>Waste Disposal</h3>
+<p>Estimates of greenhouse gas emission benefits from recycling newspaper, glass, plastic, metal, and magazines were developed using national waste data and life-cycle greenhouse gas emission factors for waste management. Calculations assume that it would be possible for households to recycle 100 percent of all recyclable materials generated as waste. For example, if you indicate that you recycle newspapers, this calculator assumes that you recycle 100 percent of the newspapers you receive. It is estimated that on average, each person generates 0.025 tons of newspaper, 0.038 tons of glass, 0.015 tons of plastic, 0.011 tons of metal, and 0.005 tons of magazines per year.</p>
+<p>EPA's annual Characterization Report was the source of per capita waste generation by material type (e.g., newspaper waste generated per person). Source: <a href="http://www.epa.gov/wastes/nonhaz/municipal/pubs/msw2009rpt.pdf">U.S. Environmental Protection Agency, 2010. Municipal Solid Waste Generation, Recycling, and Disposal in the United States: Facts and Figures for 2009 (PDF)</a>
+						    <span class="fileinfo">(198 pp, 2.4MB, <a href="http://www.epa.gov/epahome/pdf.html">About PDF</a>). </span>
+						</p>
+<p>Carbon dioxide equivalent emissions associated with household waste management were calculated using the total emissions for landfills (including incineration, landfill gas-to-energy projects, oxidation, and flaring) from EPA's Inventory of U.S. Greenhouse Gas Emissions and Sinks, 1990-2009 and the United States population estimates from EPA's annual Characterization Report mentioned above. The emission factors for each material type were developed by EPA and presented in the Agency's report on greenhouse gas emissions from waste management and in the online WAste Reduction Model (WARM). These emission factors take into account the full material life cycle; i.e., not only emissions at the landfill, but also emissions and sequestration associated with production, manufacturing, remanufacturing, forest carbon storage due to reduced harvests, etc. The emission factor used for recycling materials in this calculator compares greenhouse gas emissions from recycling with those attributable to landfilling. This approach enables policy makers to evaluate, on a per-ton basis, the overall difference in greenhouse gas emissions between (1) recycling 1 ton of material and (2) manufacturing and then managing (post-consumer) 1 ton of the same material. Source: U.S. Environmental Protection Agency, 2009. Solid Waste Management and Greenhouse Gases: A Life-Cycle Assessment of Emissions and Sinks, EPA530-R-06-004. WARM is available in the <a href="/climatechange/waste/tools.html">Tools section</a> of the Waste section of this Web site.</p>
+<p class="pagetop contentRight" style="clear: none">
+						    <a href="#pageContent">Top of page</a>
+						</p>
+<h2>What You Can Do to Reduce Your Emissions</h2>
+<h3>On the Road</h3>
+<p>Emission factors based on EPA's estimate of the <a href="http://www.epa.gov/oms/climate/documents/420f11041.pdf">greenhouse gas emissions from a typical passenger vehicle</a> in the United States.</p>
+<p>Cost savings for reducing the number of miles driven are calculated using $0.16 cents per mile (includes gas, oil and maintenance). Source: <a href="http://www-cta.ornl.gov/data/chapter10.shtml">Transportation Energy Data Book. Table 10.13. Average variable cost per mile, 2011</a>.</p>
+<p>Properly inflating tires: Assumes an increase in fuel efficiency of 3 percent. Keeping your engine properly tuned: Assumes an increase in fuel efficiency of 4 percent. Source: <a href="http://www.fueleconomy.gov/">Environmental Protection Agency and Department of Energy, Fuel Economy Website, 2011</a>.</p>
+<p>Perform regular maintenance on your vehicles: Assumes an increase in fuel efficiency of 7 percent. Source: <a href="http://www.fueleconomy.gov/">Environmental Protection Agency and Department of Energy, Fuel Economy Website, 2011</a>.</p>
+<p>Cost savings for purchasing a more fuel efficient vehicle are calculated using $2.84 per gallon. Source: <a href="http://www.eia.gov/dnav/pet/pet_pri_gnd_dcus_nus_a.htm">U.S. Energy Information Administration, Petroleum Navigator, 2007U.S. Energy Information Administration, US Retail Gas Prices, 2011</a>.</p>
+<h3>At Home</h3>
+<p>Cost savings for natural gas consuming devices assume an average cost of $11.21 per thousand cubic feet. Source: <a href="http://www.eia.gov/dnav/ng/ng_pri_sum_dcu_nus_a.htm">Energy Information Administration: US Residential Natural Gas Prices, 2011</a>.</p>
+<p>Cost savings for electricity consuming devices assume average cost per kWh of $0.1150. Source: <a href="http://www.eia.gov/forecasts/aeo/pdf/tbla8.pdf">Energy Information Administration, Annual Energy Outlook Table A8, 2011</a>.</p>
+<p>Cost savings for fuel oil consuming devices assume an average cost of $2.80 per gallon. Source: <a href="http://www.eia.gov/dnav/pet/pet_pri_dist_dcu_nus_a.htm">Energy Information Administration: US Residential Fuel Oil Prices, 2011</a>.</p>
+<p>Cost savings for propane consuming devices assume an average cost of $2.59 per gallon. Source: <a href="http://www.eia.gov/dnav/pet/pet_pri_wfr_dcus_nus_m.htm">Energy Information Administration: Residential Propane Prices, 2011</a>.</p>
+<p>Turning down your heating thermostat: Assumes 3 percent savings in heating energy use for a 1 degree decrease. Source: ENERGY STAR. Life Cycle Cost Estimating Tool for ENERGY STAR Programmable Thermostats, 2008. Assumes that, nationally, 7% of annual residential electricity consumption, 62% of annual natural gas consumption, 61% of annual propane consumption, and 84% of annual fuel oil consumption are used for space heating. Source: <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus3.pdf">U.S. Energy Information Administration. End-use Consumption of Electricity. US Energy Information Administration: A Look at Residential Energy Consumption in 2005. Total Energy Consumption in U.S. Households by Type of Housing Unit (Table US3), 2009</a>
+						    <span class="fileinfo">(4 pp, 51K, <a href="http://www.epa.gov/epahome/pdf.html">About PDF</a>) and <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/spaceheating/pdf/tablesh3.pdf">US Energy Information Administration: A Look at Residential Energy Consumption in 2005. Space-Heating Energy Consumption in U.S. Households by Type of Housing Unit (Table SH3), 2009 (PDF)</a>
+						        <span class="fileinfo">(7 pp, 58K, <a href="http://www.epa.gov/epahome/pdf.html">About PDF</a>)</span>
+						    </span>
+						</p>
+<p>Turning up thermostat for central air conditioner: Assumes 6 percent savings in cooling energy use for a 1 degree increase. Source: ENERGY STAR. Life Cycle Cost Estimating Tool for ENERGY STAR Programmable Thermostats, 2008. Assumes that nationally, 20% of annual electricity consumption is used for space cooling. Source: U.S. Energy Information Administration. End-use Consumption of Electricity. <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus4.pdf">Total Energy Consumption in U.S. Households by Fuels Used, 2005 (PDF) Total Energy Consumption in U.S. Households by Type of Housing Unit, 2005 (Table US4) (PDF)</a>
+						    <span class="fileinfo">(4 pp, 51K, <a href="http://www.epa.gov/epahome/pdf.html">About PDF</a>) and <a href="http://www.eia.gov/consumption/residential/data/2005/c&amp;e/summary/pdf/tableus12.pdf">Total Consumption by Energy End Uses, 2005 (Table US12) (PDF)</a>
+						        <span class="fileinfo">(4 pp, 50K, http://www.epa.gov/epahome/pdf.htmlAbout PDF)</span>
+						    </span>
+						</p>
+<p>Enable sleep feature on your computer and monitor. Assumes ENERGY STAR desktop computer and monitor. Average annual unit computer energy (sleep feature enabled, computer turned off at night): 80 kWh; average annual unit computer energy (sleep feature not enabled, computer turned off at night): 152 kWh. Average annual unit monitor energy (sleep feature enabled, monitor turned off at night): 44 kWh; average annual unit monitor energy (sleep feature not enabled, monitor turned off at night): 76 kWh. Source: <a href="http://www.energystar.gov/index.cfm?fuseaction=find_a_product.showProductGroup&amp;pgw_code=CO">ENERGY STAR. LBNL Home Office Spreadsheet, 2009</a>.</p>
+<p>Wash clothes in cold water instead of hot: Assumes average use of 485 kWh per year or 1.07 kWh per load. Source: D&amp;R International product database, 2011. Use a clothes line or drying rack for 50% of your laundry, instead of your dryer: Assumes 1,079 kWh of electricity used per year. Source: <a href="http://www.energysavers.gov/information_resources/index.cfm/mytopic=60002">U.S. Department of Energy. A Consumer's Guide to Energy Efficiency and Renewable Energy, 2007</a>.</p>
+<p>Replacing 60 watt incandescent light bulbs with 13 watt compact fluorescents: Assumes that lights are on for 3 hours per day. Source: <a href="http://www.energystar.gov/index.cfm?c=cfls.pr_cfls">ENERGY STAR. Cost Estimate for Energy Star Qualified Light Bulbs, 2011</a>.</p>
+<p>Replacing old refrigerator with an ENERGY STAR model: Assumes old model uses 794 kWh per year; ENERGY STAR model uses 424 kWh per year. Source: Source: D&amp;R International “Historical Data Tables Factbook Appendix from D&amp;R_2-8-11.xlsx.</p>
+<p>Replacing an old boiler or furnace with an ENERGY STAR model: Assumes 2000 sq ft house; 300 square feet of glass. Source: EPA’s Climate Change Action Plan (CCAP), 2010.</p>
+<p>Replacing single-pane windows with ENERGY STAR windows: Assumes 2000 square-foot house, 300 square feet of glass. Source: <a href="http://www.energystar.gov/index.cfm?c=windows_doors.pr_methodology">ENERGY STAR. Methodology based on RESFEN 3.1 calculations performed by Lawrence Berkeley National Laboratory (LBNL), 2005</a>.</p>
+<h3>Recycling</h3>
+<p>Calculations assume that it would be possible for households to recycle 100 percent of all recyclable materials generated as waste. The plastic material type used in the calculator includes PET and HDPE, and the metal material type includes aluminum and steel cans.</p>
+</div>
+                    <!--googleoff: index-->
+                    <!-- BEGIN AREA FOOTER -->
+                    <p id="areafooter">
+						<span class="column1 topic"><a href="/climatechange/basics">Basic Information</a></span>
+						<span class="column2 topic"><a href="/climatechange/ghgemissions">Greenhouse Gas Emissions</a></span>
+						<span class="column3 topic"><a href="/climatechange/science">Science</a></span>
+						<span class="column4 topic"><a href="/climatechange/EPAactivities.html">What EPA is Doing</a></span>
+						<span class="column5 topic"><a href="/climatechange/wycd">What You Can Do</a></span>
+						<br/>
+						<span class="column1 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="column2"><a href="/climatechange/ghgemissions/gases.html">Overview of Gases</a></span>
+						<span class="column3"><a href="/climatechange/science/overview.html">Overview</a></span>
+						<span class="column4"><a href="/climatechange/EPAactivities/economics.html">Evaluating Policy Options, Costs, and Benefits</a></span>
+						<span class="column5"><a href="/climatechange/wycd/home.html">At Home</a></span>
+						<br/>
+						<span class="column1 topic postInA"><a href="/climatechange/newsroom.html">Newsroom</a></span>
+						<span class="column2 postInA"><a href="/climatechange/ghgemissions/sources.html">Sources of Emissions</a></span>
+						<span class="column3 postInA"><a href="/climatechange/science/causes.html">Causes of Climate Change</a></span>
+						<span class="column4 "><a href="/climatechange/EPAactivities/regulatory-initiatives.html">Regulatory Initiatives</a></span>
+						<span class="column5 postInA"><a href="/climatechange/wycd/road.html">On the Road</a></span>
+						<br/>
+						<span class="column1 blank postInA"><a href="/climatechange/index.html">blank</a></span>
+						<span class="column2 postInA"><a href="/climatechange/ghgemissions/global.html">Global Data</a></span>
+						<span class="column3 postInA"><a href="/climatechange/science/indicators/">Indicators of Climate Change</a></span>
+						<span class="column4"><a href="/climatechange/EPAactivities/voluntaryprograms.html">Voluntary Programs</a></span>
+						<span class="column5 postInA"><a href="/climatechange/wycd/office.html">In the Office</a></span>
+						<br/>
+						<span class="column1 topic postInA"><a href="/climatechange/links.html">Related Links</a></span>
+						<span class="column2 postInA"><a href="/climatechange/ghgemissions/usinventoryreport.html">National Data</a></span>
+						<span class="column3 postInA"><a href="/climatechange/science/future.html">Future Climate Change</a></span>
+						<span class="column4"><a href="http://epa.gov/statelocalclimate/">State, Local, and Tribal Partnerships</a></span>
+						<span class="column5 postInA"><a href="/climatechange/wycd/school.html">At School</a></span>
+						<br/>
+<span class="column1 blank postTribes">
+						    <a href="/climatechange/glossary.html">blank</a>
+						</span>
+						<span class="column2 postTribes">
+						    <a href="http://www.epa.gov/ghgreporting/">Facility Data</a>
+						</span>
+						<span class="column3 blank postInA"><a href="/climatechange/index.html">blank</a></span>
+						<span class="column4 blank"><a href="/climatechange/">blank</a></span>
+						<span class="column5 blank postTribes"><a href="/climatechange/index.html">blank</a></span
+						<br/>
+						<span class="column1 topic postTribes"><a href="/climatechange/glossary.html">Glossary</a></span>
+						<span class="column2 postTribes"><a href="/climatechange/ghgemissions/individual.html">Individual Calculator</a></span>
+						<span class="column3 blank postTribes"><a href="/climatechange/index.html">blank</a></span>
+						<span class="column4 blank"><a href="/climatechange/">blank</a></span>
+						<span class="column5 topic postTribes"><a href="/climatechange/index.html">Climate Connections</a></span>
+						<br/>
+						<span class="postTribes column1 blank" style="clear: both"><a href="/climatechange/kids">blank</a></span>
+						<span class="postTribes column2 blank"><a href="/climatechange/">blank</a></span>
+						<span class="column3 topic postEmissions"><a href="/climatechange/impacts-adaptation/index.html">Climate Change Impacts and Adapting to Change</a></span>
+						<span class="column4 postTribes"><a href="/climatechange/EPAactivities/internationalpartnerships.html">International Partnerships</a></span>
+						<span class="column5 postTribes"><a href="http://www.epa.gov/cleanenergy/">Clean Energy</a></span>
+						<br/>
+						<span class="postInA postEmissions column1 topic" style="clear: both"><a href="/climatechange/kids/index.html">Students' Site</a></span>
+						<span class="postInA postTribes column2 blank"><a href="/climatechange/">blank</a></span>
+						<span class="postInA postTribes column3 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column4 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postEmissions column5"><a href="http://www.epa.gov/otaq/climate/index.htm">Climate and Transportation</a></span>
+                        <br/>
+                        <span class="postInA postTribes column1 blank" style="clear: both"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column2 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column3 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column4 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postEmissions column5"><a href="http://water.epa.gov/scitech/climatechange/">Climate and Water</a></span>
+                        <br/>
+                        <span class="postInA postTribes column1 blank" style="clear: both"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column2 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column3 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postTribes column4 blank"><a href="/climatechange/index.html">blank</a></span>
+						<span class="postInA postEmissions column5"><a href="http://epa.gov/climatechange/climate-change-waste/">Climate and Waste</a></span>
+                        <br/>
+                        <span class="postInA postTribes column1 blank" style="clear: both"><a href="/climatechange/index.html">blank</a></span>
+                        <span class="postInA postTribes column2 blank"><a href="/climatechange/index.html">blank</a></span>
+                        <span class="postInA postTribes column3 blank"><a href="/climatechange/index.html">blank</a></span>
+                        <span class="postInA postTribes column4 blank"><a href="/climatechange/index.html">blank</a></span>
+                        <span class="postInA postEmissions column5"><a href="http://www.epa.gov/research/climatescience/">EPA Climate Science Research</a></span>
+						<br/>
+						</p>
+                    <!-- END AREA FOOTER -->
+                    <!-- END CONTENT -->
+                </div>
+                <div id="areanav">
+                    <!-- BEGIN AREA MAIN NAVIGATION -->
+                    <h4 class="skip">Area Navigation</h4>
+                    <ul>
+    <li class="separator">
+						    <a href="/climatechange/">Climate Change Home</a>
+						    <hr/>
+    </li>
+    <li>
+						    <a href="/climatechange/basics/">Basic Information</a>
+                            <ul>
+                            <li> <a href="/climatechange/basics/facts.html">Common Questions</a></li></ul>
+						</li>
+    <li>
+						    <a href="/climatechange/ghgemissions/">Greenhouse Gas Emissions</a>
+    <ul>
+        <li>
+						            <a href="/climatechange/ghgemissions/gases.html">Overview of Gases</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/ghgemissions/sources.html">Sources of Emissions</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/ghgemissions/global.html">Global Data</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/ghgemissions/usinventoryreport.html">National Data</a>
+						        </li>
+        <li>
+						            <a href="http://www.epa.gov/ghgreporting/">Facility Data</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/ghgemissions/individual.html">Individual Calculator</a>
+						        </li>
+    </ul>
+    </li>
+    <li>
+						    <a href="/climatechange/science/">Science</a>
+    <ul>
+        <li>
+						            <a href="/climatechange/science/overview.html">Overview</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/science/causes.html">Causes of Climate Change</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/science/indicators/index.html">Indicators of Climate Change</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/science/future.html">Future Climate Change</a>
+                            
+						        </li>
+                                 <li><a href="/climatechange/science/multimedia.html">Multimedia Gallery</a></li>	
+    </ul>
+    </li>
+    <li>
+						    <a href="/climatechange/impacts-adaptation/">Impacts &amp; Adaptation</a>
+    <ul>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/alaska.html">Alaska</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/islands.html">U.S. Islands</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/southwest.html">Southwest </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/southeast.html">Southeast </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/northeast.html">Northeast </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/northwest.html">Northwest </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/midwest.html">Midwest </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/greatplains.html">Great Plains</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/international.html">International</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/health.html">Human Health </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/ecosystems.html">Ecosystems </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/forests.html">Forests </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/transportation.html">Transportation </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/energy.html">Energy</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/coasts.html">Coasts </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/agriculture.html">Agriculture and Food</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/society.html">Society</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/water.html">Water Resources </a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/adapt-overview.html">Adaptation Overview</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/adapt-tools.html">Tools for Public Officials</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/impacts-adaptation/fed-programs.html">Federal and EPA Programs</a>
+						        </li>
+    </ul>
+    </li>
+    <li>
+						    <a href="/climatechange/EPAactivities.html">What EPA is Doing</a>
+    <ul>
+        <li>
+						            <a href="/climatechange/EPAactivities/regulatory-initiatives.html">Regulatory Initiatives</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/EPAactivities/voluntaryprograms.html">Voluntary Programs</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/EPAactivities/economics.html">Evaluating Policies</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/EPAactivities/internationalpartnerships.html">International Partnerships</a>
+						        </li>
+        <li>
+						            <a href="http://epa.gov/statelocalclimate/">State, Local, and Tribal Partnerships</a>
+						        </li>
+    </ul>
+    </li>
+    <li>
+						    <a href="/climatechange/wycd/">What You Can Do</a>
+    <ul>
+        <li>
+						            <a href="/climatechange/wycd/home.html">At Home</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/wycd/road.html">On the Road</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/wycd/office.html">At the Office</a>
+						        </li>
+        <li>
+						            <a href="/climatechange/wycd/school.html">At School</a>
+						        </li>
+    </ul>
+    </li>
+    <li>
+						    <a href="/climatechange/newsroom.html">Newsroom</a>
+						</li>
+    <li>
+						    <a href="/climatechange/glossary.html">Glossary</a>
+						</li>
+    <li>
+						    <a href="/climatechange/students/index.html">Students' Site</a>
+						</li>
+</ul>
+                </div>
+                <!-- END AREA MAIN NAVIGATION -->
+            </div>
+        </div>
+        <!-- BEGIN FOOTER -->
+        <div id="footer">
+            <ul id="goodies">
+                <li id="rss-news">
+                    <a href="http://www.epa.gov/newsroom/rssfeeds.htm">News Feeds</a>
+                </li>
+                <li id="podcasts">
+                    <a href="http://www.epa.gov/epahome/podcasts.htm">Podcasts</a>
+                </li>
+                <li id="mobile">
+                    <a href="http://m.epa.gov/">EPA Mobile</a>
+                </li>
+                <li id="email-news">
+                    <a href="http://www.epa.gov/newsroom/email_signups.htm">News by Email</a>
+                </li>
+                <li id="widgets">
+                    <a href="http://www.epa.gov/widgets/">Widgets</a>
+                </li>
+            </ul>
+            <ul id="globalfooter">
+                <li>
+                    <a href="http://www.epa.gov/">EPA Home</a>
+                </li>
+                <li>
+                    <a href="http://www.epa.gov/epafiles/usenotice.htm">Privacy and Security Notice</a>
+                </li>
+                <li class="last">
+                    <a href="http://www.epa.gov/climatechange/contactus.html">Contact Us</a>
+                </li>
+            </ul>
+            <p id="wcmswatermark">WCMS</p>
+            <p id="seal">The Seal of the United States Environmental Protection Agency</p>
+        </div>
+        <p class="skip">
+            <a title="Jump to main content." href="#content">Jump to main content.</a>
+        </p>
+        <!-- END FOOTER -->
+        <script type="text/javascript" src="http://www.epa.gov/epafiles/js/third-party/jquery.js"> </script>
+        <script type="text/javascript" src="http://www.epa.gov/epafiles/js/epa-core-v4.js"> </script>
+        <!-- Begin: page related java script --><script type="text/javascript" src="/climatechange/scripts/main.js"></script>
+<!-- End: page related java script --><!-- BEGIN CP Specific tag -->
+        <script type="text/javascript">displayToolkit("0901efcc80183460","status|submittoworkflow|viewproperties|createnewpage|multimport"); </script>
+        <script type="text/javascript">quickEditForm("0901efcc80183460","/root",false,"../forms/110_basic","","700px","900px","110 Basic","","pencil.gif",""); </script>
+        <!-- END CP Specific tag-->
+    </body>
+</html>

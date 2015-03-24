@@ -1,0 +1,211 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><!-- InstanceBegin template="/Templates/index.dwt" codeOutsideHTMLIsLocked="false" -->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<!-- InstanceBeginEditable name="doctitle" --><title>Basics of Electricity | Sunelco Solar, Wind, Hydro Renewable Electric Power</title><meta name="Description" content="The basics of electricity for solar panels and alternative energy, including direct current and alternating current. Planning electrical loads for renewable energy." /><!-- InstanceEndEditable -->
+<meta name="keywords" content="Solar, Power, Renewable, Energy, Panel, Wind, Electricity, Battery, design, products, service, hydro, Montana, Sunelco, sun, electric" />
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+
+
+<!-- Dropmenu Scripts !-->
+	
+	<script type="text/javascript" src="js/jquery.js"></script> 
+	<script type="text/javascript" src="js/dropmenu.js"></script> 
+	<script type="text/javascript">
+		$(document).ready(function(){
+		$("#nav-one").dropmenu({});
+});
+</script>
+	
+	<!-- End Dropmenu Scripts !-->
+    
+    <script type="text/javascript">
+
+/*** 
+    Simple jQuery Slideshow Script
+    Released by Jon Raasch (jonraasch.com) under FreeBSD license: free to use or modify, not responsible for anything, etc.  Please link out to me if you like it :)
+***/
+
+function slideSwitch() {
+    var $active = $('#slideshow IMG.active');
+
+    if ( $active.length == 0 ) $active = $('#slideshow IMG:last');
+
+    // use this to pull the images in the order they appear in the markup
+    var $next =  $active.next().length ? $active.next()
+        : $('#slideshow IMG:first');
+
+    // uncomment the 3 lines below to pull the images in random order
+    
+    // var $sibs  = $active.siblings();
+    // var rndNum = Math.floor(Math.random() * $sibs.length );
+    // var $next  = $( $sibs[ rndNum ] );
+
+
+    $active.addClass('last-active');
+
+    $next.css({opacity: 0.0})
+        .addClass('active')
+        .animate({opacity: 1.0}, 1000, function() {
+            $active.removeClass('active last-active');
+        });
+}
+
+$(function() {
+    setInterval( "slideSwitch()", 6000 );
+});
+
+</script>
+
+<link rel="stylesheet" href="css/prettyPhoto.css" type="text/css" media="screen" charset="utf-8" />
+	<script src="js/jquery.prettyPhoto.js" type="text/javascript" charset="utf-8"></script>
+    
+
+
+
+<!-- InstanceBeginEditable name="head" --><style type="text/css">.test {}</style><!-- InstanceEndEditable -->
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21437073-1']);
+  _gaq.push(['_setDomainName', '.sunelco.com']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</head>
+
+<body>
+<div id="container">
+<div id="header-wrapper">
+  <div id="header">
+    <div id="header_nav">
+      <ul>
+        <li><a href="catalog.html">order catalog</a></li>
+        <li><a href="contact.html">contact us</a></li>
+      </ul>
+    </div>
+    <!-- end #header -->
+    </div>
+  
+  <div id="nav">
+    <ul id="nav-one" class="dropmenu"> 
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a>
+      <div class="classroom">
+        <div class="nav-col-wide"><img src="images/nav-about.jpg" width="215" height="130" /></div>
+  <div class="nav-col-small last">
+    <ul>
+      <li><a href="about.html">About Sunelco</a>
+        <li><a href="about-who.html">Who We Are</a></li>
+  
+      </ul>
+  </div>
+          <div class="clearfloats"></div>
+          </div>
+      </li>
+      <li><a href="class_intro.html">Classroom</a>
+        <div class="classroom">
+  <div class="nav-col-wide"><img src="images/classroom-chalboard.jpg" width="215" height="130" /></div>
+  <div class="nav-col-small last">
+    <ul>
+      <li><a href="class_intro.html">Intro to Renewable</a>
+        <li><a href="class_electricity.html">Basics of Electricity</a></li>
+      <li><a href="class_voltage.html">Voltage Drop Tables</a></li>
+      </ul>
+  </div>
+          <div class="clearfloats"></div>
+          </div>
+       </li>
+      <li><a href="planning.html">System Planning</a>
+        <div class="planning">
+  <div class="nav-col-small"><img src="images/nav-planning.jpg" width="154" height="125" alt="planning" /></div>
+  <div class="nav-col-wide last">
+    
+    
+    <ul>
+      <li><a href="planning.html">System Planning By Sunelco</a></li>
+      <li><a href="planning_design.html">Designing Renewable: Good Practices</a></li>
+      <li><a href="planning_pumping.html">Solar Water Pumping </a></li>
+      <li><a href="planning_telecom.html">Renewable Energy for Telecommunications</a></li>
+      <li><a href="catalog.html">Planning Guide and Product Catalog</a></li>
+      
+      </ul>
+  </div>
+          
+          <div class="clearfloats"></div>
+        </div>
+       </li>
+      <li><a href="incentives.html">Incentives</a></li>
+      <li><a href="gallery/">Installation Gallery</a></li>
+    </ul>
+    </div>
+</div>
+
+ 
+  
+  <div class="top_950"></div>
+  <!-- InstanceBeginEditable name="mainContent" -->  <div id="mainContent">    <a name="top" id="top"></a><div id="main_left">  <img src="images/electricity-header.jpg" alt="electrical receptacle" width="565" height="130" class="main_left_image" />  <h1>Basics of Electricity</h1>      <p>jump to a section:<br />        <a href="#dc">direct current</a><br />      <a href="#ac">alternating current</a></p><p>The definition of electricity is given as &quot;the flow of electrons along a conductor&quot;. If you have ever come into physical contact with this flow of electrons by touching some exposed wire or other exposed electrical device you will note that you received a shock. This shock is the result of electrons using your body as a conductor. Typically, we prefer electricity to stay in a designated, approved conductor and to move in an orderly fashion to its point of use.</p><p>In order for electrons to “flow” the potential must be greater at the source than at the load much like a water faucet and garden hose. We have to turn on the faucet and introduce water into the garden hose in order to get a flow of water out the other end. Likewise in electricity, we have to introduce electrons into one end of a wire in order to get electricity out the other end of the wire. The volume and pressure of electricity introduced at one end will determine the amount of work that the electrons can do at the other end. Since the terms &quot;volume&quot; and &quot;pressure&quot; were already taken by the water people, the electric people coined the terms &quot;amperage&quot; and &quot;voltage&quot; to differentiate between water and electrical volume and pressure. Not surprisingly, amperage (sometimes referred to as current) is measured in Amps and voltage is measured in Volts.</p><p>Given a high enough amperage and voltage, electricity can knock you off your feet just as surely as if you were squirted with a large volume of water at high pressure.</p><p>There are many factors that affect the flow of electrons along a conductor and a few of them are important to us in the design of our renewable energy systems. One of the main considerations is knowing how much work can be done with a given amount of electricity. We have all heard the term Watts when applied to a light bulb, toaster, hair dryer, microwave oven or other appliance. Watts are the amount of power consumed or amount of electrical work required to do a job. Watts are normally measured by the hour so that a 100 watt light bulb burning for 1 hour would consume 100 watt hours of electricity.</p><p>To determine how much wattage a device will use we can multiply the amps times the volts and the resultant product will be the wattage. The formula AMPS X VOLTS = WATTS is very important to people who work with electricity. Conversely, Watts divided by Volts will equal Amps and Watts divided by Amps will equal Volts.</p><h2>How much for a lightbulb?</h2><p>To give a definition of how this works, let’s use the 100 watt light bulb mentioned earlier as an example. If the 100 watt bulb is for use in a residential home application and the electricity coming out of the fixture is known to be 120 volts then by dividing 100 watts by 120 volts we will arrive at the fact that our bulb draws .83 amps. For those countries that use 230 volt electricity, the formula still works and the amperage consumed would be calculated by dividing 100 watts by 230 volts (answer; .43 amps). Now let’s say the bulb is for use in a camper or RV that has a 12 volt battery system. We have to divide the 100 watts by 12 volts with the result that the bulb will now consume 8.3 amps of electricity. In all three of the above scenarios the bulb consumed 100 watts but the voltage and amperage varied in each case. To help us understand the concept a little better consider the dollar as equal to one watt. Which is more; a dollar bill, 4 quarters, 10 dimes, 20 nickles, or 100 pennies? They are all the same in value just as the 100 watts is the same amount of work or power consumption in each case.</p><p>This brings us to different voltages and the advantages and disadvantages of each. A 12 volt electrical system is a very safe system in terms of electrical shock because of the low potential for electrocution. 12 volt electricity just doesn’t travel through the human body very well. On the other hand, it doesn’t travel through a wire all that well either because the voltage (pressure, remember?) is so low. At 240 volts, we have the extreme potential for electrocution because the voltage (pressure) is 20 times that of the 12 volt system but, given the same load (appliance or fixture) at the end of the circuit, at 240 volts we only have to move 1/20 the amperage to operate the load. To solve this problem wire manufacturers created wire in different thicknesses (gauges) so that we could choose the wire gauge that would carry the voltage and current most appropriate to our application.</p><p>Because 12 volt electricity is so low in pressure, a larger wire is required to get our electrons to the point of use without creating a lot of heat (waste) along the way. By increasing the voltage wherever possible we can reduce the amount of amperage we have to push along the wire. Not only have we increased the pressure but we have reduced the volume when we raised the voltage. Therefore, we can use a smaller wire to carry the same wattage over a given distance if the voltage is kept high. The results of using a wire that is too small to carry the amperage expected of it is heat build up in the wire and loss of power at the other end. Some wire loss is normal but those in the know have established acceptable amounts of loss given in percents for the various voltages in common use today.</p><h1><a name="dc" id="dc"></a>Direct Current (DC)</h1><p>Solar modules, some wind generators, hydrogen fuel cells and most micro-hydro generators create DC or Direct Current electricity. This is the type of electricity found in batteries. The most typical DC current is 12 volts DC which is what we find in automobile batteries. To keep things simple lets use the 12 volt battery as the building block for our educational system.</p><p>Typically, but not always, solar modules make DC electricity directly from sunlight. It is used to charge a battery and this stored energy is held in the battery for use later. This is very convenient because we don’t always need electricity when the sun is shining. Several solar modules can be wired in parallel to speed the rate at which a battery is charged. See the section titled <a href="#">Basics of Electricity</a> for more on this subject.</p><p>If we have a 12 volt battery that is completely discharged it will have a terminal voltage of less than 11 volts when read with a volt meter. A fully charged 12 volt battery will have a terminal voltage of approximately 12.7 volts when at a full state of charge. However, to fully charge a 12 volt battery we must slowly raise the voltage of the battery to approximately 14.5 for a wet cell (lead-acid) battery or 14 volts for a sealed, maintenance free or gelled cell battery. Once the battery terminal voltage has been brought up to 14 or 14.5 volts and held there for a period of time we can say the battery has been fully charged. Once we stop charging the battery and allow the voltage of the battery to “settle” it will drop down to the 12.7 volts mentioned earlier. Because we have to raise the battery level to 14.5 and sometimes even higher, most solar modules, wind generators, fuel cells and micro-hydro systems have a maximum output voltage of approximately 17 volts. This higher voltage is required because heat from the sun, friction or other outside sources can significantly reduce the peak output voltage of our system. By allowing a few extra volts output, we can be assured of having the required 14.5 volts required to completely charge the 12 volt battery.</p><p>It is important to note here that a 12 volt battery is usually made up of six 2 volt “cells” wired in series to give us 12 volts. The size of the cells and consequently the size of the entire battery will usually determine the amount of electricity the battery can hold. The measure of battery capacity is the “Amp Hour”.</p><p>A typical Marine/RV, deep cycle battery which is similar to an automotive starter battery will have around 80 amp hours of storage capacity. To charge our 12 volt battery (bring it up to 14.5 volts) requires that we provide some amperage to “drive” the voltage of the battery upward. For this reason our charging source (solar, wind, fuel cell or hydro) has to generate amperage as well as voltage. The more amperage it generates, the faster it will push the battery voltage to the 14.5 volt stage.</p><p>As an example, let’s say that we have a solar panel capable of putting out 5 amps in full sun and generating 17 volts. Using the manufacturer’s rating system, we can multiply the amps times the volts of the solar panel.</p><p>Thus, 5 amps times 17 volts = 85 watts. If our 80 amp hour battery is 100% dead (100% depth of discharge) we can assume that it will take the 85 watt solar module 16 hours of full sun to completely restore the depleted 80 amp hours (80 amp hours divided by 5 amps per hour). In reality because of battery inefficiency and other factors such as temperature and battery type it will take slightly longer. We typically use a 15% inefficiency factor to estimate the recharge time for wet cell batteries. This means that we would have to provide 115% of the amp hours (92 amp hours) taken from the battery to recharge it. So it would actually take 18.4 hours of full sun equivalent to completely recharge the dead battery with our 85 watt panel. If we choose to wire two 85 watt solar panels in parallel, we will now have 10 amps output with a maximum of 17 volts. Recharging of the 80 amp hour battery will be reduced to ½ of the time it took with only one solar panel.</p><p>We could take this discussion into 24 or 48 volt battery systems or systems which use 2 volt or 6 volt batteries in series and at some point we hope to expand this site to include more information on those types of systems. There are some excellent publications in our book department as well as in the <a href="catalog.html">Sunelco Planning Guide and Product Catalog</a> that provide extensive information on batteries and battery charging. We hope you will take the opportunity to add one or more of them to your library.</p>											<h1 Class="summary"><a name="ac" id="ac"></a>Alternating Current											</h1>											<p Class="summary">The difference in AC current and DC current is that rather than 																			being delivered up in a smooth, continuous flow like DC electricity, AC current 																			is switched on and off at a high rate of speed usually 50 to 60 times per 																			second. In order to do any work, electricity requires at least two wires. In DC 																			electricity we call these Positive (+) and Negative (-) but in AC electricity 																			they are called Hot and Neutral. The 50 or 60 pulses per second (called hertz 																			or Hz) of AC electricity are alternately sent down the Hot and Neutral wires to 																			the load. Since only one or the other of the wires is charged at any given 																			moment this alternation of current came to be called Alternating Current or AC. 																			Clever, huh? If you have ever had an electrical shock from a wall socket, the 																			vibrating effect is the result of the 60 Hz of 120 volt electricity traveling 																			through your body.</p>																		<p class="summary">If you followed the previous section on DC current you 																			discovered that you can store DC electricity in batteries for use later. 																			Unfortunately, AC power such as we are accustomed to coming out of our wall 																			sockets is not so easy to store. Small amounts of AC electricity can be stored 																			in electronic devices called capacitors but they are not practical for storing 																			electricity for home use.</p>																		<p class="summary">Since most home appliances in North America are designed to 																			operate at 120 volts AC and not 12 volts DC we have to have some method of 																			converting our stored renewable energy from 12 volts DC to 120 volts AC (note 																			the 1 to 10 ratio). In earlier times, we could connect a motor which operated 																			off of 12 volt DC to a 120 volt generator and run the 12 volt motor off of our 																			battery to produce 120 volts AC. This was all very good but very inefficient. 																			Approximately 60% of our energy was lost as we moved from one electrical system 																			to the other. Over the years since electricity has been in wide-spread use, 																			other, more efficient devices have come about to make this conversion more 																			efficient. Transformers (a metal core wound with wire) and electronic circuitry 																			or a combination of the two have pretty much replaced the old fashioned rotary 																			inverter. Inverters today have an efficiency rate that can exceed 90% (less 																			than 10% of the power lost in conversion) when properly sized for the 																			application.</p>																		<p class="summary">No discussion of AC electricity in relation to renewable energy 																			is complete without mentioning that there are two basic types of inverters 																			commonly in use today. The modified sine wave and the full sine wave inverter 																			vary only slightly in their ability to run common household appliances. While 																			the modified sine wave inverter is less expensive due to the simplicity of its 																			design there are a few loads such as digital clocks, fluorescent lights with 																			magnetic ballasts, ceiling fans, variable speed devices and electronics which 																			employ silicon controlled rectifiers which do not perform well from a modified 																			sine wave inverter. To operate these devices at their full potential, an 																			inverter with a full sine wave output is required.</p>																		<p class="summary">So what’s the difference in the two? If you are familiar with a 																			device called an oscilloscope which lets you look at electricity you will know 																			that conventional electricity from the wall plug looks like a regular series of 																			ocean waves that are all identical. In a 60 Hz system such as we have here in 																			North America, there are exactly 60 identical crests and 60 identical valleys 																			per second in the wave pattern. With a modified sine wave inverter, we will 																			still see 60 identical crests and valleys per second, however they are not 																			smooth like ocean waves but rather stepped, much like an Aztec pyramid with 																			little flat tops and bottoms. Some electrical motors and fluorescent lights 																			buzz and some small battery chargers (the type used in portable tools) do not 																			even recognize this type of waveform as electricity at all. However, most 																			appliances will never know the difference so you can see why the modified sine 																			wave inverter is still popular today considering it costs less to buy than the 																			full sine wave inverter. For more on inverters, see our section on <i>Inverters</i> in the Sunelco market place or order a copy of our 																			<a href="catalog.html">Sunelco Planning Guide and Product Catalog.</a></p>																		<p class="summary"><a href="#top">back to top</a></p>          </div>    <div id="main_right"> <a href="catalog.html"><img src="images/btn-catalog.jpg" width="296" height="210" alt="Sunelco Planning Guide and Product Catalog" /></a>      <h3>How does length of electrical cable effect electricity?</h3>    <p>visit our <a href="class_voltage.html">Voltage Drop</a> section</p>      <h3>Electrical Load Planning</h3>    <p>Use this form to evaluate your electrical needs:</p>    <p><a href="images/sunelco-load-evaluation.pdf" class="pdfsmall">load planning form</a> </p>       <h3>Financial Assistance</h3>   <p>Find out about the many financial incentives available for renewable energy</p>   <p><a href="incentives.html">visit incentives</a></p>    </div>    <div class="clearfloats"></div>  </div>  <!-- InstanceEndEditable -->
+  <div class="bottom_950"></div>
+ <div class="clearfloats"></div>
+<!-- end #container --></div>
+<div id="footer-wrapper">
+  <div id="footer">
+    <div class="left-column">
+      <h1>Classroom</h1>
+      <ul>
+        <li><a href="class_intro.html">Intro to Renewable Energy</a></li>
+        <li><a href="class_electricity.html">Basics of Electricity</a></li>
+        <li><a href="class_voltage.html">Voltage Drop Tables</a>      </li>
+      </ul>
+      <ul>
+        <li></li>
+      </ul>
+    </div>
+    <div class="left-column">
+      <h1>Planning</h1>
+      <ul>
+        <li><a href="planning.html">Sunelco System Design</a></li>
+        <li><a href="planning_design.html">Designing Renewable Energy Systems</a></li>
+        <li><a href="planning_pumping.html">Solar Water Pumping</a></li>
+        <li><a href="planning_telecom.html">Renewable for Telecommunications</a></li>
+      </ul>
+    </div>
+    <div class="left-column">
+      
+      <h1>Call Toll Free:</h1>
+      <p>1-888-786-3526 </p>
+      <h1>Business Hours:</h1>
+      <p>Monday-Friday<br />
+        8:30 to 5:00, Mountain Time </p>
+      <p>&nbsp;</p>
+    </div>
+     <div class="left-column">
+      
+      <h1>Email</h1>
+      <p><a href="contact.html">&raquo; send an email</a></p>
+<h1>Address:</h1>
+      <p> 2086 Hwy 93 North, Suite 130 <br />
+        Victor, Montana 59875 </p>
+    </div>
+     <div class="clearfloats"></div>
+   
+  <!-- end #footer --></div>
+  
+</div>
+<script type="text/javascript" charset="utf-8">
+		$(document).ready(function(){
+			$("a[rel^='prettyPhoto']").prettyPhoto({
+				theme: 'light_rounded'});
+		});
+	</script>
+</body>
+<!-- InstanceEnd --></html>

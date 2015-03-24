@@ -1,3 +1,43 @@
 {"title" :"query: test, tf-idf: 54.0654800837","count" :"20", "id" : "63", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 6.9314718056","count" :"20", "id" : "103", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 5.54517744448","count" :"20", "id" : "75", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 4.15888308336","count" :"20", "id" : "100", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 2.77258872224","count" :"20", "id" : "48", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 54.0654800837","count" :"20", "id" : "63", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 6.9314718056","count" :"20", "id" : "103", "TYPE" : "bad"}{"title" :"query: test, tf-idf: 45.0431038354, lemma: test","count" :"20", "id" : "63", "TYPE" : "bad"}
 {"title" :"query: test, tf-idf: 45.0431038354, lemma: test","count" :"20", "id" : "63", "TYPE" : "bad"}
 {"title" :"query: how much energy does a tv use?, tf-idf: 0.0, lemma: how much energy do a tv use ?","count" :"20", "id" : "165", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "153", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "155", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "154", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "153", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "155", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "154", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "134", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "60", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "62", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "153", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "155", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "153", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "155", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "153", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "155", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "154", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "134", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "60", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "153", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "155", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "154", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "134", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "60", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "62", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "63", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "137", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "135", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "112", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "139", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "86", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "117", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "22", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "49", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "119", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "44", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "41", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "182", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 1.0, lemma: test","count" :"20", "id" : "181", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 45.0431038354, lemma: test","count" :"20", "id" : "63", "TYPE" : "bad"}
+{"title" :"query: test, tf-idf dot product: 8.78889830934, lemma: test","count" :"20", "id" : "37", "TYPE" : "bad"}

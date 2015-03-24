@@ -35,16 +35,21 @@
             </div>
         </div>
         <div class="row collapse">
-
-            <div class="large-6 small-6 columns">
-			    <p></p>
+            <div class="large-1 small-1 columns">
+			   <p id="precision" >0</p>
             </div>
-			<div class="large-4 small-3 columns">
+            <div class="large-4 small-3 columns">
 				<p>Number of documents to return:</p>
             </div>
 			 <div class="large-2 small-3 columns">
                  <input id="count" type="text" value="20">
             </div>
+            <div class="large-3 small-3 columns">
+                <select id="drop">
+                  <option value="product">tf-idf dot product</option>
+                  <option value="cosign">tf-idf cosign</option>
+                </select>
+
 
         </div>
     </form>
@@ -113,7 +118,8 @@
         function send() {
             var msg = document.getElementById('message').value;
 			var count = document.getElementById('count').value;;
-			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count +'"}';
+            var model = $( "#drop" ).val()
+			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count + '", "model" : "' + model +'"}';
             //var batchsize = parseInt(document.getElementById('batch').value);
             $( ".del" ).remove()
             if (sock) {
@@ -127,7 +133,11 @@
 
 
 		function sendBadDocument(title, id, count) {
-            $('#' + id ).remove()
+            $('#' + id ).remove();
+
+            var replace = parseInt($( "#precision" ).text()) + 1;
+            console.log(replace);
+            $( "#precision").replaceWith('<p id="precision" >' + replace + '</p>');
 			var obj = '{"title" :"' + title + '","count" :"' + count +'", "id" : "' + id +'", "TYPE" : "bad"}';
             if (sock) {
                sock.send(obj);
@@ -137,7 +147,7 @@
             }
         };
         function badDocument(msg, type) {
-			var model = $("input[name=data]:checked").val();[]
+			var model = $( "#drop" ).val()
 			var obj = '{"TYPE" :"' + type + '","MSG" :"' + msg +'", "Model" : "' + model +'"}';
             if (sock) {
                sock.send(obj);
@@ -155,7 +165,7 @@
 
 			var obj = JSON.parse(m);
 			//console.log(obj['Job_Title']);
-			$('<div id="' + obj['id'] + '" class="row del"><div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div><div class="large-10 columns"><p>'+ obj['Job_Title'] + '</p><a href="#" onclick=\'sendBadDocument(' +'"' + obj["Job_Title"] + '",' + obj['id'] + ',' +obj['retCount'] + ');\' class="postfix button expand">Bad document!! Send it back!!</a><p>' + obj['Job_Requirements'] + '</p><p>' + obj['Job_Description'] + '</p></div></div>').insertBefore("#bef");
+			$('<div id="' + obj['id'] + '" class="row del"><div class="large-2 columns small-3"><img src="http://placehold.it/80x80&text=[img]"/></div><div class="large-10 columns"><p>'+ obj['Job_Title'] + '</p><a href="#" onclick=\'sendBadDocument(' +'"' + obj["Job_Title"] + '",' + obj['id'] + ',' +obj['retCount'] + ');\' class="postfix button expand">Bad document</a><p>' + obj['Job_Requirements'] + '</p><p>' + obj['Job_Description'] + '</p></div></div>').insertBefore("#bef");
 			
 			
 			//ellog.innerHTML += m + '\n';
