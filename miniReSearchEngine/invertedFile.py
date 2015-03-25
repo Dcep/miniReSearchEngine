@@ -36,11 +36,13 @@ class miniReSearchIF():
 				tokens = nltk.word_tokenize(current_file.read())
 				counter = 0
 				for word in set(tokens):
+					word = word.lower()
 					try:
 						invertedFile[word]['DocCount'] += 1
 					except:
 						invertedFile[word]['DocCount'] = 1
 				for word in tokens:
+					word = word.lower()
 					counter += 1
 					try:
 						invertedFile[word]['FreqCount'] += 1

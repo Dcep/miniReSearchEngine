@@ -40,9 +40,9 @@ class lemma:
 		for word in tagged:
 			posTag = self.get_wordnet_pos(word[1])
 			if posTag == "":
-				yield self.wnl.lemmatize(word[0])
+				yield self.wnl.lemmatize(word[0].lower())
 			else:
-				yield self.wnl.lemmatize(word[0], pos=posTag)
+				yield self.wnl.lemmatize(word[0].lower(), pos=posTag)
 
 
 if __name__ == '__main__':
