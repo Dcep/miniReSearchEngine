@@ -26,9 +26,9 @@ class searchAlgorithm:
 			self.originalDocs[row.split(',')[0]] = row.split()[1]
 
 
-	def docInfo(self,document, payload, data, file):
+	def docInfo(self,document, payload, data, file, model):
 		self.send[document] = json.dumps(dict(id=document, Job_Title="query: " +
-			payload + ",<br> tf-idf cosine: " + str(
+			payload + ",<br> " + model + ": " + str(
 			self.docList[document]) + "<br> original doc: " + self.originalDocs[document] +
 			", <br> lemma: " + " ".join(data), Job_Requirements=file, retCount=self.returnCount))
 
@@ -43,7 +43,7 @@ class searchAlgorithm:
 					except:
 						self.docList[document] = ((self.docDict[word]['docNo'][document]["Freq"] * self.idf[
 							word]) + self.Epsilon) * payload.split().count(word)
-					self.docInfo(document, payload, data, current_file.read())
+					self.docInfo(document, payload, data, current_file.read(), "tf-idf")
 
 
 	def cosine_tfidf(self, payload, data):
@@ -76,7 +76,7 @@ class searchAlgorithm:
 			with open("clean/" + self.originalDocs[document]) as current_file:
 				mag = (queryMag * tfidfMag[document]) + self.Epsilon
 				self.docList[document] = sum(self.docList[document]) / mag
-				self.docInfo(document, payload, data, current_file.read())
+				self.docInfo(document, payload, data, current_file.read(), 'tf-idf cosine')
 
 	#def okapiBM25(self):
 
@@ -85,8 +85,7 @@ class searchAlgorithm:
 		self.idf = {}
 		#calculate idf for all words in the query
 		for i in range(wcount):
-			#print self.invFile[data[i]]
-			#try:
+			try:
 				self.docDict[data[i]] = (json.loads(json.dumps(self.invFile[data[i]], ensure_ascii=False)))
 				print payload['idf']
 				if payload['idf'] == 'BIM':
@@ -95,9 +94,9 @@ class searchAlgorithm:
 					print "here"
 					self.idf[data[i]] = (math.log((self.invFile['totalDocuments'] + self.idfEpsilon) / (self.docDict[data[i]]['DocCount'] + self.idfEpsilon)))
 					print self.idf[data[i]]
-			#except:
-			#	del self.docDict[data[i]]
-			#	print "word not in corpus"
+			except:
+				del self.docDict[data[i]]
+				print "word not in corpus"
 		if not self.docDict:
 			raise KeyError("no available queries")
 
@@ -108,23 +107,23 @@ class searchAlgorithm:
 		data = []
 		#self.returnCount = returnCount
 		data.extend([i for i in lem.return_lemma(query)])
-		#try:
-		self.calc_idf(data, payload)
-		if model == 'product':
-			self.tfidf(query, data)
-		else:
-			self.cosine_tfidf(query, data)
-		count = 0
+		try:
+			self.calc_idf(data, payload)
+			if model == 'product':
+				self.tfidf(query, data)
+			else:
+				self.cosine_tfidf(query, data)
+			count = 0
 
 
-		for i in sorted(self.docList.items(), key=itemgetter(1), reverse=True):
-				count += 1
-				yield self.send[i[0]]
-				if count == int(self.returnCount):
-					print("return count: " + str(self.returnCount) + "Request count: " + str(count))
-					break
-		#except:
-		#	self.send = json.dumps({'id': 'NaN', "Job_Title": query + " Not in Collection, <br> lemma: " + " ".join(data),
-		#                  "Job_Requirements": query + " Not in Collection",
-		#                  "Job_Description": query + " Not in Collection"})
-		#	yield self.send
+			for i in sorted(self.docList.items(), key=itemgetter(1), reverse=True):
+					count += 1
+					yield self.send[i[0]]
+					if count == int(self.returnCount):
+						print("return count: " + str(self.returnCount) + "Request count: " + str(count))
+						break
+		except:
+			self.send = json.dumps({'id': 'NaN', "Job_Title": query + " Not in Collection, <br> lemma: " + " ".join(data),
+		                  "Job_Requirements": query + " Not in Collection",
+		                  "Job_Description": query + " Not in Collection"})
+			yield self.send
