@@ -46,7 +46,7 @@ class EchoServerProtocol(WebSocketServerProtocol, miniReSearchIF):
         print payload
         obj = json.loads(payload)
         if obj['TYPE'] == 'qry':
-            self.RetCount = obj["count"]
+            self.count = obj["count"]
             self.search(obj["MSG"], obj['model'])
         elif obj['TYPE'] == 'bad':
             f = open("badDocs.txt", 'a')
@@ -54,7 +54,8 @@ class EchoServerProtocol(WebSocketServerProtocol, miniReSearchIF):
 
     def search(self, payload, model):
         algo = searchAlgorithm()
-        for data in algo.query(payload, self.invFile, self.RetCount, model):
+        algo.returnCount = self.count
+        for data in algo.query(payload, self.invFile, model):
             self.sendMessage(data)
 
 if __name__ == '__main__':

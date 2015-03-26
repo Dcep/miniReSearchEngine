@@ -6,11 +6,24 @@ from lemma import lemma
 
 
 class searchAlgorithm:
+
 	def __init__(self):
 		self.docDict = {}
 		self.docList = {}
 		self.returnCount = 20
 		self.send = {}
+		self.Epsilon = 0.5#sys.float_info.epsilon
+		reader = open('docIndex.csv')
+		self.originalDocs = {}
+		for row in reader:
+			self.originalDocs[row.split(',')[0]] = row.split()[1]
+
+
+	def docInfo(self,document, payload, data, file):
+		self.send[document] = json.dumps(dict(id=document, Job_Title="query: " +
+			payload + ",<br> tf-idf cosine: " + str(
+			self.docList[document]) + "<br> original doc: " + self.originalDocs[document] +
+			", <br> lemma: " + " ".join(data), Job_Requirements=file, retCount=self.returnCount))
 
 	def tfidf(self, payload, data):
 		for word in self.docDict:
@@ -19,30 +32,23 @@ class searchAlgorithm:
 				with open("lemma/" + str(document) + '.txt') as current_file:
 					try:
 						self.docList[document] = self.docList[document] + (
-							self.docDict[word]['docNo'][document]["Freq"] * self.idf)
+						(self.docDict[word]['docNo'][document]["Freq"] * self.idf) + self.Epsilon)
 					except:
-						self.docList[document] = (self.docDict[word]['docNo'][document]["Freq"] * self.idf[
-							word]) * payload.split().count(word)
+						self.docList[document] = ((self.docDict[word]['docNo'][document]["Freq"] * self.idf[
+							word]) + self.Epsilon) * payload.split().count(word)
+					self.docInfo(document, payload, data, current_file.read())
 
-					self.send[document] = json.dumps({'id': document, "Job_Title": "query: " +
-					                                                               payload + ", tf-idf dot product: " + str(
-						self.docList[document]) + ", lemma: " + " ".join(data), "Job_Requirements": current_file.read(),
-					                                  "retCount": self.returnCount})
 
 	def cosine_tfidf(self, payload, data):
-		reader = open('docIndex.csv')
-		originalDocs = {}
-		for row in reader:
-			originalDocs[row.split(',')[0]] = row.split()[1]
-		#print originalDocs
+
 		for word in self.docDict:
 			for document in self.docDict[word]['docNo']:
 				try:
-					self.docList[document].append(self.docDict[word]['docNo'][document]["Freq"] * self.idf[word])
+					self.docList[document].append((self.docDict[word]['docNo'][document]["Freq"] * self.idf[word]) + self.Epsilon)
 				except:
 					self.docList[document] = []
-					self.docList[document].append(self.docDict[word]['docNo'][document]["Freq"] * self.idf[word])
-					# print sum(self.tfidfList[document])
+					self.docList[document].append((self.docDict[word]['docNo'][document]["Freq"] * self.idf[word]) + self.Epsilon)
+
 
 		tfidfMag = {}
 		for document in self.docList:
@@ -60,68 +66,45 @@ class searchAlgorithm:
 		queryMag = math.sqrt(queryMag)
 
 		for document in tfidfMag:
-			with open("clean/" + originalDocs[document]) as current_file:
-				mag = queryMag * tfidfMag[document]
-				if mag == 0:
-					mag = 0.0000000001
+			with open("clean/" + self.originalDocs[document]) as current_file:
+				mag = (queryMag * tfidfMag[document]) + self.Epsilon
 				self.docList[document] = sum(self.docList[document]) / mag
-				self.send[document] = json.dumps({'id': document, "Job_Title": "query: " +
-				                                                               payload + ", tf-idf cosine: " + str(
-					self.docList[document]) + "original doc: " + originalDocs[document] +", lemma: " + " ".join(data), "Job_Requirements": current_file.read(),
-				                                  "retCount": self.returnCount})
+				self.docInfo(document, payload, data, current_file.read())
 
-
-
-
-
-				# self.tfidfList[document].append(self.docDict[word]['docNo'][document]["Freq"] * self.idf[word])
-		print self.docList
-
-	# @staticmethod
-	def query(self, payload, invFile, returnCount, model):
+	def query(self, payload, invFile, model):
 		lem = lemma()
 		data = []
-		self.returnCount = returnCount
-		data.extend([i for i in lem.return_lemma(payload)])  # payload.split()
+		#self.returnCount = returnCount
+		data.extend([i for i in lem.return_lemma(payload)])
 		wcount = len(data)
-		#try:
-		print payload
-		print data
-		self.idf = {}
-		#docDict = {}
-		#tfidf = {}
+		try:
+			self.idf = {}
 
-		for i in range(wcount):
-			try:
-				self.docDict[data[i]] = (json.loads(json.dumps(invFile[data[i]], ensure_ascii=False)))
-				self.idf[data[i]] = (math.log(invFile['totalDocuments'] / self.docDict[data[i]]['DocCount']))
-			except:
-				del self.docDict[data[i]]
-				print "word not in corpus"
-		if not self.docDict:
-			raise KeyError("no available queries")
+			for i in range(wcount):
+				try:
+					self.docDict[data[i]] = (json.loads(json.dumps(invFile[data[i]], ensure_ascii=False)))
+					self.idf[data[i]] = (math.log(invFile['totalDocuments'] / self.docDict[data[i]]['DocCount']))
+				except:
+					del self.docDict[data[i]]
+					print "word not in corpus"
+			if not self.docDict:
+				raise KeyError("no available queries")
 
-		if model == 'product':
-			self.tfidf(payload, data)
-		else:
-			self.cosine_tfidf(payload, data)
-		count = 0
-
-		#print tfidf.items().sort(key=itemgetter(1), reverse=True)
-		for i in sorted(self.docList.items(), key=itemgetter(1), reverse=True):
-			print i
-			count += 1
-			print "retcoutn:" + str(self.returnCount)
-
-			yield self.send[i[0]]
-			if count == int(self.returnCount):
-				print "Got to break"
-				break
-			print "retcount: " + str(self.returnCount) + " count: " + str(count)
+			if model == 'product':
+				self.tfidf(payload, data)
+			else:
+				self.cosine_tfidf(payload, data)
+			count = 0
 
 
-			#except:
-			#    self.send = json.dumps({'id': 0, "Job_Title": payload + " Not in database, lemma: " + " ".join(data),
-			#                   "Job_Requirements": payload + " Not in database",
-			#                  "Job_Description": payload + " Not in database"})
-			#    yield self.send
+			for i in sorted(self.docList.items(), key=itemgetter(1), reverse=True):
+					count += 1
+					yield self.send[i[0]]
+					if count == int(self.returnCount):
+						print("return count: " + str(self.returnCount) + "Request count: " + str(count))
+						break
+		except:
+			self.send = json.dumps({'id': 'NaN', "Job_Title": payload + " Not in Collection, <br> lemma: " + " ".join(data),
+		                   "Job_Requirements": payload + " Not in Collection",
+		                  "Job_Description": payload + " Not in Collection"})
+			yield self.send

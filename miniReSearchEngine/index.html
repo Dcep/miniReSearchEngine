@@ -27,18 +27,19 @@
  <div class="radius panel">
     <form>
         <div class="row collapse">
-            <div class="large-10 small-8 columns">
+            <div class="large-8 small-6 columns">
                 <input id="message" type="text">
             </div>
-            <div class="large-2 small-3 columns">
+            <div class="large-3 small-2 columns">
                 <a id="Search" href="#" onclick='send();' class="postfix button expand">Search</a>
             </div>
         </div>
         <div class="row collapse">
-            <div class="large-1 small-1 columns">
-			   <p id="precision" >0</p>
+            <div class="large-3 small-3 columns">
+			   <p>incorrect:<span id="precision">0</span></p>
+               <p id="P-at"></p>
             </div>
-            <div class="large-4 small-3 columns">
+            <div class="large-3 small-3 columns">
 				<p>Number of documents to return:</p>
             </div>
 			 <div class="large-2 small-3 columns">
@@ -116,9 +117,12 @@
          };
 
         function send() {
+
             var msg = document.getElementById('message').value;
-			var count = document.getElementById('count').value;;
-            var model = $( "#drop" ).val()
+			var count = document.getElementById('count').value;
+            $( "#precision").replaceWith('<span id="precision" >' + 0 + '</span>');
+            $( "#P-at").replaceWith('<span id="P-at" >P@' +count+ ": " +'</span>');
+            var model = $( "#drop" ).val();
 			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count + '", "model" : "' + model +'"}';
             //var batchsize = parseInt(document.getElementById('batch').value);
             $( ".del" ).remove()
@@ -134,10 +138,14 @@
 
 		function sendBadDocument(title, id, count) {
             $('#' + id ).remove();
-
+            var count = document.getElementById('count').value;
             var replace = parseInt($( "#precision" ).text()) + 1;
+
             console.log(replace);
-            $( "#precision").replaceWith('<p id="precision" >' + replace + '</p>');
+            var pval = (count - replace) / count
+            $( "#precision").replaceWith('<span id="precision" >' + replace + '</span>');
+            $( "#P-at").replaceWith('<span id="P-at" >P@' +count+ ": " + pval + '</span>');
+
 			var obj = '{"title" :"' + title + '","count" :"' + count +'", "id" : "' + id +'", "TYPE" : "bad"}';
             if (sock) {
                sock.send(obj);
