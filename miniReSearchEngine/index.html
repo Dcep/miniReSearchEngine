@@ -207,8 +207,29 @@
                   <option value="product">tf-idf dot-product</option>
                   <option value="cosign">tf-idf cosign</option>
                 </select>
-
-
+            </div>
+        </div>
+        <div class="row collapse">
+            <div class="large-2 small-3 columns">
+				<p>Epsilon:</p>
+            </div>
+			 <div class="large-2 small-3 columns"  >
+                 <input id="Epsilon" type="text" value="0">
+            </div>
+            <div class="large-1 columns">
+                <p></p>
+            </div>
+            <div class="large-1 small-2 columns">
+				<p > Epsilon idf:</p>
+            </div>
+			 <div class="large-2 small-3 columns">
+                 <input id="idfEpsilon" type="text" value="0">
+            </div>
+            <div class="large-3 small-3 columns">
+                <select id="idf">
+                  <option value="standard">idf standard</option>
+                  <option value="BIM">idf BIM</option>
+                </select>
         </div>
     </form>
     </div>
@@ -277,18 +298,21 @@
 
             var msg = document.getElementById('message').value;
 			var count = document.getElementById('count').value;
-            $( "#precision").replaceWith('<span id="precision" >' + 0 + '</span>');
-            $( "#P-at").replaceWith('<span id="P-at" >P@' +count+ ": " +'</span>');
             var model = $( "#drop" ).val();
-			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count + '", "model" : "' + model +'"}';
+            var Epsilon = document.getElementById('Epsilon').value;
+            var idfEpsilon = document.getElementById('idfEpsilon').value;
+            var idf = document.getElementById('idf').value;
+			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count + '", "model" : "' + model +'", "idf" : "' + idf +'", "Epsilon" : "' + Epsilon +'", "idfEpsilon" : "' + idfEpsilon +'"}';
             //var batchsize = parseInt(document.getElementById('batch').value);
-            $( ".del" ).remove()
+            $( ".del" ).remove();
             if (sock) {
                sock.send(obj);
                log("Sent " + "x : " + obj);
             } else {
                log("Not connected.");
             }
+            $( "#precision").replaceWith('<span id="precision" >' + 0 + '</span>');
+            $( "#P-at").replaceWith('<span id="P-at" >P@' +count+ ": " +'</span>');
         };
 
 

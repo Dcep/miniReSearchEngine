@@ -78,3 +78,4 @@
 {"title" :"query: test,<br> tf-idf cosine: 8.81776616672<br> original doc: www.consumeraffairs.com,utilities,pacific-gas-and-electric.html, <br> lemma: test","count" :"16", "id" : "9", "TYPE" : "bad"}
 {"title" :"query: test,<br> tf-idf cosine: 7.4314718056<br> original doc: www.theguardian.com,notesandqueries,query,0%2C5753%2C-2452%2C00.html, <br> lemma: test","count" :"16", "id" : "103", "TYPE" : "bad"}
 {"title" :"query: test,<br> tf-idf cosine: 6.04517744448<br> original doc: www.rdhmag.com,articles,print,volume-25,issue-10,feature,five-common-misconceptions-about-power-toothbrushes.html, <br> lemma: test","count" :"16", "id" : "160", "TYPE" : "bad"}
+{"title" :"query: test,<br> tf-idf cosine: 54.0654800837<br> original doc: www.dcrainmaker.com,2010,11,how-calorie-measurement-works-on-garmin.html, <br> lemma: test","count" :"20", "id" : "63", "TYPE" : "bad"}
