@@ -206,6 +206,7 @@
                 <select id="drop">
                   <option value="product">tf-idf dot-product</option>
                   <option value="cosign">tf-idf cosign</option>
+                  <option value="Okapi">Okapi-BM25</option>
                 </select>
             </div>
         </div>
@@ -230,6 +231,23 @@
                   <option value="standard">idf standard</option>
                   <option value="BIM">idf BIM</option>
                 </select>
+        </div>
+                <div class="row collapse">
+            <div class="large-2 small-3 columns">
+				<p>Okapi-BM25 b:</p>
+            </div>
+			 <div class="large-2 small-3 columns"  >
+                 <input id="beta" type="text" value="0.75">
+            </div>
+            <div class="large-1 columns">
+                <p></p>
+            </div>
+            <div class="large-1 small-2 columns">
+				<p >Okapi-BM25 k:</p>
+            </div>
+			 <div class="large-2 small-3 columns">
+                 <input id="kappa" type="text" value="1.6">
+            </div>
         </div>
     </form>
     </div>
@@ -302,7 +320,10 @@
             var Epsilon = document.getElementById('Epsilon').value;
             var idfEpsilon = document.getElementById('idfEpsilon').value;
             var idf = document.getElementById('idf').value;
-			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count + '", "model" : "' + model +'", "idf" : "' + idf +'", "Epsilon" : "' + Epsilon +'", "idfEpsilon" : "' + idfEpsilon +'"}';
+            var kappa = document.getElementById('kappa').value;
+            var beta = document.getElementById('beta').value;
+			var obj = '{"TYPE" : "qry", "MSG" :"' + msg + '", "count" : "' + count + '", "model" : "' + model +'", "idf" : "' +
+			 idf +'", "Epsilon" : "' + Epsilon +'", "idfEpsilon" : "' + idfEpsilon +'", "kappa" : "' + kappa +'", "beta" : "' + beta +'"}';
             //var batchsize = parseInt(document.getElementById('batch').value);
             $( ".del" ).remove();
             if (sock) {
