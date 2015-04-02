@@ -205,7 +205,7 @@
             <div class="large-3 small-3 columns">
                 <select id="drop">
                   <option value="product">tf-idf dot-product</option>
-                  <option value="cosign">tf-idf cosign</option>
+                  <option value="cosign">tf-idf cosine</option>
                   <option value="Okapi">Okapi-BM25</option>
                 </select>
             </div>
@@ -313,6 +313,8 @@
          };
 
         function send() {
+		$( "#precision").replaceWith('<span id="precision" >' + 0 + '</span>');
+		$( "#P-at").replaceWith('<span id="P-at" >P@: </span>');
 
             var msg = document.getElementById('message').value;
 			var count = document.getElementById('count').value;
